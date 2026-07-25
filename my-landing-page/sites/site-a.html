@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[야목역] 서희스타힐스 그랜드힐 관심고객 등록</title>
+  <style>
+    body { font-family: 'Noto Sans KR', sans-serif; background: #f8f9fa; margin: 0; padding: 20px; }
+    .container { max-width: 500px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 6px; font-weight: bold; }
+    input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+    button { width: 100%; padding: 14px; background: #1a73e8; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; }
+    button:disabled { background: #aaa; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>[야목역] 서희스타힐스 그랜드힐 관심고객 등록</h2>
+    
+    <form id="leadForm">
+      <div class="form-group">
+        <label for="name">성함</label>
+        <input type="text" id="name" required placeholder="홍길동">
+      </div>
+      <div class="form-group">
+        <label for="phone">연락처</label>
+        <input type="tel" id="phone" required placeholder="010-1234-5678">
+      </div>
+      <button type="submit" id="submitBtn">관심고객 등록하기</button>
+    </form>
+  </div>
+
+  <script>
+    // 1단계에서 얻은 구글 Apps Script URL
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbwJh34BIDRg65M-tawmZi82LLGfgeYW1m4vMHcAJQHEv9shra4vuONW0wKwZITvJCQ_/exec넣기";
+    
+    // ★ 해당 서브페이지의 현장명을 명시해줍니다.
+    const CURRENT_SITE_NAME = "야목역 서희스타힐스";
+
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerText = "전송 중...";
+
+      const payload = {
+        siteName: CURRENT_SITE_NAME, // 구글 시트로 전달될 현장 이름
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value
+      };
+
+      fetch(GAS_URL, {
+        method: 'POST',
+        mode: 'no-cors', // CORS 제한 회피
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(() => {
+        alert(`${CURRENT_SITE_NAME} 관심고객 등록이 완료되었습니다.`);
+        document.getElementById('leadForm').reset();
+      })
+      .catch(err => {
+        alert("등록 중 오류가 발생했습니다. 다시 시도해 주세요.");
+        console.error(err);
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "관심고객 등록하기";
+      });
+    });
+  </script>
+</body>
+</html>
