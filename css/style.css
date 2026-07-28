@@ -1,17 +1,18 @@
 
  body { font-family: 'Noto Sans KR', sans-serif; background: #f8f9fa; margin: 0;padding:0;}
-.container { max-width: 500px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.container { max-width: 500px; margin: 40px auto; background: #fff; padding: 20px 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 .form-group { margin-bottom: 15px; }
 label { display: block; margin-bottom: 6px; font-weight: bold; }
 input[type="text"], input[type="tel"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
 button[type="submit"] { width: 100%; padding: 14px; background: #1a73e8; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 20px; }
 button[type="submit"]:disabled { background: #aaa; }
+section{padding:0 20px}
 
 /* 약관 영역 스타일 */
-.privacy-section { margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee; font-size: 13px; color: #444; }
+.privacy-section { font-size: 13px; color: #444; }
 .privacy-notice { font-size: 10px; color: #666; line-height: 1.5; margin-bottom: 12px; }
-.check-all-box { padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid #eee; font-weight: bold; }
-.check-list { display: flex; flex-direction: column; gap: 8px; }
+.check-all-box { padding-bottom: 5px; margin-bottom: 5px; border-bottom: 1px solid #eee; font-weight: bold; }
+.check-list { display: flex; flex-direction: column; gap: 3px; }
 .check-item-row { display: flex; justify-content: space-between; align-items: center; }
 .check-item-row label { margin-bottom: 0; font-weight: normal; cursor: pointer; display: flex; align-items: center; gap: 6px; }
 .btn-view-terms { background: none; border: none; color: #888; text-decoration: underline; font-size: 12px; cursor: pointer; padding: 0; }
@@ -24,6 +25,7 @@ button[type="submit"]:disabled { background: #aaa; }
 .modal-body { font-size: 12px; color: #555; line-height: 1.6; margin-top: 10px; }
 .btn-close-modal { margin-top: 15px; width: 100%; padding: 10px; background: #111; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
 
+.container h2{text-align:center; line-height: 1.2;}
 
 .center-logo {
 padding-top:20px;
@@ -113,6 +115,7 @@ padding-top:20px;
     font-size: 14px;
   }
 }
+
 
 
 /* 전화 걸기 플로팅 버튼 기본 위치 설정 */
@@ -255,7 +258,8 @@ padding-top:20px;
 .special-promo-container {
   position: relative; /* 자식 요소의 기준점 */
   width: 100%;
-  margin: 30px auto;
+padding: 0px 20px 50px;
+box-sizing: border-box;
   overflow: hidden; /* 이미지 밖으로 나가는 빛 줄기 숨김 */
   border-radius: 12px;
 }
