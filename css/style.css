@@ -1,4 +1,6 @@
 .mainimg {text-align:center;}
+.mainimg img{    width: 100%;
+    max-width: 700px;}
 /* 하단 고정 바 전체 스타일 */
 .bottom-bar {
   position: fixed;
@@ -64,7 +66,7 @@
   }
   
   .bottom-bar-text strong {
-    font-size: 13px;
+    font-size: 14px;
   }
   
   .bottom-bar-text span {
@@ -73,7 +75,7 @@
   
   .btn-go-top {
     padding: 8px 12px;
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
