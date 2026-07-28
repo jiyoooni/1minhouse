@@ -1,6 +1,41 @@
-.mainimg {text-align:center;}
-.mainimg img{    width: 100%;
-    max-width: 700px;}
+
+ body { font-family: 'Noto Sans KR', sans-serif; background: #f8f9fa; margin: 0;padding:0;}
+.container { max-width: 500px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.form-group { margin-bottom: 15px; }
+label { display: block; margin-bottom: 6px; font-weight: bold; }
+input[type="text"], input[type="tel"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+button[type="submit"] { width: 100%; padding: 14px; background: #1a73e8; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 20px; }
+button[type="submit"]:disabled { background: #aaa; }
+
+/* 약관 영역 스타일 */
+.privacy-section { margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee; font-size: 13px; color: #444; }
+.privacy-notice { font-size: 10px; color: #666; line-height: 1.5; margin-bottom: 12px; }
+.check-all-box { padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid #eee; font-weight: bold; }
+.check-list { display: flex; flex-direction: column; gap: 8px; }
+.check-item-row { display: flex; justify-content: space-between; align-items: center; }
+.check-item-row label { margin-bottom: 0; font-weight: normal; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+.btn-view-terms { background: none; border: none; color: #888; text-decoration: underline; font-size: 12px; cursor: pointer; padding: 0; }
+.required-star { color: #e53e3e; }
+
+/* 모달 팝업 스타일 */
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center; }
+.modal-content { background: #fff; width: 90%; max-width: 450px; padding: 20px; border-radius: 8px; max-height: 80vh; overflow-y: auto; }
+.modal-content h3 { margin-top: 0; font-size: 16px; color: #111; }
+.modal-body { font-size: 12px; color: #555; line-height: 1.6; margin-top: 10px; }
+.btn-close-modal { margin-top: 15px; width: 100%; padding: 10px; background: #111; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+
+
+.center-logo {
+padding-top:20px;
+  display: block;
+  max-width: 200px;
+  width: 100%;       /* 모바일 등 작은 화면에서 자동으로 비율 맞춰 축소 */
+  height: auto;
+  margin: 0 auto;    /* 좌우 중앙 정렬 핵심 */
+}
+
+.mainimg {text-align:center; max-width: 700px; margin: 0 auto; padding-bottom:50px}
+.mainimg img{width: 100%}
 /* 하단 고정 바 전체 스타일 */
 .bottom-bar {
   position: fixed;
@@ -79,41 +114,185 @@
   }
 }
 
-/* 전화 걸기 플로팅 버튼 */
+
+/* 전화 걸기 플로팅 버튼 기본 위치 설정 */
 .btn-call-floating {
   position: fixed;
   right: 20px;
-  bottom: 85px; /* 하단 바 높이 + 20px 띄움 */
+  bottom: 85px;
   width: 54px;
   height: 54px;
-  background-color: #25d366; /* 눈에 잘 띄는 초록색 (원하는 색상으로 변경 가능) */
+  background-color: #25d366;
   color: #ffffff;
-  border-radius: 50%; /* 완전한 원형/타원형 형태 */
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 10000; /* 하단 바보다 위로 올림 */
+  z-index: 10000;
   text-decoration: none;
-  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.btn-call-floating:hover {
-  background-color: #1eb954;
-  transform: scale(1.08); /* 마우스 올렸을 때 살짝 커짐 */
-}
-
-/* 모바일 화면 위치 미세 조정 */
-@media (max-width: 600px) {
-  .btn-call-floating {
-    right: 15px;
-    bottom: 75px; /* 모바일 하단 바 높이에 맞춰 조정 */
-    width: 48px;
-    height: 48px;
-  }
+/* 💬 아이콘 위 '전화문의' 말풍선 스타일 */
+.call-tooltip {
+  position: absolute;
+  bottom: 64px; /* 아이콘 위쪽 위치 */
+  left: 50%;
+  transform: translateX(-50%);
   
-  .btn-call-floating svg {
-    width: 20px;
-    height: 20px;
+  background-color: #111111; /* 어두운 배경 */
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+
+  /* 위아래로 둥실둥실 움직이는 애니메이션 */
+  animation: bounce 1.8s infinite ease-in-out;
+}
+
+/* 말풍선 꼬리표 (아래쪽 화살표) */
+.call-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* 말풍선 바로 밑에 배치 */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #111111 transparent transparent transparent;
+}
+
+/* 둥실둥실 바운스 애니메이션 */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-6px); /* 위로 6px 이동 */
+  }
+}
+
+/* 모바일 분기 처리 */
+@media (max-width: 600px) {
+  .call-tooltip {
+    bottom: 56px;
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
+
+
+
+
+/* 푸터 영역 스타일 */
+.footer-section {
+  background-color: #222222;
+  color: #888888;
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 30px 20px 100px 20px; /* 맨 아래 100px은 하단 고정 스티키바 자리를 위한 여백 */
+  border-top: 1px solid #333333;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-links .divider {
+  margin: 0 8px;
+  color: #444;
+}
+
+.footer-info p {
+  margin: 4px 0;
+}
+
+.footer-info span {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.footer-disclaimer {
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #333;
+  color: #777;
+  font-size: 11px;
+}
+
+.footer-copy {
+  margin-top: 15px;
+  color: #555;
+  font-size: 11px;
+}
+
+/* 모바일 분기 처리 */
+@media (max-width: 600px) {
+  .footer-info span {
+    display: block; /* 모바일에서는 줄바꿈으로 깔끔하게 정렬 */
+    margin-right: 0;
+  }
+}
+
+/* 배너 감싸는 컨테이너 */
+.special-promo-container {
+  position: relative; /* 자식 요소의 기준점 */
+  width: 100%;
+  margin: 30px auto;
+  overflow: hidden; /* 이미지 밖으로 나가는 빛 줄기 숨김 */
+  border-radius: 12px;
+}
+
+/* 이미지 스타일 */
+.special-promo-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 🌟 높이 0px 문제를 해결한 빛 줄기(light-line) */
+.light-line {
+  position: absolute;
+  top: 0;
+  left: -100%; /* 화면 왼쪽 밖에서 출발 */
+  width: 50%;
+  height: 100%; /* 이미지 높이 전체를 채움 */
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg); /* 빛줄기를 대각선으로 기울임 */
+  animation: shine 3s infinite; /* 3초마다 반복 */
+}
+
+/* 빛이 지나가는 키프레임 애니메이션 */
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  20% {
+    left: 200%; /* 20% 지점에서 빛이 오른쪽 끝으로 통과 */
+  }
+  100% {
+    left: 200%; /* 나머지 80% 시간 동안은 쉼 (주기적 반짝임) */
   }
 }

@@ -3,37 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style.css">
   <title>[야목역] 서희스타힐스 그랜드힐 관심고객 등록</title>
-  <style>
-    body { font-family: 'Noto Sans KR', sans-serif; background: #f8f9fa; margin: 0; padding: 20px; }
-    .container { max-width: 500px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .form-group { margin-bottom: 15px; }
-    label { display: block; margin-bottom: 6px; font-weight: bold; }
-    input[type="text"], input[type="tel"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
-    button[type="submit"] { width: 100%; padding: 14px; background: #1a73e8; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 20px; }
-    button[type="submit"]:disabled { background: #aaa; }
+    <link rel="stylesheet" href="../css/style.css">
 
-    /* 약관 영역 스타일 */
-    .privacy-section { margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee; font-size: 13px; color: #444; }
-    .privacy-notice { font-size: 12px; color: #666; line-height: 1.5; margin-bottom: 12px; }
-    .check-all-box { padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid #eee; font-weight: bold; }
-    .check-list { display: flex; flex-direction: column; gap: 8px; }
-    .check-item-row { display: flex; justify-content: space-between; align-items: center; }
-    .check-item-row label { margin-bottom: 0; font-weight: normal; cursor: pointer; display: flex; align-items: center; gap: 6px; }
-    .btn-view-terms { background: none; border: none; color: #888; text-decoration: underline; font-size: 12px; cursor: pointer; padding: 0; }
-    .required-star { color: #e53e3e; }
-
-    /* 모달 팝업 스타일 */
-    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center; }
-    .modal-content { background: #fff; width: 90%; max-width: 450px; padding: 20px; border-radius: 8px; max-height: 80vh; overflow-y: auto; }
-    .modal-content h3 { margin-top: 0; font-size: 16px; color: #111; }
-    .modal-body { font-size: 12px; color: #555; line-height: 1.6; margin-top: 10px; }
-    .btn-close-modal { margin-top: 15px; width: 100%; padding: 10px; background: #111; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
-  </style>
 </head>
 <body>
-
+<img src="../img/logo.svg" alt="로고" class="center-logo">
   <div class="container">
     <h2>[야목역] 서희스타힐스 그랜드힐 관심고객 등록</h2>
     
@@ -117,6 +92,11 @@
   <div class="mainimg">
     <img src="../img/main-img1.jpg" alt="">
     <img src="../img/main-img2.jpg" alt="">
+      <div class="special-promo-container">
+    <img src="../img/event.png" alt="특별 혜택"> 
+    <!-- path/to/your/image.png 를 실제 이미지 파일 경로로 바꿔주세요 -->
+    <div class="light-line"></div>
+    </div>
     <img src="../img/main-img3.jpg" alt="">
     <img src="../img/main-img4.jpg" alt="">
   </div>
@@ -137,11 +117,41 @@
 
 <!-- 전화 연결 플로팅 버튼 -->
 <a href="tel:1600-0640" class="btn-call-floating" aria-label="전화 상담 연결">
+  <!-- 추가된 말풍선 -->
+  <div class="call-tooltip">전화문의</div>
+
   <!-- SVG 전화 아이콘 -->
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
     <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
   </svg>
 </a>
+
+<!-- 하단 푸터 영역 -->
+<footer class="footer-section">
+  <div class="footer-container">
+    <!-- 약관 및 개인정보 처리방침 링크 -->
+    <div class="footer-links">
+      <a href="#" onclick="alert('개인정보 처리방침 모달 연동'); return false;"><strong>개인정보처리방침</strong></a>
+      <span class="divider">|</span>
+      <a href="#" onclick="alert('이용약관 연동'); return false;">이용약관</a>
+    </div>
+
+    <!-- 사업자 및 현장 정보 -->
+    <div class="footer-info">
+      <p><span>상호명: 바이닥터GN&#40;성남모란점&#41;</span> <span>대표자: 양보현</span> <span>사업자등록번호: 177-19-00530</span></p>
+      <p><span>주소: 경기도 성남시 중원구 시민로77번길 17, 동양빌라트</span> <span>문의전화: 1600-0640</span></p>
+    </div>
+
+    <!-- 법적 면책 조항 (분양 랜딩 필수) -->
+    <div class="footer-disclaimer">
+      ※ 본 웹사이트에 사용된 이미지, CG, 개발 호재 등은 소비자의 이해를 돕기 위해 제작된 것으로 실제 시공 및 인허가 과정에서 변경될 수 있습니다.<br>
+      ※ 본 사이트는 서희스타힐스 분양 정보 제공 및 관심고객 등록 안내를 위한 홍보용 웹사이트입니다.
+    </div>
+
+    <!-- 저작권 -->
+    <p class="footer-copy">Copyright © 야목역 서희스타힐스 그랜드힐. All rights reserved.</p>
+  </div>
+</footer>
 
   <script>
     const GAS_URL = "https://script.google.com/macros/s/AKfycbwJh34BIDRg65M-tawmZi82LLGfgeYW1m4vMHcAJQHEv9shra4vuONW0wKwZITvJCQ_/exec";
