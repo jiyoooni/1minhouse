@@ -121,6 +121,28 @@
     <img src="../img/main-img4.jpg" alt="">
   </div>
 
+  <!-- 하단 고정 스티키 바 -->
+<div class="bottom-bar">
+  <div class="bottom-bar-content">
+    <div class="bottom-bar-text">
+      <strong>야목역 서희스타힐스 그랜드힐</strong>
+      <span>지금 관심고객 등록하고 혜택을 받아보세요!</span>
+    </div>
+    <!-- 최상단 이동 버튼 (필요에 따라 폼 위치로 이동 가능) -->
+    <button type="button" class="btn-go-top" onclick="scrollToTop()">
+      관심고객 등록하기 &gt;
+    </button>
+  </div>
+</div>
+
+<!-- 전화 연결 플로팅 버튼 -->
+<a href="tel:1600-0640" class="btn-call-floating" aria-label="전화 상담 연결">
+  <!-- SVG 전화 아이콘 -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+  </svg>
+</a>
+
   <script>
     const GAS_URL = "https://script.google.com/macros/s/AKfycbwJh34BIDRg65M-tawmZi82LLGfgeYW1m4vMHcAJQHEv9shra4vuONW0wKwZITvJCQ_/exec";
     const CURRENT_SITE_NAME = "야목역 서희스타힐스";
@@ -197,5 +219,21 @@
       });
     });
   </script>
+  <script>
+  // 클릭 시 최상단으로 부드럽게 스크롤 이동
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // 만약 특정 DB 폼 위치(예: id="form-section")로 이동하고 싶다면 아래 함수를 사용하세요.
+  /*
+  function scrollToForm() {
+    const formElement = document.getElementById('form-section');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  */
+</script>
 </body>
 </html>

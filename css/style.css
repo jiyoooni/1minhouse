@@ -1,1 +1,117 @@
 .mainimg {text-align:center;}
+/* 하단 고정 바 전체 스타일 */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #031c38; /* 이미지의 남색 배경 */
+  padding: 12px 20px;
+  box-sizing: border-box;
+  z-index: 9999; /* 다른 요소 위에 항상 떠있도록 고정 */
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+}
+
+/* 내부 레이아웃 정렬 */
+.bottom-bar-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 텍스트 영역 */
+.bottom-bar-text {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.bottom-bar-text strong {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.bottom-bar-text span {
+  font-size: 13px;
+  color: #d1d5db;
+}
+
+/* 관심고객 등록하기 노란색 버튼 */
+.btn-go-top {
+  background-color: #ffcc00; /* 이미지의 노란색 */
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-go-top:hover {
+  background-color: #e6b800;
+}
+
+/* 모바일 화면 대응 (화면이 좁을 때 글자 크기 조정) */
+@media (max-width: 600px) {
+  .bottom-bar {
+    padding: 10px 15px;
+  }
+  
+  .bottom-bar-text strong {
+    font-size: 13px;
+  }
+  
+  .bottom-bar-text span {
+    font-size: 11px;
+  }
+  
+  .btn-go-top {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+/* 전화 걸기 플로팅 버튼 */
+.btn-call-floating {
+  position: fixed;
+  right: 20px;
+  bottom: 85px; /* 하단 바 높이 + 20px 띄움 */
+  width: 54px;
+  height: 54px;
+  background-color: #25d366; /* 눈에 잘 띄는 초록색 (원하는 색상으로 변경 가능) */
+  color: #ffffff;
+  border-radius: 50%; /* 완전한 원형/타원형 형태 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10000; /* 하단 바보다 위로 올림 */
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-call-floating:hover {
+  background-color: #1eb954;
+  transform: scale(1.08); /* 마우스 올렸을 때 살짝 커짐 */
+}
+
+/* 모바일 화면 위치 미세 조정 */
+@media (max-width: 600px) {
+  .btn-call-floating {
+    right: 15px;
+    bottom: 75px; /* 모바일 하단 바 높이에 맞춰 조정 */
+    width: 48px;
+    height: 48px;
+  }
+  
+  .btn-call-floating svg {
+    width: 20px;
+    height: 20px;
+  }
+}
