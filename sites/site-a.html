@@ -9,9 +9,26 @@
     .container { max-width: 500px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
     .form-group { margin-bottom: 15px; }
     label { display: block; margin-bottom: 6px; font-weight: bold; }
-    input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
-    button { width: 100%; padding: 14px; background: #1a73e8; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; }
-    button:disabled { background: #aaa; }
+    input[type="text"], input[type="tel"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+    button[type="submit"] { width: 100%; padding: 14px; background: #1a73e8; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 20px; }
+    button[type="submit"]:disabled { background: #aaa; }
+
+    /* 약관 영역 스타일 */
+    .privacy-section { margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee; font-size: 13px; color: #444; }
+    .privacy-notice { font-size: 12px; color: #666; line-height: 1.5; margin-bottom: 12px; }
+    .check-all-box { padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid #eee; font-weight: bold; }
+    .check-list { display: flex; flex-direction: column; gap: 8px; }
+    .check-item-row { display: flex; justify-content: space-between; align-items: center; }
+    .check-item-row label { margin-bottom: 0; font-weight: normal; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .btn-view-terms { background: none; border: none; color: #888; text-decoration: underline; font-size: 12px; cursor: pointer; padding: 0; }
+    .required-star { color: #e53e3e; }
+
+    /* 모달 팝업 스타일 */
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-content { background: #fff; width: 90%; max-width: 450px; padding: 20px; border-radius: 8px; max-height: 80vh; overflow-y: auto; }
+    .modal-content h3 { margin-top: 0; font-size: 16px; color: #111; }
+    .modal-body { font-size: 12px; color: #555; line-height: 1.6; margin-top: 10px; }
+    .btn-close-modal { margin-top: 15px; width: 100%; padding: 10px; background: #111; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
   </style>
 </head>
 <body>
@@ -21,46 +38,150 @@
     
     <form id="leadForm">
       <div class="form-group">
-        <label for="name">성함</label>
+        <label for="name">성함 <span class="required-star">*</span></label>
         <input type="text" id="name" required placeholder="홍길동">
       </div>
       <div class="form-group">
-        <label for="phone">연락처</label>
+        <label for="phone">연락처 <span class="required-star">*</span></label>
         <input type="tel" id="phone" required placeholder="010-1234-5678">
       </div>
+
+      <!-- 약관 동의 영역 -->
+      <div class="privacy-section">
+        <p class="privacy-notice">
+          당사는 고객님의 정보를 중요시하며, 개인정보보호법을 준수하고 있습니다.<br>
+          수집된 개인정보는 고객 여러분께 분양과 관련된 최적의 서비스를 제공하기 위한 목적으로 활용되며 최소한의 범위 내에서 개인정보를 수집하고 있습니다.
+        </p>
+
+        <!-- 전체 동의 -->
+        <div class="check-all-box">
+          <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
+            <input type="checkbox" id="checkAll" style="width: 16px; height: 16px;">
+            전체 동의 <span class="required-star">*</span>
+          </label>
+        </div>
+
+        <!-- 세부 동의 항목 -->
+        <div class="check-list">
+          <div class="check-item-row">
+            <label>
+              <input type="checkbox" class="check-item" id="checkPrivacy" style="width: 15px; height: 15px;">
+              개인정보 수집 및 이용 동의 <span class="required-star">*</span>
+            </label>
+            <button type="button" class="btn-view-terms" onclick="openModal('modalPrivacy')">(약관보기)</button>
+          </div>
+
+          <div class="check-item-row">
+            <label>
+              <input type="checkbox" class="check-item" id="checkThirdParty" style="width: 15px; height: 15px;">
+              개인정보 제3자 제공 동의 <span class="required-star">*</span>
+            </label>
+            <button type="button" class="btn-view-terms" onclick="openModal('modalThirdParty')">(약관보기)</button>
+          </div>
+        </div>
+      </div>
+
       <button type="submit" id="submitBtn">관심고객 등록하기</button>
     </form>
   </div>
 
+  <!-- 약관보기 팝업 1: 개인정보 수집 및 이용 동의 -->
+  <div id="modalPrivacy" class="modal-overlay">
+    <div class="modal-content">
+      <h3>개인정보 수집 및 이용 동의</h3>
+      <div class="modal-body">
+        <p>1. <strong>수집 항목</strong>: 이름, 연락처(휴대전화번호)</p>
+        <p>2. <strong>수집 및 이용 목적</strong>: 분양 정보 안내, 상담 신청 접수 및 고객 문의 응대, 프로모션/이벤트 정보 제공</p>
+        <p>3. <strong>보유 및 이용 기간</strong>: 수집 목적 달성 시 또는 고객 요청 시 즉시 파기 (단, 관계 법령에 따라 보존할 필요가 있는 경우 해당 기간 동안 보관)</p>
+        <p>4. <strong>동의 거부 권리</strong>: 귀하는 개인정보 수집 및 이용에 거부할 권리가 있으나, 거부 시 상담 신청 및 정보 제공 서비스 이용이 제한될 수 있습니다.</p>
+      </div>
+      <button type="button" class="btn-close-modal" onclick="closeModal('modalPrivacy')">닫기</button>
+    </div>
+  </div>
+
+  <!-- 약관보기 팝업 2: 개인정보 제3자 제공 동의 -->
+  <div id="modalThirdParty" class="modal-overlay">
+    <div class="modal-content">
+      <h3>개인정보 제3자 제공 동의</h3>
+      <div class="modal-body">
+        <p>1. <strong>제공받는 자</strong>: 분양 대행사, 협력 분양 상담사</p>
+        <p>2. <strong>제공 목적</strong>: 분양 상담 진행, 맞춤형 분양 정보 제공 및 방문 예약 안내</p>
+        <p>3. <strong>제공 항목</strong>: 이름, 연락처</p>
+        <p>4. <strong>보유 및 이용 기간</strong>: 분양 완료 시 또는 위탁 계약 종료 시까지</p>
+        <p>5. <strong>동의 거부 권리</strong>: 귀하는 개인정보 제3자 제공에 거부할 권리가 있으나, 거부 시 분양 상담 서비스 제공이 제한될 수 있습니다.</p>
+      </div>
+      <button type="button" class="btn-close-modal" onclick="closeModal('modalThirdParty')">닫기</button>
+    </div>
+  </div>
+
+  <img src="../img/main-img1.jpg" alt="">
+  <img src="../img/main-img2.jpg" alt="">
+
   <script>
-    // 1단계에서 얻은 구글 Apps Script URL
     const GAS_URL = "https://script.google.com/macros/s/AKfycbwJh34BIDRg65M-tawmZi82LLGfgeYW1m4vMHcAJQHEv9shra4vuONW0wKwZITvJCQ_/exec";
-    
-    // ★ 해당 서브페이지의 현장명을 명시해줍니다.
     const CURRENT_SITE_NAME = "야목역 서희스타힐스";
 
+    // --- 약관 동의 체크박스 제어 ---
+    const checkAll = document.getElementById('checkAll');
+    const checkItems = document.querySelectorAll('.check-item');
+
+    // 1. '전체 동의' 클릭 시 하위 체크박스 전체 선택/해제
+    checkAll.addEventListener('change', function() {
+      checkItems.forEach(item => {
+        item.checked = checkAll.checked;
+      });
+    });
+
+    // 2. 하위 체크박스 조작 시 '전체 동의' 상태 자동 업데이트
+    checkItems.forEach(item => {
+      item.addEventListener('change', function() {
+        const allChecked = Array.from(checkItems).every(i => i.checked);
+        checkAll.checked = allChecked;
+      });
+    });
+
+    // --- 약관보기 팝업(모달) 제어 ---
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    // --- 폼 제출 시 검증 및 전송 ---
     document.getElementById('leadForm').addEventListener('submit', function(e) {
       e.preventDefault();
+
+      // ★ 약관 동의 여부 검증 (체크 안 되어있으면 경고창 출력 후 중단)
+      const isPrivacyChecked = document.getElementById('checkPrivacy').checked;
+      const isThirdPartyChecked = document.getElementById('checkThirdParty').checked;
+
+      if (!isPrivacyChecked || !isThirdPartyChecked) {
+        alert("개인정보 수집 및 이용 동의와 제3자 제공 동의에 모두 동의해주셔야 등록이 가능합니다.");
+        return;
+      }
       
       const submitBtn = document.getElementById('submitBtn');
       submitBtn.disabled = true;
       submitBtn.innerText = "전송 중...";
 
       const payload = {
-        siteName: CURRENT_SITE_NAME, // 구글 시트로 전달될 현장 이름
+        siteName: CURRENT_SITE_NAME,
         name: document.getElementById('name').value,
         phone: document.getElementById('phone').value
       };
 
       fetch(GAS_URL, {
         method: 'POST',
-        mode: 'no-cors', // CORS 제한 회피
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       })
       .then(() => {
         alert(`${CURRENT_SITE_NAME} 관심고객 등록이 완료되었습니다.`);
         document.getElementById('leadForm').reset();
+        checkAll.checked = false; // 동의 체크박스 초기화
       })
       .catch(err => {
         alert("등록 중 오류가 발생했습니다. 다시 시도해 주세요.");
