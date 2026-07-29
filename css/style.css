@@ -30,7 +30,7 @@ section{padding:0 20px}
 .center-logo {
 padding-top:20px;
   display: block;
-  max-width: 200px;
+  max-width: 170px;
   width: 100%;       /* 모바일 등 작은 화면에서 자동으로 비율 맞춰 축소 */
   height: auto;
   margin: 0 auto;    /* 좌우 중앙 정렬 핵심 */
@@ -40,15 +40,22 @@ padding-top:20px;
 .mainimg img{width: 100%}
 /* 하단 고정 바 전체 스타일 */
 .bottom-bar {
-  position: fixed;
+position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #031c38; /* 이미지의 남색 배경 */
+  background-color: #031c38;
   padding: 12px 20px;
   box-sizing: border-box;
-  z-index: 9999; /* 다른 요소 위에 항상 떠있도록 고정 */
+  z-index: 9999;
   box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+}
+
+.bottom-bar.hidden {
+  opacity: 0 !important;
+  transform: translateY(100%) !important; /* 화면 아래로 100% 밀어냄 */
+  visibility: hidden !important;
+  pointer-events: none !important; /* 숨겨졌을 때 클릭 방지 */
 }
 
 /* 내부 레이아웃 정렬 */
