@@ -43,53 +43,83 @@
     <div class="container">
       <h2>[시흥 거모B1] 호반써밋<br>관심고객 등록</h2>
 
-      <form id="leadForm">
-        <div class="form-group">
-          <label for="name">성함 <span class="required-star">*</span></label>
-          <input type="text" id="name" required placeholder="홍길동" autocomplete="name">
-        </div>
-        <div class="form-group">
-          <label for="phone">연락처 <span class="required-star">*</span></label>
-          <input type="tel" id="phone" required placeholder="010-1234-5678" autocomplete="tel" inputmode="tel">
-        </div>
+      <!-- 상단 폼 -->
+<form class="lead-form" data-position="상단">
+  <div class="form-group">
+    <label>
+      성함 <span class="required-star">*</span>
+      <input
+        type="text"
+        class="lead-name"
+        required
+        placeholder="홍길동"
+        autocomplete="name">
+    </label>
+  </div>
 
-        <!-- 약관 동의 영역 -->
-        <div class="privacy-section">
-          <p class="privacy-notice">
-            당사는 고객님의 정보를 중요시하며, 개인정보보호법을 준수하고 있습니다.<br>
-            수집된 개인정보는 고객 여러분께 분양과 관련된 최적의 서비스를 제공하기 위한 목적으로 활용되며 최소한의 범위 내에서 개인정보를 수집하고 있습니다.
-          </p>
+  <div class="form-group">
+    <label>
+      연락처 <span class="required-star">*</span>
+      <input
+        type="tel"
+        class="lead-phone"
+        required
+        placeholder="010-1234-5678"
+        autocomplete="tel"
+        inputmode="tel">
+    </label>
+  </div>
 
-          <!-- 전체 동의 -->
-          <div class="check-all-box">
-            <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
-              <input type="checkbox" id="checkAll" style="width: 16px; height: 16px;">
-              전체 동의 <span class="required-star">*</span>
-            </label>
-          </div>
+  <div class="privacy-section">
+    <p class="privacy-notice">
+      당사는 고객님의 정보를 중요시하며, 개인정보보호법을 준수하고 있습니다.<br>
+      수집된 개인정보는 분양 상담 및 정보 제공 목적으로 활용됩니다.
+    </p>
 
-          <!-- 세부 동의 항목 -->
-          <div class="check-list">
-            <div class="check-item-row">
-              <label>
-                <input type="checkbox" class="check-item" id="checkPrivacy" style="width: 15px; height: 15px;">
-                개인정보 수집 및 이용 동의 <span class="required-star">*</span>
-              </label>
-              <button type="button" class="btn-view-terms" onclick="openModal('modalPrivacy')">(약관보기)</button>
-            </div>
+    <div class="check-all-box">
+      <label>
+        <input type="checkbox" class="check-all">
+        전체 동의 <span class="required-star">*</span>
+      </label>
+    </div>
 
-            <div class="check-item-row">
-              <label>
-                <input type="checkbox" class="check-item" id="checkThirdParty" style="width: 15px; height: 15px;">
-                개인정보 제3자 제공 동의 <span class="required-star">*</span>
-              </label>
-              <button type="button" class="btn-view-terms" onclick="openModal('modalThirdParty')">(약관보기)</button>
-            </div>
-          </div>
-        </div>
+    <div class="check-list">
+      <div class="check-item-row">
+        <label>
+          <input type="checkbox" class="check-item">
+          개인정보 수집 및 이용 동의
+          <span class="required-star">*</span>
+        </label>
 
-        <button type="submit" id="submitBtn">관심고객 등록하기</button>
-      </form>
+        <button
+          type="button"
+          class="btn-view-terms"
+          onclick="openModal('modalPrivacy')">
+          (약관보기)
+        </button>
+      </div>
+
+      <div class="check-item-row">
+        <label>
+          <input type="checkbox" class="check-item">
+          개인정보 제3자 제공 동의
+          <span class="required-star">*</span>
+        </label>
+
+        <button
+          type="button"
+          class="btn-view-terms"
+          onclick="openModal('modalThirdParty')">
+          (약관보기)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="submit-btn">
+    관심고객 등록하기
+  </button>
+</form>
     </div>
 
     <!-- 약관보기 팝업 1: 개인정보 수집 및 이용 동의 -->
@@ -127,7 +157,7 @@
     <img src="../img/site02-img1.jpg" alt="시흥 거모B1 호반써밋 분양 선착순 동호수 지정 계약 안내">
 
 <!-- 이벤트 롤링 배너 -->
-<section class="event-banner-slider" id="eventBannerSlider"
+<section class="event-banner-slider"
          aria-label="방문 예약 고객 이벤트">
 
   <div class="event-banner-list">
@@ -262,7 +292,7 @@
 
 
 <!-- 이벤트 롤링 배너 -->
-<section class="event-banner-slider" id="eventBannerSlider"
+<section class="event-banner-slider"
          aria-label="방문 예약 고객 이벤트">
 
   <div class="event-banner-list">
@@ -320,6 +350,120 @@
     </svg>
   </a>
 
+  <section>
+    <div class="container">
+      <h2>[시흥 거모B1] 호반써밋<br>관심고객 등록</h2>
+
+      <!-- 상단 폼 -->
+<form class="lead-form" data-position="하단">
+  <div class="form-group">
+    <label>
+      성함 <span class="required-star">*</span>
+      <input
+        type="text"
+        class="lead-name"
+        required
+        placeholder="홍길동"
+        autocomplete="name">
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      연락처 <span class="required-star">*</span>
+      <input
+        type="tel"
+        class="lead-phone"
+        required
+        placeholder="010-1234-5678"
+        autocomplete="tel"
+        inputmode="tel">
+    </label>
+  </div>
+
+  <div class="privacy-section">
+    <p class="privacy-notice">
+      당사는 고객님의 정보를 중요시하며, 개인정보보호법을 준수하고 있습니다.<br>
+      수집된 개인정보는 분양 상담 및 정보 제공 목적으로 활용됩니다.
+    </p>
+
+    <div class="check-all-box">
+      <label>
+        <input type="checkbox" class="check-all">
+        전체 동의 <span class="required-star">*</span>
+      </label>
+    </div>
+
+    <div class="check-list">
+      <div class="check-item-row">
+        <label>
+          <input type="checkbox" class="check-item">
+          개인정보 수집 및 이용 동의
+          <span class="required-star">*</span>
+        </label>
+
+        <button
+          type="button"
+          class="btn-view-terms"
+          onclick="openModal('modalPrivacy')">
+          (약관보기)
+        </button>
+      </div>
+
+      <div class="check-item-row">
+        <label>
+          <input type="checkbox" class="check-item">
+          개인정보 제3자 제공 동의
+          <span class="required-star">*</span>
+        </label>
+
+        <button
+          type="button"
+          class="btn-view-terms"
+          onclick="openModal('modalThirdParty')">
+          (약관보기)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="submit-btn">
+    관심고객 등록하기
+  </button>
+</form>
+    </div>
+
+    <!-- 약관보기 팝업 1: 개인정보 수집 및 이용 동의 -->
+    <div id="modalPrivacy" class="modal-overlay">
+      <div class="modal-content">
+        <h3>개인정보 수집 및 이용 동의</h3>
+        <div class="modal-body">
+          <p>1. <strong>수집 항목</strong>: 이름, 연락처(휴대전화번호)</p>
+          <p>2. <strong>수집 및 이용 목적</strong>: 분양 정보 안내, 상담 신청 접수 및 고객 문의 응대, 프로모션/이벤트 정보 제공</p>
+          <p>3. <strong>보유 및 이용 기간</strong>: 수집 목적 달성 시 또는 고객 요청 시 즉시 파기 (단, 관계 법령에 따라 보존할 필요가 있는 경우 해당 기간 동안 보관)</p>
+          <p>4. <strong>동의 거부 권리</strong>: 귀하는 개인정보 수집 및 이용에 거부할 권리가 있으나, 거부 시 상담 신청 및 정보 제공 서비스 이용이 제한될 수 있습니다.</p>
+        </div>
+        <button type="button" class="btn-close-modal" onclick="closeModal('modalPrivacy')">닫기</button>
+      </div>
+    </div>
+
+    <!-- 약관보기 팝업 2: 개인정보 제3자 제공 동의 -->
+    <div id="modalThirdParty" class="modal-overlay">
+      <div class="modal-content">
+        <h3>개인정보 제3자 제공 동의</h3>
+        <div class="modal-body">
+          <p>1. <strong>제공받는 자</strong>: 분양 대행사, 협력 분양 상담사</p>
+          <p>2. <strong>제공 목적</strong>: 분양 상담 진행, 맞춤형 분양 정보 제공 및 방문 예약 안내</p>
+          <p>3. <strong>제공 항목</strong>: 이름, 연락처</p>
+          <p>4. <strong>보유 및 이용 기간</strong>: 분양 완료 시 또는 위탁 계약 종료 시까지</p>
+          <p>5. <strong>동의 거부 권리</strong>: 귀하는 개인정보 제3자 제공에 거부할 권리가 있으나, 거부 시 분양 상담 서비스 제공이 제한될 수 있습니다.</p>
+        </div>
+        <button type="button" class="btn-close-modal" onclick="closeModal('modalThirdParty')">닫기</button>
+      </div>
+    </div>
+  </section>
+
+
   <!-- 하단 푸터 영역 -->
   <footer class="footer-section">
     <div class="footer-container">
@@ -344,81 +488,123 @@
     </div>
   </footer>
 
-  <script>
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbwJh34BIDRg65M-tawmZi82LLGfgeYW1m4vMHcAJQHEv9shra4vuONW0wKwZITvJCQ_/exec";
-    const CURRENT_SITE_NAME = "시흥 거모B1 호반써밋";
+ <script>
+const GAS_URL =
+  "https://script.google.com/macros/s/AKfycbwJh34BIDRg65M-tawmZi82LLGfgeYW1m4vMHcAJQHEv9shra4vuONW0wKwZITvJCQ_/exec";
 
-    // --- 약관 동의 체크박스 제어 ---
-    const checkAll = document.getElementById('checkAll');
-    const checkItems = document.querySelectorAll('.check-item');
+const CURRENT_SITE_NAME = "시흥 거모B1 호반써밋";
 
-    // 1. '전체 동의' 클릭 시 하위 체크박스 전체 선택/해제
-    checkAll.addEventListener('change', function() {
-      checkItems.forEach(item => {
+/* 약관 모달 */
+function openModal(id) {
+  const modal = document.getElementById(id);
+
+  if (modal) {
+    modal.style.display = 'flex';
+  }
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+
+  if (modal) {
+    modal.style.display = 'none';
+  }
+}
+
+/* 상단·하단 폼 모두 적용 */
+document.querySelectorAll('.lead-form').forEach(function (form) {
+  const checkAll = form.querySelector('.check-all');
+  const checkItems = Array.from(
+    form.querySelectorAll('.check-item')
+  );
+
+  const nameInput = form.querySelector('.lead-name');
+  const phoneInput = form.querySelector('.lead-phone');
+  const submitBtn = form.querySelector('.submit-btn');
+
+  /* 전체 동의 */
+  if (checkAll) {
+    checkAll.addEventListener('change', function () {
+      checkItems.forEach(function (item) {
         item.checked = checkAll.checked;
       });
     });
+  }
 
-    // 2. 하위 체크박스 조작 시 '전체 동의' 상태 자동 업데이트
-    checkItems.forEach(item => {
-      item.addEventListener('change', function() {
-        const allChecked = Array.from(checkItems).every(i => i.checked);
-        checkAll.checked = allChecked;
+  /* 개별 약관 체크 */
+  checkItems.forEach(function (item) {
+    item.addEventListener('change', function () {
+      if (!checkAll) return;
+
+      checkAll.checked = checkItems.every(function (checkbox) {
+        return checkbox.checked;
       });
     });
+  });
 
-    // --- 약관보기 팝업(모달) 제어 ---
-    function openModal(id) {
-      document.getElementById(id).style.display = 'flex';
-    }
+  /* 폼 제출 */
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-
-    // --- 폼 제출 시 검증 및 전송 ---
-    document.getElementById('leadForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const isPrivacyChecked = document.getElementById('checkPrivacy').checked;
-      const isThirdPartyChecked = document.getElementById('checkThirdParty').checked;
-
-      if (!isPrivacyChecked || !isThirdPartyChecked) {
-        alert("개인정보 수집 및 이용 동의와 제3자 제공 동의에 모두 동의해주셔야 등록이 가능합니다.");
-        return;
-      }
-
-      const submitBtn = document.getElementById('submitBtn');
-      submitBtn.disabled = true;
-      submitBtn.innerText = "전송 중...";
-
-      const payload = {
-        siteName: CURRENT_SITE_NAME,
-        name: document.getElementById('name').value,
-        phone: document.getElementById('phone').value
-      };
-
-      fetch(GAS_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      })
-      .then(() => {
-        alert(`${CURRENT_SITE_NAME} 관심고객 등록이 완료되었습니다.`);
-        document.getElementById('leadForm').reset();
-        checkAll.checked = false;
-        checkItems.forEach(item => item.checked = false);
-      })
-      .catch(err => {
-        alert("등록 중 오류가 발생했습니다. 다시 시도해 주세요.");
-        console.error(err);
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerText = "관심고객 등록하기";
-      });
+    const allRequiredChecked = checkItems.every(function (checkbox) {
+      return checkbox.checked;
     });
+
+    if (!allRequiredChecked) {
+      alert(
+        "개인정보 수집 및 이용 동의와 제3자 제공 동의에 모두 동의해주셔야 등록이 가능합니다."
+      );
+      return;
+    }
+
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
+
+    if (!name || !phone) {
+      alert("성함과 연락처를 모두 입력해 주세요.");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = "전송 중...";
+
+    const payload = {
+      siteName: CURRENT_SITE_NAME,
+      formPosition: form.dataset.position || "",
+      name: name,
+      phone: phone
+    };
+
+    fetch(GAS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(function () {
+      alert(
+        CURRENT_SITE_NAME +
+        " 관심고객 등록이 완료되었습니다."
+      );
+
+      form.reset();
+    })
+    .catch(function (error) {
+      alert(
+        "등록 중 오류가 발생했습니다. 다시 시도해 주세요."
+      );
+
+      console.error(error);
+    })
+    .finally(function () {
+      submitBtn.disabled = false;
+      submitBtn.innerText = "관심고객 등록하기";
+    });
+  });
+});
+
 
     // --- 스크롤 감지 이벤트 (하단바 & 플로팅 버튼 제어) ---
     window.addEventListener('scroll', function() {
@@ -440,144 +626,246 @@
     }
   </script>
 
-  <script>
+ <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const slider = document.getElementById('eventBannerSlider');
+  const sliders = document.querySelectorAll('.event-banner-slider');
 
-  if (!slider) return;
+  sliders.forEach(function (slider) {
+    const slides = Array.from(
+      slider.querySelectorAll('.event-banner-slide')
+    );
 
-  const slides = slider.querySelectorAll('.event-banner-slide');
-  const dots = slider.querySelectorAll('.event-banner-dot');
+    const dots = Array.from(
+      slider.querySelectorAll('.event-banner-dot')
+    );
 
-  if (slides.length <= 1) return;
+    if (slides.length <= 1) return;
 
-  let currentIndex = 0;
-  let autoPlayTimer = null;
+    const AUTO_PLAY_DELAY = 3000;
+    const MINIMUM_SWIPE_DISTANCE = 45;
 
-  const autoPlayDelay = 3000;
-  const minimumSwipeDistance = 45;
+    let currentIndex = 0;
+    let autoPlayTimer = null;
 
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let touchEndX = 0;
-  let touchEndY = 0;
+    let isDragging = false;
+    let hasDragged = false;
+    let activePointerId = null;
 
-  function showSlide(index) {
-    if (index < 0) {
-      index = slides.length - 1;
+    let startX = 0;
+    let startY = 0;
+    let currentX = 0;
+    let currentY = 0;
+
+    /* 원하는 배너 표시 */
+    function showSlide(index) {
+      if (index < 0) {
+        index = slides.length - 1;
+      }
+
+      if (index >= slides.length) {
+        index = 0;
+      }
+
+      slides.forEach(function (slide, slideIndex) {
+        const isActive = slideIndex === index;
+
+        slide.classList.toggle('active', isActive);
+        slide.setAttribute('aria-hidden', String(!isActive));
+        slide.tabIndex = isActive ? 0 : -1;
+      });
+
+      dots.forEach(function (dot, dotIndex) {
+        const isActive = dotIndex === index;
+
+        dot.classList.toggle('active', isActive);
+
+        if (isActive) {
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.removeAttribute('aria-current');
+        }
+      });
+
+      currentIndex = index;
     }
 
-    if (index >= slides.length) {
-      index = 0;
+    function showNextSlide() {
+      showSlide(currentIndex + 1);
     }
 
-    slides.forEach(function (slide, slideIndex) {
-      const isActive = slideIndex === index;
-
-      slide.classList.toggle('active', isActive);
-      slide.setAttribute('aria-hidden', String(!isActive));
-      slide.tabIndex = isActive ? 0 : -1;
-    });
-
-    dots.forEach(function (dot, dotIndex) {
-      const isActive = dotIndex === index;
-
-      dot.classList.toggle('active', isActive);
-      dot.setAttribute('aria-current', isActive ? 'true' : 'false');
-    });
-
-    currentIndex = index;
-  }
-
-  function showNextSlide() {
-    showSlide(currentIndex + 1);
-  }
-
-  function showPreviousSlide() {
-    showSlide(currentIndex - 1);
-  }
-
-  function stopAutoPlay() {
-    if (autoPlayTimer) {
-      clearInterval(autoPlayTimer);
-      autoPlayTimer = null;
+    function showPreviousSlide() {
+      showSlide(currentIndex - 1);
     }
-  }
 
-  function startAutoPlay() {
-    stopAutoPlay();
-
-    autoPlayTimer = setInterval(function () {
-      showNextSlide();
-    }, autoPlayDelay);
-  }
-
-  function restartAutoPlay() {
-    stopAutoPlay();
-    startAutoPlay();
-  }
-
-  /* 하단 점 클릭 */
-  dots.forEach(function (dot, index) {
-    dot.addEventListener('click', function () {
-      showSlide(index);
-      restartAutoPlay();
-    });
-  });
-
-  /* 모바일 터치 시작 */
-  slider.addEventListener('touchstart', function (event) {
-    const touch = event.changedTouches[0];
-
-    touchStartX = touch.clientX;
-    touchStartY = touch.clientY;
-
-    stopAutoPlay();
-  }, { passive: true });
-
-  /* 모바일 터치 종료 */
-  slider.addEventListener('touchend', function (event) {
-    const touch = event.changedTouches[0];
-
-    touchEndX = touch.clientX;
-    touchEndY = touch.clientY;
-
-    const horizontalDistance = touchEndX - touchStartX;
-    const verticalDistance = touchEndY - touchStartY;
-
-    /*
-     * 세로 스크롤보다 좌우 움직임이 크고
-     * 45px 이상 이동했을 때만 스와이프로 판단
-     */
-    if (
-      Math.abs(horizontalDistance) >= minimumSwipeDistance &&
-      Math.abs(horizontalDistance) > Math.abs(verticalDistance)
-    ) {
-      if (horizontalDistance < 0) {
-        showNextSlide();
-      } else {
-        showPreviousSlide();
+    /* 자동 롤링 */
+    function stopAutoPlay() {
+      if (autoPlayTimer !== null) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
       }
     }
 
-    startAutoPlay();
-  }, { passive: true });
-
-  /* 마우스를 올리면 자동 재생 잠시 정지 */
-  slider.addEventListener('mouseenter', stopAutoPlay);
-  slider.addEventListener('mouseleave', startAutoPlay);
-
-  /* 브라우저 탭을 벗어나면 자동 재생 정지 */
-  document.addEventListener('visibilitychange', function () {
-    if (document.hidden) {
+    function startAutoPlay() {
       stopAutoPlay();
-    } else {
+
+      if (document.hidden) return;
+
+      autoPlayTimer = setInterval(function () {
+        showNextSlide();
+      }, AUTO_PLAY_DELAY);
+    }
+
+    function restartAutoPlay() {
+      stopAutoPlay();
       startAutoPlay();
     }
+
+    /* 하단 점 클릭 */
+    dots.forEach(function (dot, index) {
+      dot.addEventListener('click', function () {
+        showSlide(index);
+        restartAutoPlay();
+      });
+    });
+
+    /* 모바일 터치 + PC 마우스 드래그 시작 */
+    slider.addEventListener('pointerdown', function (event) {
+      if (event.pointerType === 'mouse' && event.button !== 0) {
+        return;
+      }
+
+      isDragging = true;
+      hasDragged = false;
+      activePointerId = event.pointerId;
+
+      startX = event.clientX;
+      startY = event.clientY;
+      currentX = event.clientX;
+      currentY = event.clientY;
+
+      slider.classList.add('is-dragging');
+      stopAutoPlay();
+
+      try {
+        slider.setPointerCapture(event.pointerId);
+      } catch (error) {
+        console.warn(error);
+      }
+    });
+
+    /* 드래그 중 */
+    slider.addEventListener('pointermove', function (event) {
+      if (
+        !isDragging ||
+        event.pointerId !== activePointerId
+      ) {
+        return;
+      }
+
+      currentX = event.clientX;
+      currentY = event.clientY;
+
+      const distanceX = currentX - startX;
+
+      if (Math.abs(distanceX) > 8) {
+        hasDragged = true;
+      }
+    });
+
+    /* 드래그 종료 */
+    function finishDrag(event) {
+      if (!isDragging) return;
+
+      if (
+        event.pointerId !== undefined &&
+        activePointerId !== null &&
+        event.pointerId !== activePointerId
+      ) {
+        return;
+      }
+
+      const distanceX = currentX - startX;
+      const distanceY = currentY - startY;
+
+      isDragging = false;
+      slider.classList.remove('is-dragging');
+
+      const isHorizontalSwipe =
+        Math.abs(distanceX) > Math.abs(distanceY);
+
+      const isLongEnough =
+        Math.abs(distanceX) >= MINIMUM_SWIPE_DISTANCE;
+
+      if (isHorizontalSwipe && isLongEnough) {
+        if (distanceX < 0) {
+          showNextSlide();
+        } else {
+          showPreviousSlide();
+        }
+      }
+
+      if (
+        activePointerId !== null &&
+        slider.hasPointerCapture(activePointerId)
+      ) {
+        try {
+          slider.releasePointerCapture(activePointerId);
+        } catch (error) {
+          console.warn(error);
+        }
+      }
+
+      activePointerId = null;
+      startAutoPlay();
+
+      setTimeout(function () {
+        hasDragged = false;
+      }, 100);
+    }
+
+    slider.addEventListener('pointerup', finishDrag);
+    slider.addEventListener('pointercancel', finishDrag);
+
+    /* 드래그 후 전화 링크가 눌리는 것 방지 */
+    slides.forEach(function (slide) {
+      slide.addEventListener('click', function (event) {
+        if (hasDragged) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      });
+    });
+
+    /* 이미지 기본 드래그 방지 */
+    slider.querySelectorAll('img').forEach(function (image) {
+      image.setAttribute('draggable', 'false');
+
+      image.addEventListener('dragstart', function (event) {
+        event.preventDefault();
+      });
+    });
+
+    /* PC 마우스 올리면 자동 전환 정지 */
+    slider.addEventListener('mouseenter', stopAutoPlay);
+
+    slider.addEventListener('mouseleave', function () {
+      if (!isDragging) {
+        startAutoPlay();
+      }
+    });
+
+    showSlide(0);
+    startAutoPlay();
   });
 
-  showSlide(0);
-  startAutoPlay();
+  /* 브라우저 탭을 벗어나면 모든 배너 정지 효과 */
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) return;
+
+    document.querySelectorAll('.event-banner-slider').forEach(function (slider) {
+      slider.dispatchEvent(new Event('mouseenter'));
+    });
+  });
 });
 </script>
 <script>
