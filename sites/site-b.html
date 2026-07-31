@@ -3,64 +3,412 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[야목역] 서희스타힐스 그랜드힐 관심고객 등록</title>
-  <style>
-    body { font-family: 'Noto Sans KR', sans-serif; background: #f8f9fa; margin: 0; padding: 20px; }
-    .container { max-width: 500px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .form-group { margin-bottom: 15px; }
-    label { display: block; margin-bottom: 6px; font-weight: bold; }
-    input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
-    button { width: 100%; padding: 14px; background: #1a73e8; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; }
-    button:disabled { background: #aaa; }
-  </style>
-</head>
-<body>
 
-  <div class="container">
-    <h2>[야목역] 서희스타힐스 그랜드힐 관심고객 등록</h2>
-    
-    <form id="leadForm">
-      <div class="form-group">
-        <label for="name">성함</label>
-        <input type="text" id="name" required placeholder="홍길동">
+  <!-- 1. 기본 검색엔진 최적화 (SEO) -->
+  <title>시흥 거모B1 호반써밋 | 선착순 동·호지정 관심고객 등록</title>
+  <meta name="description" content="시흥거모 공공주택지구 B1블록, 총 353세대 전용 84㎡A·84㎡B. 선착순 동·호지정 계약 중, 계약금 1차 1,000만원. 시흥 거모B1 호반써밋 관심고객 등록 및 방문 상담 안내.">
+  <meta name="keywords" content="시흥 거모B1 호반써밋, 호반써밋 시흥거모B1, 시흥거모지구 아파트, 거모지구 분양, 시흥 아파트 분양, 선착순 동호지정, 계약금 1차 1000만원, 전용 84㎡, 관심고객등록">
+  <meta name="author" content="호반써밋 시흥거모B1">
+  <meta name="robots" content="index, follow">
+
+  <!-- 2. 카카오톡, 네이버 블로그 공유용 (Open Graph / OG 태그) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="시흥 거모B1 호반써밋">
+  <meta property="og:title" content="시흥 거모B1 호반써밋 - 선착순 동·호지정 계약 중">
+  <meta property="og:description" content="총 353세대, 전용 84㎡A·84㎡B. 계약금 1차 1,000만원으로 선착순 동·호지정 계약을 진행 중입니다. 지금 관심고객 등록 및 방문 상담을 신청하세요.">
+  <meta property="og:image" content="https://jiyoooni.github.io/1minhouse/img/og-image.jpg"> <!-- 실제 운영 도메인의 절대경로로 변경 -->
+  <!-- <meta property="og:url" content="https://대표도메인주소.com"> -->
+
+  <!-- 3. 트위터/X 공유용 카드 -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="시흥 거모B1 호반써밋 관심고객 등록">
+  <meta name="twitter:description" content="시흥거모 공공주택지구 B1블록, 총 353세대 전용 84㎡A·B. 선착순 동·호지정 계약 중, 계약금 1차 1,000만원.">
+  <meta name="twitter:image" content="https://jiyoooni.github.io/1minhouse/img/og-image.jpg">
+
+  <!-- 4. 파비콘 (브라우저 탭 아이콘) -->
+  <link rel="icon" type="image/png" href="../img/favicon_hoban.png">
+
+  <!-- 5. 캐노니컬 태그 (대표 URL 설정 - 중복 문서 방지) -->
+  <link rel="canonical" href="https://jiyoooni.github.io/1minhouse/site-b.html">
+
+  <!-- 6. 외부 스타일시트 연결 -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <img src="../img/hoban-logo.png" alt="시흥 거모B1 호반써밋 로고" class="center-logo">
+
+  <section>
+    <div class="container">
+      <h2>[시흥 거모B1] 호반써밋<br>관심고객 등록</h2>
+
+      <form id="leadForm">
+        <div class="form-group">
+          <label for="name">성함 <span class="required-star">*</span></label>
+          <input type="text" id="name" required placeholder="홍길동" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="phone">연락처 <span class="required-star">*</span></label>
+          <input type="tel" id="phone" required placeholder="010-1234-5678" autocomplete="tel" inputmode="tel">
+        </div>
+
+        <!-- 약관 동의 영역 -->
+        <div class="privacy-section">
+          <p class="privacy-notice">
+            당사는 고객님의 정보를 중요시하며, 개인정보보호법을 준수하고 있습니다.<br>
+            수집된 개인정보는 고객 여러분께 분양과 관련된 최적의 서비스를 제공하기 위한 목적으로 활용되며 최소한의 범위 내에서 개인정보를 수집하고 있습니다.
+          </p>
+
+          <!-- 전체 동의 -->
+          <div class="check-all-box">
+            <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
+              <input type="checkbox" id="checkAll" style="width: 16px; height: 16px;">
+              전체 동의 <span class="required-star">*</span>
+            </label>
+          </div>
+
+          <!-- 세부 동의 항목 -->
+          <div class="check-list">
+            <div class="check-item-row">
+              <label>
+                <input type="checkbox" class="check-item" id="checkPrivacy" style="width: 15px; height: 15px;">
+                개인정보 수집 및 이용 동의 <span class="required-star">*</span>
+              </label>
+              <button type="button" class="btn-view-terms" onclick="openModal('modalPrivacy')">(약관보기)</button>
+            </div>
+
+            <div class="check-item-row">
+              <label>
+                <input type="checkbox" class="check-item" id="checkThirdParty" style="width: 15px; height: 15px;">
+                개인정보 제3자 제공 동의 <span class="required-star">*</span>
+              </label>
+              <button type="button" class="btn-view-terms" onclick="openModal('modalThirdParty')">(약관보기)</button>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" id="submitBtn">관심고객 등록하기</button>
+      </form>
+    </div>
+
+    <!-- 약관보기 팝업 1: 개인정보 수집 및 이용 동의 -->
+    <div id="modalPrivacy" class="modal-overlay">
+      <div class="modal-content">
+        <h3>개인정보 수집 및 이용 동의</h3>
+        <div class="modal-body">
+          <p>1. <strong>수집 항목</strong>: 이름, 연락처(휴대전화번호)</p>
+          <p>2. <strong>수집 및 이용 목적</strong>: 분양 정보 안내, 상담 신청 접수 및 고객 문의 응대, 프로모션/이벤트 정보 제공</p>
+          <p>3. <strong>보유 및 이용 기간</strong>: 수집 목적 달성 시 또는 고객 요청 시 즉시 파기 (단, 관계 법령에 따라 보존할 필요가 있는 경우 해당 기간 동안 보관)</p>
+          <p>4. <strong>동의 거부 권리</strong>: 귀하는 개인정보 수집 및 이용에 거부할 권리가 있으나, 거부 시 상담 신청 및 정보 제공 서비스 이용이 제한될 수 있습니다.</p>
+        </div>
+        <button type="button" class="btn-close-modal" onclick="closeModal('modalPrivacy')">닫기</button>
       </div>
-      <div class="form-group">
-        <label for="phone">연락처</label>
-        <input type="tel" id="phone" required placeholder="010-1234-5678">
+    </div>
+
+    <!-- 약관보기 팝업 2: 개인정보 제3자 제공 동의 -->
+    <div id="modalThirdParty" class="modal-overlay">
+      <div class="modal-content">
+        <h3>개인정보 제3자 제공 동의</h3>
+        <div class="modal-body">
+          <p>1. <strong>제공받는 자</strong>: 분양 대행사, 협력 분양 상담사</p>
+          <p>2. <strong>제공 목적</strong>: 분양 상담 진행, 맞춤형 분양 정보 제공 및 방문 예약 안내</p>
+          <p>3. <strong>제공 항목</strong>: 이름, 연락처</p>
+          <p>4. <strong>보유 및 이용 기간</strong>: 분양 완료 시 또는 위탁 계약 종료 시까지</p>
+          <p>5. <strong>동의 거부 권리</strong>: 귀하는 개인정보 제3자 제공에 거부할 권리가 있으나, 거부 시 분양 상담 서비스 제공이 제한될 수 있습니다.</p>
+        </div>
+        <button type="button" class="btn-close-modal" onclick="closeModal('modalThirdParty')">닫기</button>
       </div>
-      <button type="submit" id="submitBtn">관심고객 등록하기</button>
-    </form>
+    </div>
+  </section>
+
+  <div class="mainimg">
+    <!-- PDF 1페이지: 단지 메인 비주얼 / 선착순 동·호지정 / 계약금 1차 500만원 -->
+    <img src="../img/site02-img1.jpg" alt="시흥 거모B1 호반써밋 분양 선착순 동호수 지정 계약 안내">
+
+<!-- 이벤트 롤링 배너 -->
+<section class="event-banner-slider" id="eventBannerSlider"
+         aria-label="방문 예약 고객 이벤트">
+
+  <div class="event-banner-list">
+
+    <!-- 골드바 이벤트 -->
+    <a href="tel:1600-0640"
+       class="event-banner-slide active"
+       aria-label="예약 방문 고객 골드바 1돈 증정 이벤트 전화문의">
+      <img
+        src="../img/event-goldbar.png"
+        alt="관심고객 등록 후 예약 방문 고객 대상 골드바 1돈 증정 선착순 이벤트, 전화문의 1600-0640">
+    </a>
+
+    <!-- 백화점 상품권 이벤트 -->
+    <a href="tel:1600-0640"
+       class="event-banner-slide"
+       aria-label="예약 방문 고객 백화점 상품권 증정 이벤트 전화문의">
+      <img
+        src="../img/event-giftcard.png"
+        alt="관심고객 등록 후 예약 방문 고객 대상 백화점 상품권 증정 선착순 이벤트, 전화문의 1600-0640">
+    </a>
+
   </div>
 
-  <script>
-    // 1단계에서 얻은 구글 Apps Script URL
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbwJh34BIDRg65M-tawmZi82LLGfgeYW1m4vMHcAJQHEv9shra4vuONW0wKwZITvJCQ_/exec넣기";
-    
-    // ★ 해당 서브페이지의 현장명을 명시해줍니다.
-    const CURRENT_SITE_NAME = "야목역 서희스타힐스";
+  <!-- 현재 배너 표시 -->
+  <div class="event-banner-dots" aria-label="이벤트 배너 선택">
+    <button type="button"
+            class="event-banner-dot active"
+            aria-label="골드바 이벤트 배너 보기"></button>
 
+    <button type="button"
+            class="event-banner-dot"
+            aria-label="백화점 상품권 이벤트 배너 보기"></button>
+  </div>
+
+</section>
+
+    <!-- PDF 2페이지: 입지환경 / 시흥거모 공공주택지구 / 프리미엄 6가지 -->
+    <img src="../img/site02-img2.jpg" alt="시흥 거모B1 호반써밋 분양 사업개요와 거모지구 입지 안내">
+    <img src="../img/site02-img3.jpg" alt="시흥 거모B1 호반써밋 단지 배치도 동호수 및 커뮤니티 안내">
+    <img src="../img/site02-img4.jpg" alt="시흥 거모B1 호반써밋 교통 교육 생활환경 입지 프리미엄">
+    <img src="../img/site02-img5.jpg" alt="시흥 거모지구 개발계획 교통망과 민간분양 공급 현황">
+    <img src="../img/site02-img6.png" alt="시흥 거모지구 평면도">
+
+  </div>
+
+  <section class="model-gallery" id="modelGallery" aria-label="모델하우스 사진">
+        <img src="../img/site02-img7.png" alt="시흥 거모지구 인테리어">
+
+  <!-- 메인 이미지 -->
+  <div class="model-gallery-viewport" tabindex="0">
+    <div class="model-gallery-track">
+
+      <div class="model-gallery-slide">
+        <img
+          src="../img/IMG_0864.jpg"
+          alt="시흥 거모B1 호반써밋 모델하우스 거실 인테리어">
+      </div>
+
+      <div class="model-gallery-slide">
+        <img
+          src="../img/IMG_0866.jpg"
+          alt="시흥 거모B1 호반써밋 모델하우스 주방 인테리어">
+      </div>
+
+      <div class="model-gallery-slide">
+        <img
+          src="../img/IMG_0869.jpg"
+          alt="시흥 거모B1 호반써밋 모델하우스 안방 인테리어">
+      </div>
+
+      <div class="model-gallery-slide">
+        <img
+          src="../img/IMG_0871.jpg"
+          alt="시흥 거모B1 호반써밋 모델하우스 침실 인테리어">
+      </div>
+
+      <div class="model-gallery-slide">
+        <img
+          src="../img/IMG_0873.jpg"
+          alt="시흥 거모B1 호반써밋 모델하우스 욕실 인테리어">
+      </div>
+
+    </div>
+
+    <!-- 이전 버튼 -->
+    <button
+      type="button"
+      class="model-gallery-arrow model-gallery-prev"
+      aria-label="이전 이미지">
+      &#10094;
+    </button>
+
+    <!-- 다음 버튼 -->
+    <button
+      type="button"
+      class="model-gallery-arrow model-gallery-next"
+      aria-label="다음 이미지">
+      &#10095;
+    </button>
+  </div>
+
+  <!-- 하단 썸네일 -->
+  <div class="model-gallery-thumbnails" aria-label="사진 선택">
+
+    <button type="button" class="model-gallery-thumb active" data-index="0"
+            aria-label="거실 사진 보기" aria-current="true">
+      <img src="../img/IMG_0864.jpg" alt="">
+    </button>
+
+    <button type="button" class="model-gallery-thumb" data-index="1"
+            aria-label="주방 사진 보기">
+      <img src="../img/IMG_0866.jpg" alt="">
+    </button>
+
+    <button type="button" class="model-gallery-thumb" data-index="2"
+            aria-label="안방 사진 보기">
+      <img src="../img/IMG_0869.jpg" alt="">
+    </button>
+
+    <button type="button" class="model-gallery-thumb" data-index="3"
+            aria-label="침실 사진 보기">
+      <img src="../img/IMG_0871.jpg" alt="">
+    </button>
+
+    <button type="button" class="model-gallery-thumb" data-index="4"
+            aria-label="욕실 사진 보기">
+      <img src="../img/IMG_0873.jpg" alt="">
+    </button>
+  </div>
+</section>
+
+
+<!-- 이벤트 롤링 배너 -->
+<section class="event-banner-slider" id="eventBannerSlider"
+         aria-label="방문 예약 고객 이벤트">
+
+  <div class="event-banner-list">
+
+    <!-- 골드바 이벤트 -->
+    <a href="tel:1600-0640"
+       class="event-banner-slide active"
+       aria-label="예약 방문 고객 골드바 1돈 증정 이벤트 전화문의">
+      <img
+        src="../img/event-goldbar.png"
+        alt="관심고객 등록 후 예약 방문 고객 대상 골드바 1돈 증정 선착순 이벤트, 전화문의 1600-0640">
+    </a>
+
+    <!-- 백화점 상품권 이벤트 -->
+    <a href="tel:1600-0640"
+       class="event-banner-slide"
+       aria-label="예약 방문 고객 백화점 상품권 증정 이벤트 전화문의">
+      <img
+        src="../img/event-giftcard.png"
+        alt="관심고객 등록 후 예약 방문 고객 대상 백화점 상품권 증정 선착순 이벤트, 전화문의 1600-0640">
+    </a>
+  </div>
+
+  <!-- 현재 배너 표시 -->
+  <div class="event-banner-dots" aria-label="이벤트 배너 선택">
+    <button type="button"
+            class="event-banner-dot active"
+            aria-label="골드바 이벤트 배너 보기"></button>
+
+    <button type="button"
+            class="event-banner-dot"
+            aria-label="백화점 상품권 이벤트 배너 보기"></button>
+  </div>
+</section>
+
+  <!-- 하단 고정 스티키 바 -->
+  <div class="bottom-bar hidden" id="bottomBar">
+    <div class="bottom-bar-content">
+      <div class="bottom-bar-text">
+        <strong>시흥 거모B1 호반써밋</strong>
+        <span>선착순 동·호지정 계약 중 · 계약금 1차 500만원</span>
+      </div>
+      <button type="button" class="btn-go-top" onclick="scrollToTop()">
+        관심고객 등록하기 &gt;
+      </button>
+    </div>
+  </div>
+
+  <!-- 전화 연결 플로팅 버튼 -->
+  <a href="tel:1600-0640" class="btn-call-floating hidden" id="callBtn" aria-label="시흥 거모B1 호반써밋 전화 상담 연결">
+    <div class="call-tooltip">전화문의</div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true">
+      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+    </svg>
+  </a>
+
+  <!-- 하단 푸터 영역 -->
+  <footer class="footer-section">
+    <div class="footer-container">
+
+
+      <!-- 사업자 및 현장 정보 -->
+      <div class="footer-info">
+        <p><span>상호명: 퍼스트파인드</span> <span>대표자: 양보현</span> <span>사업자등록번호: 101-51-01094</span></p>
+        <p><span>주소:경기도 안산시 단원구 원일1길 19, 2층 1호</span> <span>문의전화: 1600-0640</span></p>
+        <p><span>현장: 경기도 시흥시 거모동 1171번지&#40;시흥거모지구 B1블록&#41;</span></p>
+        <p><span>견본주택: 경기도 시흥시 정왕동 528-1번지</span></p>
+      </div>
+
+      <!-- 법적 면책 조항 -->
+      <div class="footer-disclaimer">
+        ※ 본 웹사이트에 사용된 이미지, CG, 지역도 및 개발 호재 등은 소비자의 이해를 돕기 위해 제작된 것으로 실제 시공, 인허가 및 현황과 차이가 있을 수 있습니다.<br>
+        ※ 표기된 학교, 교통망, 개발계획 및 예정사항은 관계기관의 사정에 따라 변경 또는 취소될 수 있으므로 현장 및 관계기관을 통해 직접 확인하시기 바랍니다.<br>
+        ※ 본 사이트는 시흥 거모B1 호반써밋 분양 정보 제공 및 관심고객 등록 안내를 위한 홍보용 웹사이트입니다.
+      </div>
+
+      <p class="footer-copy">Copyright © 시흥 거모B1 호반써밋. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbwJh34BIDRg65M-tawmZi82LLGfgeYW1m4vMHcAJQHEv9shra4vuONW0wKwZITvJCQ_/exec";
+    const CURRENT_SITE_NAME = "시흥 거모B1 호반써밋";
+
+    // --- 약관 동의 체크박스 제어 ---
+    const checkAll = document.getElementById('checkAll');
+    const checkItems = document.querySelectorAll('.check-item');
+
+    // 1. '전체 동의' 클릭 시 하위 체크박스 전체 선택/해제
+    checkAll.addEventListener('change', function() {
+      checkItems.forEach(item => {
+        item.checked = checkAll.checked;
+      });
+    });
+
+    // 2. 하위 체크박스 조작 시 '전체 동의' 상태 자동 업데이트
+    checkItems.forEach(item => {
+      item.addEventListener('change', function() {
+        const allChecked = Array.from(checkItems).every(i => i.checked);
+        checkAll.checked = allChecked;
+      });
+    });
+
+    // --- 약관보기 팝업(모달) 제어 ---
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    // --- 폼 제출 시 검증 및 전송 ---
     document.getElementById('leadForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      
+
+      const isPrivacyChecked = document.getElementById('checkPrivacy').checked;
+      const isThirdPartyChecked = document.getElementById('checkThirdParty').checked;
+
+      if (!isPrivacyChecked || !isThirdPartyChecked) {
+        alert("개인정보 수집 및 이용 동의와 제3자 제공 동의에 모두 동의해주셔야 등록이 가능합니다.");
+        return;
+      }
+
       const submitBtn = document.getElementById('submitBtn');
       submitBtn.disabled = true;
       submitBtn.innerText = "전송 중...";
 
       const payload = {
-        siteName: CURRENT_SITE_NAME, // 구글 시트로 전달될 현장 이름
+        siteName: CURRENT_SITE_NAME,
         name: document.getElementById('name').value,
         phone: document.getElementById('phone').value
       };
 
       fetch(GAS_URL, {
         method: 'POST',
-        mode: 'no-cors', // CORS 제한 회피
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       })
       .then(() => {
         alert(`${CURRENT_SITE_NAME} 관심고객 등록이 완료되었습니다.`);
         document.getElementById('leadForm').reset();
+        checkAll.checked = false;
+        checkItems.forEach(item => item.checked = false);
       })
       .catch(err => {
         alert("등록 중 오류가 발생했습니다. 다시 시도해 주세요.");
@@ -71,6 +419,492 @@
         submitBtn.innerText = "관심고객 등록하기";
       });
     });
+
+    // --- 스크롤 감지 이벤트 (하단바 & 플로팅 버튼 제어) ---
+    window.addEventListener('scroll', function() {
+      const bottomBar = document.getElementById('bottomBar');
+      const callBtn = document.getElementById('callBtn');
+
+      if (window.scrollY > 200) {
+        if (bottomBar) bottomBar.classList.remove('hidden');
+        if (callBtn) callBtn.classList.remove('hidden');
+      } else {
+        if (bottomBar) bottomBar.classList.add('hidden');
+        if (callBtn) callBtn.classList.add('hidden');
+      }
+    });
+
+    // --- 최상단 부드럽게 이동 ---
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   </script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const slider = document.getElementById('eventBannerSlider');
+
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll('.event-banner-slide');
+  const dots = slider.querySelectorAll('.event-banner-dot');
+
+  if (slides.length <= 1) return;
+
+  let currentIndex = 0;
+  let autoPlayTimer = null;
+
+  const autoPlayDelay = 3000;
+  const minimumSwipeDistance = 45;
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+
+  function showSlide(index) {
+    if (index < 0) {
+      index = slides.length - 1;
+    }
+
+    if (index >= slides.length) {
+      index = 0;
+    }
+
+    slides.forEach(function (slide, slideIndex) {
+      const isActive = slideIndex === index;
+
+      slide.classList.toggle('active', isActive);
+      slide.setAttribute('aria-hidden', String(!isActive));
+      slide.tabIndex = isActive ? 0 : -1;
+    });
+
+    dots.forEach(function (dot, dotIndex) {
+      const isActive = dotIndex === index;
+
+      dot.classList.toggle('active', isActive);
+      dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+
+    currentIndex = index;
+  }
+
+  function showNextSlide() {
+    showSlide(currentIndex + 1);
+  }
+
+  function showPreviousSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = null;
+    }
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+
+    autoPlayTimer = setInterval(function () {
+      showNextSlide();
+    }, autoPlayDelay);
+  }
+
+  function restartAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
+  }
+
+  /* 하단 점 클릭 */
+  dots.forEach(function (dot, index) {
+    dot.addEventListener('click', function () {
+      showSlide(index);
+      restartAutoPlay();
+    });
+  });
+
+  /* 모바일 터치 시작 */
+  slider.addEventListener('touchstart', function (event) {
+    const touch = event.changedTouches[0];
+
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+
+    stopAutoPlay();
+  }, { passive: true });
+
+  /* 모바일 터치 종료 */
+  slider.addEventListener('touchend', function (event) {
+    const touch = event.changedTouches[0];
+
+    touchEndX = touch.clientX;
+    touchEndY = touch.clientY;
+
+    const horizontalDistance = touchEndX - touchStartX;
+    const verticalDistance = touchEndY - touchStartY;
+
+    /*
+     * 세로 스크롤보다 좌우 움직임이 크고
+     * 45px 이상 이동했을 때만 스와이프로 판단
+     */
+    if (
+      Math.abs(horizontalDistance) >= minimumSwipeDistance &&
+      Math.abs(horizontalDistance) > Math.abs(verticalDistance)
+    ) {
+      if (horizontalDistance < 0) {
+        showNextSlide();
+      } else {
+        showPreviousSlide();
+      }
+    }
+
+    startAutoPlay();
+  }, { passive: true });
+
+  /* 마우스를 올리면 자동 재생 잠시 정지 */
+  slider.addEventListener('mouseenter', stopAutoPlay);
+  slider.addEventListener('mouseleave', startAutoPlay);
+
+  /* 브라우저 탭을 벗어나면 자동 재생 정지 */
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      stopAutoPlay();
+    } else {
+      startAutoPlay();
+    }
+  });
+
+  showSlide(0);
+  startAutoPlay();
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const gallery = document.getElementById('modelGallery');
+
+  if (!gallery) return;
+
+  const viewport = gallery.querySelector('.model-gallery-viewport');
+  const track = gallery.querySelector('.model-gallery-track');
+  const slides = Array.from(
+    gallery.querySelectorAll('.model-gallery-slide')
+  );
+
+  const thumbnails = Array.from(
+    gallery.querySelectorAll('.model-gallery-thumb')
+  );
+
+  const previousButton = gallery.querySelector('.model-gallery-prev');
+  const nextButton = gallery.querySelector('.model-gallery-next');
+
+  if (!viewport || !track || slides.length === 0) return;
+
+  let currentIndex = 0;
+
+  let pointerIsDown = false;
+  let horizontalDragging = false;
+  let pointerDirection = null;
+  let activePointerId = null;
+
+  let startX = 0;
+  let startY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  const SWIPE_DISTANCE = 50;
+  const DIRECTION_CHECK_DISTANCE = 8;
+
+  /*
+   * 트랙의 실제 이동 위치 계산
+   */
+  function getSlidePosition(index) {
+    return -(index * viewport.clientWidth);
+  }
+
+  /*
+   * 이미지 트랙 이동
+   */
+  function moveTrack(position, useAnimation) {
+    track.style.transition = useAnimation
+      ? 'transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)'
+      : 'none';
+
+    track.style.transform =
+      'translate3d(' + position + 'px, 0, 0)';
+  }
+
+  /*
+   * 특정 이미지 표시
+   */
+  function showSlide(index, useAnimation = true) {
+    if (index < 0) {
+      index = slides.length - 1;
+    }
+
+    if (index >= slides.length) {
+      index = 0;
+    }
+
+    currentIndex = index;
+
+    moveTrack(getSlidePosition(currentIndex), useAnimation);
+
+    slides.forEach(function (slide, slideIndex) {
+      const isActive = slideIndex === currentIndex;
+
+      slide.setAttribute('aria-hidden', String(!isActive));
+    });
+
+    thumbnails.forEach(function (thumbnail, thumbnailIndex) {
+      const isActive = thumbnailIndex === currentIndex;
+
+      thumbnail.classList.toggle('active', isActive);
+
+      if (isActive) {
+        thumbnail.setAttribute('aria-current', 'true');
+      } else {
+        thumbnail.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  /*
+   * 다음 이미지
+   */
+  function showNextSlide() {
+    showSlide(currentIndex + 1);
+  }
+
+  /*
+   * 이전 이미지
+   */
+  function showPreviousSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  /*
+   * 하단 썸네일 클릭
+   */
+  thumbnails.forEach(function (thumbnail) {
+    thumbnail.addEventListener('click', function () {
+      const selectedIndex = Number(
+        thumbnail.getAttribute('data-index')
+      );
+
+      if (Number.isNaN(selectedIndex)) return;
+
+      showSlide(selectedIndex);
+    });
+  });
+
+  /*
+   * 좌우 버튼
+   */
+  if (previousButton) {
+    previousButton.addEventListener('click', function () {
+      showPreviousSlide();
+    });
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener('click', function () {
+      showNextSlide();
+    });
+  }
+
+  /*
+   * 마우스 및 터치 시작
+   */
+  viewport.addEventListener('pointerdown', function (event) {
+    /*
+     * PC에서는 왼쪽 마우스 버튼만 사용
+     */
+    if (event.pointerType === 'mouse' && event.button !== 0) {
+      return;
+    }
+
+    pointerIsDown = true;
+    horizontalDragging = false;
+    pointerDirection = null;
+    activePointerId = event.pointerId;
+
+    startX = event.clientX;
+    startY = event.clientY;
+    currentX = event.clientX;
+    currentY = event.clientY;
+
+    viewport.classList.add('is-dragging');
+
+    try {
+      viewport.setPointerCapture(event.pointerId);
+    } catch (error) {
+      console.warn('Pointer capture 설정 실패:', error);
+    }
+  });
+
+  /*
+   * 마우스 및 터치 이동
+   */
+  viewport.addEventListener('pointermove', function (event) {
+    if (
+      !pointerIsDown ||
+      event.pointerId !== activePointerId
+    ) {
+      return;
+    }
+
+    currentX = event.clientX;
+    currentY = event.clientY;
+
+    const distanceX = currentX - startX;
+    const distanceY = currentY - startY;
+
+    /*
+     * 사용자가 가로로 움직이는지
+     * 세로로 스크롤하는지 판단
+     */
+    if (pointerDirection === null) {
+      const movedDistance = Math.max(
+        Math.abs(distanceX),
+        Math.abs(distanceY)
+      );
+
+      if (movedDistance < DIRECTION_CHECK_DISTANCE) {
+        return;
+      }
+
+      pointerDirection =
+        Math.abs(distanceX) > Math.abs(distanceY)
+          ? 'horizontal'
+          : 'vertical';
+    }
+
+    /*
+     * 세로 움직임이면 페이지 스크롤 허용
+     */
+    if (pointerDirection !== 'horizontal') {
+      return;
+    }
+
+    horizontalDragging = true;
+
+    /*
+     * 손가락이나 마우스를 따라 이미지가 움직이도록 처리
+     */
+    const currentPosition =
+      getSlidePosition(currentIndex) + distanceX;
+
+    moveTrack(currentPosition, false);
+  });
+
+  /*
+   * 드래그 종료
+   */
+  function finishPointer(event) {
+    if (!pointerIsDown) return;
+
+    if (
+      event.pointerId !== undefined &&
+      activePointerId !== null &&
+      event.pointerId !== activePointerId
+    ) {
+      return;
+    }
+
+    const distanceX = currentX - startX;
+    const distanceY = currentY - startY;
+
+    pointerIsDown = false;
+    viewport.classList.remove('is-dragging');
+
+    const isHorizontalSwipe =
+      horizontalDragging &&
+      Math.abs(distanceX) > Math.abs(distanceY);
+
+    const isLongEnough =
+      Math.abs(distanceX) >= SWIPE_DISTANCE;
+
+    if (isHorizontalSwipe && isLongEnough) {
+      /*
+       * 왼쪽으로 밀면 다음 사진
+       */
+      if (distanceX < 0) {
+        showNextSlide();
+      }
+
+      /*
+       * 오른쪽으로 밀면 이전 사진
+       */
+      if (distanceX > 0) {
+        showPreviousSlide();
+      }
+    } else {
+      /*
+       * 이동 거리가 짧으면 원래 사진으로 복귀
+       */
+      showSlide(currentIndex);
+    }
+
+    if (
+      activePointerId !== null &&
+      viewport.hasPointerCapture(activePointerId)
+    ) {
+      try {
+        viewport.releasePointerCapture(activePointerId);
+      } catch (error) {
+        console.warn('Pointer capture 해제 실패:', error);
+      }
+    }
+
+    activePointerId = null;
+    horizontalDragging = false;
+    pointerDirection = null;
+  }
+
+  viewport.addEventListener('pointerup', finishPointer);
+  viewport.addEventListener('pointercancel', finishPointer);
+
+  /*
+   * 이미지 기본 드래그 방지
+   */
+  gallery.querySelectorAll('img').forEach(function (image) {
+    image.setAttribute('draggable', 'false');
+
+    image.addEventListener('dragstart', function (event) {
+      event.preventDefault();
+    });
+  });
+
+  /*
+   * 키보드 방향키 지원
+   */
+  viewport.addEventListener('keydown', function (event) {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      showPreviousSlide();
+    }
+
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      showNextSlide();
+    }
+  });
+
+  /*
+   * 브라우저 크기가 변경되면
+   * 현재 이미지 위치 재계산
+   */
+  window.addEventListener('resize', function () {
+    showSlide(currentIndex, false);
+  });
+
+  /*
+   * 첫 번째 사진 표시
+   */
+  showSlide(0, false);
+});
+</script>
 </body>
 </html>

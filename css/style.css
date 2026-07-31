@@ -4,7 +4,7 @@
 .form-group { margin-bottom: 15px; }
 label { display: block; margin-bottom: 6px; font-weight: bold; }
 input[type="text"], input[type="tel"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
-button[type="submit"] { width: 100%; padding: 14px; background: #1a73e8; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 20px; }
+button[type="submit"] { width: 100%; padding: 15px; background: #f36d20; color: white; border: none; border-radius: 6px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px; }
 button[type="submit"]:disabled { background: #aaa; }
 section{padding:0 20px}
 
@@ -44,7 +44,7 @@ position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #031c38;
+  background-color: #111;
   padding: 12px 20px;
   box-sizing: border-box;
   z-index: 9999;
@@ -311,5 +311,333 @@ box-sizing: border-box;
   }
   100% {
     left: 200%; /* 나머지 80% 시간 동안은 쉼 (주기적 반짝임) */
+  }
+}
+
+/* 이벤트 배너 전체 영역 */
+.event-banner-slider {
+  position: relative;
+  overflow: hidden;
+  background: #2b2827;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  margin: 10px 0 15px;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.event-banner-slider.is-dragging {
+  cursor: grabbing;
+}
+
+.event-banner-slider.is-dragging img {
+  pointer-events: none;
+}
+
+/* 이미지 원본 비율 2048 × 682 */
+.event-banner-list {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2048 / 682;
+}
+
+/* 각각의 배너 */
+.event-banner-slide {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.9s ease-in-out,
+    visibility 0.9s ease-in-out;
+}
+
+/* 현재 노출 중인 배너 */
+.event-banner-slide.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+/* 배너 이미지 */
+.event-banner-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* 하단 페이지 표시 점 */
+.event-banner-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  z-index: 10;
+
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+
+.event-banner-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+
+  transition:
+    width 0.3s ease,
+    border-radius 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.event-banner-dot.active {
+  width: 24px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .event-banner-dots {
+    bottom: 7px;
+    gap: 6px;
+  }
+
+  .event-banner-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .event-banner-dot.active {
+    width: 20px;
+  }
+}
+
+/* 움직임 최소화 설정 사용자 */
+@media (prefers-reduced-motion: reduce) {
+  .event-banner-slide,
+  .event-banner-dot {
+    transition: none;
+  }
+}
+
+
+/* =========================
+   모델하우스 사진 갤러리
+========================= */
+
+.model-gallery {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.model-gallery img{width:100%;}
+
+/* 메인 이미지 영역 */
+.model-gallery-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f3f1ee;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.model-gallery-viewport.is-dragging {
+  cursor: grabbing;
+}
+
+/* 이미지 이동 영역 */
+.model-gallery-track {
+  display: flex;
+  width: 100%;
+  will-change: transform;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 각각의 이미지 */
+.model-gallery-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #f3f1ee;
+}
+
+.model-gallery-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+/* 좌우 이동 버튼 */
+.model-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.42);
+
+  font-size: 25px;
+  line-height: 1;
+
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background-color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.model-gallery-arrow:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.model-gallery-prev {
+  left: 16px;
+}
+
+.model-gallery-next {
+  right: 16px;
+}
+
+/* 하단 썸네일 5개 */
+.model-gallery-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+
+  width: 100%;
+  padding-top: 8px;
+}
+
+/* 선택되지 않은 이미지 */
+.model-gallery-thumb {
+  position: relative;
+  display: block;
+
+  width: 100%;
+  padding: 0;
+
+  overflow: hidden;
+  border: 0;
+  background: none;
+
+  opacity: 0.35;
+  cursor: pointer;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* 마우스를 올린 이미지 */
+.model-gallery-thumb:hover {
+  opacity: 0.7;
+}
+
+/* 현재 선택된 이미지 */
+.model-gallery-thumb.active {
+  opacity: 1;
+}
+
+.model-gallery-thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+/* 현재 이미지 하단 표시선 */
+.model-gallery-thumb::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 4px;
+  background: #b87061;
+
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.model-gallery-thumb.active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .model-gallery-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+
+  .model-gallery-prev {
+    left: 8px;
+  }
+
+  .model-gallery-next {
+    right: 8px;
+  }
+
+  .model-gallery-thumbnails {
+    gap: 4px;
+    padding-top: 4px;
+  }
+
+  .model-gallery-thumb::after {
+    height: 3px;
+  }
+}
+
+/* 움직임 최소화 설정 */
+@media (prefers-reduced-motion: reduce) {
+  .model-gallery-track,
+  .model-gallery-thumb,
+  .model-gallery-thumb::after {
+    transition: none;
   }
 }

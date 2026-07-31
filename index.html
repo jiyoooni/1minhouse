@@ -3,28 +3,465 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[야목역] 서희스타힐스 그랜드힐 관심고객 등록</title>
+
+  <title>분양 현장 관심고객 등록</title>
+
+  <meta
+    name="description"
+    content="야목역 서희스타힐스 그랜드힐과 시흥 거모B1 호반써밋의 분양 정보 및 관심고객 등록을 안내합니다."
+  >
+
   <style>
-    body { font-family: 'Noto Sans KR', sans-serif; background: #f8f9fa; margin: 0; padding: 20px; }
-    .container { max-width: 500px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .form-group { margin-bottom: 15px; }
-    label { display: block; margin-bottom: 6px; font-weight: bold; }
-    input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
-    button { width: 100%; padding: 14px; background: #1a73e8; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; }
-    button:disabled { background: #aaa; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family:
+        "Pretendard",
+        "Noto Sans KR",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      color: #222;
+      background: #f4f4f4;
+      word-break: keep-all;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* 상단 영역 */
+    .main-header {
+      padding: 80px 20px 50px;
+      text-align: center;
+    }
+
+    .main-header .eyebrow {
+      margin-bottom: 14px;
+      color: #777;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
+
+    .main-header h1 {
+      margin-bottom: 16px;
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.04em;
+    }
+
+    .main-header .description {
+      color: #777;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* 현장 목록 */
+    .site-section {
+      width: min(100% - 40px, 1000px);
+      margin: 0 auto;
+      padding-bottom: 100px;
+    }
+
+    .site-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .site-card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 190px;
+      padding: 42px 48px;
+      overflow: hidden;
+      color: #fff;
+      border-radius: 22px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+      isolation: isolate;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .site-card::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(255, 255, 255, 0.18),
+          transparent 35%
+        );
+      content: "";
+      pointer-events: none;
+    }
+
+    .site-card::after {
+      position: absolute;
+      right: -60px;
+      bottom: -100px;
+      z-index: -1;
+      width: 250px;
+      height: 250px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .site-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.16);
+    }
+
+    .site-card:focus-visible {
+      outline: 3px solid #111;
+      outline-offset: 5px;
+    }
+
+    .site-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .site-status {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      margin-bottom: 18px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.17);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      backdrop-filter: blur(5px);
+    }
+
+    .site-card h2 {
+      margin-bottom: 12px;
+      font-size: clamp(25px, 4vw, 36px);
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.04em;
+    }
+
+    .site-description {
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .site-arrow {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      margin-left: 30px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      font-size: 25px;
+      transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .site-card:hover .site-arrow {
+      background: #fff;
+      color: #222;
+      transform: translateX(5px);
+    }
+
+    /* 푸터 */
+    .footer-section {
+      padding: 55px 20px;
+      color: #aaa;
+      background: #272727;
+    }
+
+    .footer-container {
+      width: min(100%, 1000px);
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    .footer-links a {
+      color: #ddd;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-links strong {
+      color: #fff;
+    }
+
+    .divider {
+      color: #555;
+    }
+
+    .footer-info {
+      margin-bottom: 24px;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .footer-info p {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px 18px;
+    }
+
+    .footer-disclaimer {
+      padding-top: 22px;
+      border-top: 1px solid #3e3e3e;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer-copy {
+      margin-top: 28px;
+      color: #777;
+      font-size: 12px;
+    }
+
+    .thumbnail-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.thumbnail-img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+    /* 모바일 */
+    @media (max-width: 640px) {
+      .main-header {
+        padding: 55px 20px 35px;
+      }
+
+      .main-header .description {
+        font-size: 14px;
+      }
+
+      .site-section {
+        width: calc(100% - 28px);
+        padding-bottom: 65px;
+      }
+
+      .site-list {
+        gap: 14px;
+      }
+
+      .site-card {
+        min-height: 180px;
+        padding: 30px 25px;
+        border-radius: 18px;
+      }
+
+      .site-card h2 {
+        padding-right: 10px;
+      }
+
+      .site-description {
+        font-size: 14px;
+      }
+
+      .site-arrow {
+        width: 46px;
+        height: 46px;
+        margin-left: 12px;
+        font-size: 21px;
+      }
+
+      .footer-section {
+        padding: 42px 20px;
+      }
+
+      .footer-info p {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .footer-info span {
+        display: block;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .site-card,
+      .site-arrow {
+        transition: none;
+      }
+    }
   </style>
 </head>
-<body>
-<div class="card">
-  <h3>[야목역] 서희스타힐스</h3>
-  <p>분양예정 | 2026년 하반기</p>
-  <a href="./sites/site-a.html">관심고객 등록하러 가기 &rarr;</a>
-</div>
 
-<div class="card">
-  <h3>마포 XXX 아파트</h3>
-  <p>분양중</p>
-  <a href="./sites/site-b.html">관심고객 등록하러 가기 &rarr;</a>
+<body>
+  <header class="main-header">
+      <div class="thumbnail-wrap">
+  <img
+    src="./img/index_thumbnail.jpg"
+    alt="1분 집구경"
+    class="thumbnail-img"
+  >
 </div>
+    <p class="eyebrow">PROJECT INFORMATION</p>
+    <h1>분양 현장 안내</h1>
+    <p class="description">
+      관심 있는 현장을 선택하여<br>
+      분양 정보와 관심고객 등록 내용을 확인해 주세요.
+    </p>
+  </header>
+
+  <main class="site-section">
+    <div class="site-list">
+
+      <a
+        href="./sites/site-a.html"
+        class="site-card"
+        aria-label="야목역 서희스타힐스 그랜드힐 관심고객 등록 페이지로 이동"
+      >
+        <div class="site-content">
+          <span class="site-status">2026년 하반기 분양 예정</span>
+
+          <h2>
+            야목역 서희스타힐스<br>
+            그랜드힐
+          </h2>
+
+          <p class="site-description">
+            사업 안내 및 관심고객 등록 바로가기
+          </p>
+        </div>
+
+        <span class="site-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a
+        href="./sites/site-b.html"
+        class="site-card"
+        aria-label="시흥 거모B1 호반써밋 관심고객 등록 페이지로 이동"
+      >
+        <div class="site-content">
+          <span class="site-status">분양 중</span>
+
+          <h2>
+            시흥 거모B1<br>
+            호반써밋
+          </h2>
+
+          <p class="site-description">
+            분양 정보 및 관심고객 등록 바로가기
+          </p>
+        </div>
+
+        <span class="site-arrow" aria-hidden="true">→</span>
+      </a>
+
+    </div>
+  </main>
+
+  <footer class="footer-section">
+    <div class="footer-container">
+
+      <div class="footer-info">
+        <p>
+          <span>상호명: 퍼스트파인드</span>
+          <span>대표자: 양보현</span>
+          <span>사업자등록번호: 101-51-01094</span>
+        </p>
+
+        <p>
+          <span>주소: 경기도 안산시 단원구 원일1길 19, 2층 1호</span>
+          <span>
+            문의전화:
+            <a href="tel:16000640">1600-0640</a>
+          </span>
+        </p>
+      </div>
+
+      <div class="footer-disclaimer">
+        ※ 본 웹사이트에 사용된 정보 및 개발계획 등은 소비자의 이해를
+        돕기 위한 것으로 실제 인허가 및 현황과 차이가 있을 수 있습니다.<br>
+
+        ※ 표기된 학교, 교통망, 개발계획 및 예정사항은 관계기관의 사정에
+        따라 변경 또는 취소될 수 있으므로 현장 및 관계기관을 통해 직접
+        확인하시기 바랍니다.<br>
+
+        ※ 본 사이트는 각 분양 현장의 정보 제공 및 관심고객 등록 안내를
+        위한 홍보용 웹사이트입니다.
+      </div>
+
+      <p class="footer-copy">
+        Copyright © First Find. All rights reserved.
+      </p>
+
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cards = document.querySelectorAll(".site-card");
+
+      /*
+       * 흰색 글자 가독성이 확보되는 컬러만 사용합니다.
+       * 원하는 컬러를 이 배열에 추가하거나 변경하면 됩니다.
+       */
+      const colors = [
+        "#413F3F",
+        "#B67062",
+        "#43515C",
+        "#506258",
+        "#76596A",
+        "#81634E",
+        "#465A68",
+        "#6D4C4C",
+        "#4C5068",
+        "#596A5D"
+      ];
+
+      // 같은 색상이 연속되지 않도록 컬러 배열 섞기
+      const shuffledColors = [...colors].sort(() => Math.random() - 0.5);
+
+      cards.forEach(function (card, index) {
+        const colorIndex = index % shuffledColors.length;
+        card.style.backgroundColor = shuffledColors[colorIndex];
+      });
+    });
+  </script>
 </body>
 </html>
