@@ -648,3 +648,128 @@ select,
 textarea {
   font-size: 16px !important;
 }
+
+
+/* 예약일시 달력 입력창 */
+.reservation-form-group {
+  margin-bottom: 15px;
+}
+
+.reservation-field {
+  position: relative;
+  width: 100%;
+}
+
+.reservation-calendar-icon {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  z-index: 3;
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  color: #344054;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.reservation-calendar-icon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.lead-form .reservation-field input,
+.lead-form .reservation-display {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 56px !important;
+  padding-right: 18px !important;
+  font-size: 16px !important;
+  color: #333;
+  background: #fff;
+  cursor: pointer;
+}
+
+.lead-form input,
+.lead-form select,
+.lead-form textarea {
+  font-size: 16px !important;
+}
+
+/* Flatpickr 달력 디자인 */
+.flatpickr-calendar {
+  z-index: 99999 !important;
+  overflow: hidden;
+  border: 1px solid #1d64c8;
+  border-radius: 8px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  font-family: inherit;
+}
+
+.flatpickr-months {
+  padding-top: 8px;
+}
+
+.flatpickr-current-month {
+  font-size: 17px;
+}
+
+.flatpickr-current-month input.cur-year {
+  font-size: 17px !important;
+}
+
+.flatpickr-weekday {
+  font-size: 14px;
+  color: #344054;
+}
+
+.flatpickr-day {
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.flatpickr-day:hover,
+.flatpickr-day:focus {
+  border-color: #1d64c8;
+  background: #edf4ff;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected:hover,
+.flatpickr-day.selected:focus {
+  border-color: #1d64c8;
+  background: #1d64c8;
+}
+
+.flatpickr-time {
+  border-top: 1px solid #e5e7eb;
+}
+
+.flatpickr-time input,
+.flatpickr-time .flatpickr-am-pm {
+  font-size: 16px !important;
+}
+
+@media (max-width: 480px) {
+  .flatpickr-calendar {
+    width: calc(100vw - 24px);
+    max-width: 340px;
+  }
+
+  .flatpickr-rContainer,
+  .flatpickr-days,
+  .dayContainer {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .flatpickr-day {
+    max-width: none;
+  }
+}
