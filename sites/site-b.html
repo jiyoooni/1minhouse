@@ -39,98 +39,76 @@
 </head>
 
 <body>
+  <div class="mainimg">
+    <!-- PDF 1페이지: 단지 메인 비주얼 / 선착순 동·호지정 / 계약금 1차 500만원 -->
+    <img alt="시흥 거모B1 호반써밋 분양 선착순 동호수 지정 계약 안내" src="../img/site02-img1.jpg" />
+  </div>
   <section class="no-bg">
-  <div class="container">
-     <img alt="시흥 거모B1 호반써밋 로고" class="center-logo" src="../img/hoban-logo.png" />
-    <h2>
-      [시흥 거모B1] 호반써밋<br>
-      방문·상담 예약
-    </h2>
+    <div class="container">
+      <img alt="시흥 거모B1 호반써밋 로고" class="center-logo" src="../img/hoban-logo.png" />
+      <h2>
+        [시흥 거모B1] 호반써밋<br>
+        방문·상담 예약
+      </h2>
       <div class="main-title-badge">
         🔥 분양률 85% 돌파 <span>|</span> 마감 임박
       </div>
-    <form class="lead-form" data-position="상단">
+      <form class="lead-form" data-position="상단">
 
-      <div class="form-group">
-        <label for="topName">
-          성함 <span class="required-star">*</span>
-        </label>
-
-        <input
-          type="text"
-          id="topName"
-          class="lead-name"
-          placeholder="홍길동"
-          autocomplete="name"
-          required>
-      </div>
-
-      <div class="form-group">
-        <label for="topPhone">
-          연락처 <span class="required-star">*</span>
-        </label>
-
-        <input
-          type="tel"
-          id="topPhone"
-          class="lead-phone"
-          placeholder="010-1234-5678"
-          autocomplete="tel"
-          inputmode="tel"
-          maxlength="13"
-          required>
-      </div>
-
-      <div class="form-group reservation-form-group">
-        <label for="topReservation">
-          예약날짜 <span class="required-star">*</span>
-        </label>
-
-        <input
-          type="text"
-          id="topReservation"
-          class="lead-reservation"
-          placeholder="예약 날짜를 선택해 주세요"
-          autocomplete="off"
-          readonly
-          required>
-      </div>
-
-      <div class="privacy-section">
-        <p class="privacy-notice">
-          당사는 고객님의 정보를 중요시하며 개인정보보호법을 준수하고 있습니다.<br>
-          수집된 개인정보는 분양 상담, 방문예약 및 정보 제공 목적으로 활용됩니다.
-        </p>
-
-        <div class="check-item-row single-agree-row">
-          <label>
-            <input
-              type="checkbox"
-              class="privacy-agree">
-
-            개인정보 수집·이용에 동의합니다
-            <span class="required-star">*</span>
+        <div class="form-group">
+          <label for="topName">
+            성함 <span class="required-star">*</span>
           </label>
 
-          <button
-            type="button"
-            class="btn-view-terms"
-            onclick="openModal('modalPrivacyPolicy')">
-            (약관보기)
-          </button>
+          <input type="text" id="topName" class="lead-name" placeholder="홍길동" autocomplete="name" required>
         </div>
-      </div>
 
-      <button
-        type="submit"
-        class="submit-btn">
-        방문·상담 예약하기
-      </button>
+        <div class="form-group">
+          <label for="topPhone">
+            연락처 <span class="required-star">*</span>
+          </label>
 
-    </form>
-  </div>
-</section>
-<div aria-labelledby="privacyPolicyTitle" aria-modal="true" class="modal-overlay" id="modalPrivacyPolicy"
+          <input type="tel" id="topPhone" class="lead-phone" placeholder="010-1234-5678" autocomplete="tel"
+            inputmode="tel" maxlength="13" required>
+        </div>
+
+        <div class="form-group reservation-form-group">
+          <label for="topReservation">
+            예약날짜 <span class="required-star">*</span>
+          </label>
+
+          <input type="text" id="topReservation" class="lead-reservation" placeholder="예약 날짜를 선택해 주세요"
+            autocomplete="off" readonly required>
+        </div>
+
+        <div class="privacy-section">
+          <p class="privacy-notice">
+            당사는 고객님의 정보를 중요시하며 개인정보보호법을 준수하고 있습니다.<br>
+            수집된 개인정보는 분양 상담, 방문예약 및 정보 제공 목적으로 활용됩니다.
+          </p>
+
+          <div class="check-item-row single-agree-row">
+            <label>
+              <input type="checkbox" class="privacy-agree">
+
+              개인정보 수집·이용에 동의합니다
+              <span class="required-star">*</span>
+            </label>
+
+            <button type="button" class="btn-view-terms" onclick="openModal('modalPrivacyPolicy')">
+              (약관보기)
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          방문·상담 예약하기
+        </button>
+
+      </form>
+    </div>
+  </section>
+  <div aria-labelledby="privacyPolicyTitle" aria-modal="true" class="modal-overlay" id="modalPrivacyPolicy"
     role="dialog">
     <div class="modal-content">
       <h3 id="privacyPolicyTitle">개인정보 수집·이용 동의</h3>
@@ -152,8 +130,6 @@
     </div>
   </div>
   <div class="mainimg">
-    <!-- PDF 1페이지: 단지 메인 비주얼 / 선착순 동·호지정 / 계약금 1차 500만원 -->
-    <img alt="시흥 거모B1 호반써밋 분양 선착순 동호수 지정 계약 안내" src="../img/site02-img1.jpg" />
     <!-- 이벤트 롤링 배너 -->
     <section aria-label="방문 예약 고객 이벤트" class="event-banner-slider">
       <div class="event-banner-list">
@@ -178,110 +154,66 @@
     <img alt="시흥 거모B1 호반써밋 교통 교육 생활환경 입지 프리미엄" src="../img/site02-img4.jpg" />
     <img alt="시흥 거모지구 개발계획 교통망과 민간분양 공급 현황" src="../img/site02-img5.jpg" />
   </div>
-<section
-  class="floorplan-gallery"
-  id="floorplanGallery"
-  aria-label="시흥 거모B1 평면 안내"
->
-  <div class="floorplan-title">
-    <h2>평면 안내</h2>
-    <p>타입을 선택하거나 이미지를 좌우로 밀어 확인해 보세요.</p>
-  </div>
-
-  <!-- 타입 선택 버튼 -->
-  <div
-    class="floorplan-thumbnails floorplan-type-buttons"
-    role="tablist"
-    aria-label="평면 타입 선택"
-  >
-    <button
-      type="button"
-      class="floorplan-thumb floorplan-type-btn active"
-      data-index="0"
-      role="tab"
-      aria-selected="true"
-      aria-controls="floorplan84A"
-    >
-      84A
-      <span>233세대</span>
-    </button>
-
-    <button
-      type="button"
-      class="floorplan-thumb floorplan-type-btn"
-      data-index="1"
-      role="tab"
-      aria-selected="false"
-      aria-controls="floorplan84B"
-    >
-      84B
-      <span>77세대</span>
-    </button>
-  </div>
-
-  <!-- 메인 이미지 영역 -->
-  <div class="floorplan-viewport" tabindex="0">
-    <div class="floorplan-track">
-
-      <div
-        class="floorplan-slide"
-        id="floorplan84A"
-        role="tabpanel"
-        aria-label="84A 타입"
-      >
-        <img
-          src="../img/floorplan-84a.png"
-          alt="시흥 거모B1 호반써밋 84A 타입 평면 안내"
-        >
-      </div>
-
-      <div
-        class="floorplan-slide"
-        id="floorplan84B"
-        role="tabpanel"
-        aria-label="84B 타입"
-      >
-        <img
-          src="../img/floorplan-84b.png"
-          alt="시흥 거모B1 호반써밋 84B 타입 평면 안내"
-        >
-      </div>
-
+  <section class="floorplan-gallery" id="floorplanGallery" aria-label="시흥 거모B1 평면 안내">
+    <div class="floorplan-title">
+      <h2>평면 안내</h2>
+      <p>타입을 선택하거나 이미지를 좌우로 밀어 확인해 보세요.</p>
     </div>
 
-    <div class="floorplan-count">
-      <strong class="floorplan-current">1</strong>
-      <span>/</span>
-      <span class="floorplan-total">2</span>
+    <!-- 타입 선택 버튼 -->
+    <div class="floorplan-thumbnails floorplan-type-buttons" role="tablist" aria-label="평면 타입 선택">
+      <button type="button" class="floorplan-thumb floorplan-type-btn active" data-index="0" role="tab"
+        aria-selected="true" aria-controls="floorplan84A">
+        84A
+        <span>233세대</span>
+      </button>
+
+      <button type="button" class="floorplan-thumb floorplan-type-btn" data-index="1" role="tab" aria-selected="false"
+        aria-controls="floorplan84B">
+        84B
+        <span>77세대</span>
+      </button>
     </div>
 
-    <button
-      type="button"
-      class="floorplan-arrow floorplan-prev"
-      aria-label="이전 평면 보기"
-    >
-      &#10094;
-    </button>
+    <!-- 메인 이미지 영역 -->
+    <div class="floorplan-viewport" tabindex="0">
+      <div class="floorplan-track">
 
-    <button
-      type="button"
-      class="floorplan-arrow floorplan-next"
-      aria-label="다음 평면 보기"
-    >
-      &#10095;
-    </button>
-  </div>
+        <div class="floorplan-slide" id="floorplan84A" role="tabpanel" aria-label="84A 타입">
+          <img src="../img/floorplan-84a.png" alt="시흥 거모B1 호반써밋 84A 타입 평면 안내">
+        </div>
 
-  <div class="floorplan-progress">
-    <span class="floorplan-progress-bar"></span>
-  </div>
-</section>
+        <div class="floorplan-slide" id="floorplan84B" role="tabpanel" aria-label="84B 타입">
+          <img src="../img/floorplan-84b.png" alt="시흥 거모B1 호반써밋 84B 타입 평면 안내">
+        </div>
+
+      </div>
+
+      <div class="floorplan-count">
+        <strong class="floorplan-current">1</strong>
+        <span>/</span>
+        <span class="floorplan-total">2</span>
+      </div>
+
+      <button type="button" class="floorplan-arrow floorplan-prev" aria-label="이전 평면 보기">
+        &#10094;
+      </button>
+
+      <button type="button" class="floorplan-arrow floorplan-next" aria-label="다음 평면 보기">
+        &#10095;
+      </button>
+    </div>
+
+    <div class="floorplan-progress">
+      <span class="floorplan-progress-bar"></span>
+    </div>
+  </section>
 
   <section aria-label="모델하우스 사진" class="model-gallery" id="modelGallery">
     <div class="floorplan-title">
-    <h2>인테리어</h2>
-    <p>모델하우스는 방문예약제로 진행됩니다</p>
-  </div>
+      <h2>인테리어</h2>
+      <p>모델하우스는 방문예약제로 진행됩니다</p>
+    </div>
     <!-- 메인 이미지 -->
     <div class="model-gallery-viewport" tabindex="0">
       <div class="model-gallery-track">
@@ -300,7 +232,7 @@
         <div class="model-gallery-slide">
           <img alt="시흥 거모B1 호반써밋 모델하우스 욕실 인테리어" src="../img/IMG_model_5.jpg" />
         </div>
-                <div class="model-gallery-slide">
+        <div class="model-gallery-slide">
           <img alt="시흥 거모B1 호반써밋 모델하우스 욕실 인테리어" src="../img/IMG_model_6.jpg" />
         </div>
       </div>
@@ -330,7 +262,7 @@
       <button aria-label="욕실 사진 보기" class="model-gallery-thumb" data-index="4" type="button">
         <img alt="" src="../img/IMG_model_5.jpg" />
       </button>
-            <button aria-label="욕실 사진 보기" class="model-gallery-thumb" data-index="5" type="button">
+      <button aria-label="욕실 사진 보기" class="model-gallery-thumb" data-index="5" type="button">
         <img alt="" src="../img/IMG_model_6.jpg" />
       </button>
     </div>
@@ -353,16 +285,20 @@
       <button aria-label="백화점 상품권 이벤트 배너 보기" class="event-banner-dot" type="button"></button>
     </div>
   </section>
+
   <!-- 하단 고정 스티키 바 -->
-  <div class="bottom-bar hidden" id="bottomBar">
+  <div class="bottom-bar" id="bottomBar">
     <div class="bottom-bar-content">
       <div class="bottom-bar-text">
         <strong>시흥 거모B1 호반써밋</strong>
         <span>선착순 동·호지정 계약 중 · 계약금 1차 500만원</span>
       </div>
-      <button class="btn-go-top" onclick="scrollToTop()" type="button">방문·상담 예약하기 &gt;</button>
+      <button class="btn-go-top" onclick="scrollToReservationForm()" type="button">
+        방문·상담 예약하기 &gt;
+      </button>
     </div>
   </div>
+
   <!-- 전화 연결 플로팅 버튼 -->
   <a aria-label="시흥 거모B1 호반써밋 전화 상담 연결" class="btn-call-floating hidden" href="tel:1600-0640" id="callBtn">
     <div class="call-tooltip">전화문의</div>
@@ -373,95 +309,73 @@
       </path>
     </svg>
   </a>
-  <section>
-  <div class="container">
-    <h2>
-      [시흥 거모B1] 호반써밋<br>
-      방문·상담 예약
-    </h2>
 
-    <form class="lead-form" data-position="상단">
-
-      <div class="form-group">
-        <label for="topName">
-          성함 <span class="required-star">*</span>
-        </label>
-
-        <input
-          type="text"
-          id="topName"
-          class="lead-name"
-          placeholder="홍길동"
-          autocomplete="name"
-          required>
+  <section id="reservationForm">
+    <div class="container">
+      <img alt="시흥 거모B1 호반써밋 로고" class="center-logo" src="../img/hoban-logo.png" />
+      <h2>
+        [시흥 거모B1] 호반써밋<br>
+        방문·상담 예약
+      </h2>
+      <div class="main-title-badge">
+        🔥 분양률 85% 돌파 <span>|</span> 마감 임박
       </div>
+      <form class="lead-form" data-position="상단">
 
-      <div class="form-group">
-        <label for="topPhone">
-          연락처 <span class="required-star">*</span>
-        </label>
-
-        <input
-          type="tel"
-          id="topPhone"
-          class="lead-phone"
-          placeholder="010-1234-5678"
-          autocomplete="tel"
-          inputmode="tel"
-          maxlength="13"
-          required>
-      </div>
-
-      <div class="form-group reservation-form-group">
-        <label for="topReservation">
-          예약날짜 <span class="required-star">*</span>
-        </label>
-
-        <input
-          type="text"
-          id="topReservation"
-          class="lead-reservation"
-          placeholder="예약 날짜를 선택해 주세요"
-          autocomplete="off"
-          readonly
-          required>
-      </div>
-
-      <div class="privacy-section">
-        <p class="privacy-notice">
-          당사는 고객님의 정보를 중요시하며 개인정보보호법을 준수하고 있습니다.<br>
-          수집된 개인정보는 분양 상담, 방문예약 및 정보 제공 목적으로 활용됩니다.
-        </p>
-
-        <div class="check-item-row single-agree-row">
-          <label>
-            <input
-              type="checkbox"
-              class="privacy-agree">
-
-            개인정보 수집·이용 및 제3자 제공에 동의합니다
-            <span class="required-star">*</span>
+        <div class="form-group">
+          <label for="topName">
+            성함 <span class="required-star">*</span>
           </label>
 
-          <button
-            type="button"
-            class="btn-view-terms"
-            onclick="openModal('modalPrivacyPolicy')">
-            (약관보기)
-          </button>
+          <input type="text" id="topName" class="lead-name" placeholder="홍길동" autocomplete="name" required>
         </div>
-      </div>
 
-      <button
-        type="submit"
-        class="submit-btn">
-        방문·상담 예약하기
-      </button>
+        <div class="form-group">
+          <label for="topPhone">
+            연락처 <span class="required-star">*</span>
+          </label>
 
-    </form>
-  </div>
-</section>
-<!-- 하단 푸터 영역 -->
+          <input type="tel" id="topPhone" class="lead-phone" placeholder="010-1234-5678" autocomplete="tel"
+            inputmode="tel" maxlength="13" required>
+        </div>
+
+        <div class="form-group reservation-form-group">
+          <label for="topReservation">
+            예약날짜 <span class="required-star">*</span>
+          </label>
+
+          <input type="text" id="topReservation" class="lead-reservation" placeholder="예약 날짜를 선택해 주세요"
+            autocomplete="off" readonly required>
+        </div>
+
+        <div class="privacy-section">
+          <p class="privacy-notice">
+            당사는 고객님의 정보를 중요시하며 개인정보보호법을 준수하고 있습니다.<br>
+            수집된 개인정보는 분양 상담, 방문예약 및 정보 제공 목적으로 활용됩니다.
+          </p>
+
+          <div class="check-item-row single-agree-row">
+            <label>
+              <input type="checkbox" class="privacy-agree">
+
+              개인정보 수집·이용 및 동의
+              <span class="required-star">*</span>
+            </label>
+
+            <button type="button" class="btn-view-terms" onclick="openModal('modalPrivacyPolicy')">
+              (약관보기)
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          방문·상담 예약하기
+        </button>
+
+      </form>
+    </div>
+  </section>
+  <!-- 하단 푸터 영역 -->
   <footer class="footer-section">
     <div class="footer-container">
       <!-- 사업자 및 현장 정보 -->
@@ -483,425 +397,455 @@
   <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/ko.js"></script>
   <script>
-  const GAS_URL =
-    "https://script.google.com/macros/s/AKfycbwJh34BIDRg65M-tawmZi82LLGfgeYW1m4vMHcAJQHEv9shra4vuONW0wKwZITvJCQ_/exec";
+    const GAS_URL =
+      "https://script.google.com/macros/s/AKfycbwJh34BIDRg65M-tawmZi82LLGfgeYW1m4vMHcAJQHEv9shra4vuONW0wKwZITvJCQ_/exec";
 
-  const CURRENT_SITE_NAME = "시흥 거모B1 호반써밋";
-
-
-  /* 오늘 날짜를 YYYY-MM-DD 형식으로 반환 */
-  function getTodayDateString() {
-    const today = new Date();
-
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, "0");
-    const day = String(today.getDate()).padStart(2, "0");
-
-    return year + "-" + month + "-" + day;
-  }
+    const CURRENT_SITE_NAME = "시흥 거모B1 호반써밋";
 
 
-  /* 약관 모달 */
-  function openModal(id) {
-    const modal = document.getElementById(id);
+    /* 오늘 날짜를 YYYY-MM-DD 형식으로 반환 */
+    function getTodayDateString() {
+      const today = new Date();
 
-    if (modal) {
-      modal.style.display = "flex";
-      document.body.style.overflow = "hidden";
-    }
-  }
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, "0");
+      const day = String(today.getDate()).padStart(2, "0");
 
-  function closeModal(id) {
-    const modal = document.getElementById(id);
-
-    if (modal) {
-      modal.style.display = "none";
-      document.body.style.overflow = "";
-    }
-  }
-
-
-  /* 전화번호 자동 하이픈 */
-  function formatPhoneNumber(value) {
-    const number = value
-      .replace(/[^0-9]/g, "")
-      .slice(0, 11);
-
-    if (number.length <= 3) {
-      return number;
+      return year + "-" + month + "-" + day;
     }
 
-    if (number.length <= 7) {
+
+    /* 약관 모달 */
+    function openModal(id) {
+      const modal = document.getElementById(id);
+
+      if (modal) {
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+
+      if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      }
+    }
+
+
+    /* 전화번호 자동 하이픈 */
+    function formatPhoneNumber(value) {
+      const number = value
+        .replace(/[^0-9]/g, "")
+        .slice(0, 11);
+
+      if (number.length <= 3) {
+        return number;
+      }
+
+      if (number.length <= 7) {
+        return (
+          number.slice(0, 3) +
+          "-" +
+          number.slice(3)
+        );
+      }
+
       return (
         number.slice(0, 3) +
         "-" +
-        number.slice(3)
+        number.slice(3, 7) +
+        "-" +
+        number.slice(7, 11)
       );
     }
 
-    return (
-      number.slice(0, 3) +
-      "-" +
-      number.slice(3, 7) +
-      "-" +
-      number.slice(7, 11)
-    );
-  }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const leadForms =
+        document.querySelectorAll(".lead-form");
 
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const leadForms =
-      document.querySelectorAll(".lead-form");
+      leadForms.forEach(function (form) {
+        const nameInput =
+          form.querySelector(".lead-name");
+
+        const phoneInput =
+          form.querySelector(".lead-phone");
+
+        const reservationInput =
+          form.querySelector(".lead-reservation");
+
+        const privacyAgree =
+          form.querySelector(".privacy-agree");
+
+        const submitBtn =
+          form.querySelector(".submit-btn");
 
 
-    leadForms.forEach(function (form) {
-      const nameInput =
-        form.querySelector(".lead-name");
+        if (
+          !nameInput ||
+          !phoneInput ||
+          !reservationInput ||
+          !privacyAgree ||
+          !submitBtn
+        ) {
+          console.error(
+            "폼에 필요한 요소가 없습니다.",
+            form
+          );
 
-      const phoneInput =
-        form.querySelector(".lead-phone");
-
-      const reservationInput =
-        form.querySelector(".lead-reservation");
-
-      const privacyAgree =
-        form.querySelector(".privacy-agree");
-
-      const submitBtn =
-        form.querySelector(".submit-btn");
-
-
-      if (
-        !nameInput ||
-        !phoneInput ||
-        !reservationInput ||
-        !privacyAgree ||
-        !submitBtn
-      ) {
-        console.error(
-          "폼에 필요한 요소가 없습니다.",
-          form
-        );
-
-        return;
-      }
+          return;
+        }
 
 
-      /* 입력창 클릭 시 placeholder 숨김 */
-      [nameInput, phoneInput].forEach(function (input) {
-        const originalPlaceholder =
-          input.getAttribute("placeholder") || "";
+        /* 입력창 클릭 시 placeholder 숨김 */
+        [nameInput, phoneInput].forEach(function (input) {
+          const originalPlaceholder =
+            input.getAttribute("placeholder") || "";
 
-        input.dataset.originalPlaceholder =
-          originalPlaceholder;
+          input.dataset.originalPlaceholder =
+            originalPlaceholder;
 
-        input.addEventListener("focus", function () {
-          input.placeholder = "";
+          input.addEventListener("focus", function () {
+            input.placeholder = "";
+          });
+
+          input.addEventListener("blur", function () {
+            if (input.value.trim() === "") {
+              input.placeholder =
+                input.dataset.originalPlaceholder;
+            }
+          });
         });
 
-        input.addEventListener("blur", function () {
-          if (input.value.trim() === "") {
-            input.placeholder =
-              input.dataset.originalPlaceholder;
-          }
+
+        /* 전화번호 자동 하이픈 */
+        phoneInput.addEventListener("input", function () {
+          phoneInput.value =
+            formatPhoneNumber(phoneInput.value);
         });
-      });
 
 
-      /* 전화번호 자동 하이픈 */
-      phoneInput.addEventListener("input", function () {
-        phoneInput.value =
-          formatPhoneNumber(phoneInput.value);
-      });
+        /* 예약날짜 달력 */
+        let reservationPicker = null;
 
+        if (typeof flatpickr === "function") {
+          reservationPicker = flatpickr(
+            reservationInput,
+            {
+              locale:
+                flatpickr.l10ns &&
+                  flatpickr.l10ns.ko
+                  ? flatpickr.l10ns.ko
+                  : "default",
 
-      /* 예약날짜 달력 */
-      let reservationPicker = null;
+              /* 날짜만 저장 */
+              dateFormat: "Y-m-d",
 
-      if (typeof flatpickr === "function") {
-        reservationPicker = flatpickr(
-          reservationInput,
-          {
-            locale:
-              flatpickr.l10ns &&
-              flatpickr.l10ns.ko
-                ? flatpickr.l10ns.ko
-                : "default",
+              /* 사용자 화면 표시 */
+              altInput: true,
+              altFormat: "Y년 m월 d일",
 
-            /* 날짜만 저장 */
-            dateFormat: "Y-m-d",
+              altInputClass:
+                "lead-reservation reservation-display",
 
-            /* 사용자 화면 표시 */
-            altInput: true,
-            altFormat: "Y년 m월 d일",
+              /* 오늘 이전 날짜 선택 금지 */
+              minDate: "today",
 
-            altInputClass:
-              "lead-reservation reservation-display",
+              disableMobile: true,
+              allowInput: false,
+              clickOpens: true,
 
-            /* 오늘 이전 날짜 선택 금지 */
-            minDate: "today",
+              onReady: function (
+                selectedDates,
+                dateStr,
+                instance
+              ) {
+                instance.altInput.placeholder =
+                  "예약 날짜를 선택하세요";
 
-            disableMobile: true,
-            allowInput: false,
-            clickOpens: true,
+                instance.altInput.setAttribute(
+                  "aria-label",
+                  "예약 날짜 선택"
+                );
+              },
 
-            onReady: function (
-              selectedDates,
-              dateStr,
-              instance
-            ) {
-              instance.altInput.placeholder =
-                "예약 날짜를 선택하세요";
-
-              instance.altInput.setAttribute(
-                "aria-label",
-                "예약 날짜 선택"
-              );
-            },
-
-            onOpen: function (
-              selectedDates,
-              dateStr,
-              instance
-            ) {
-              instance.set(
-                "minDate",
-                getTodayDateString()
-              );
+              onOpen: function (
+                selectedDates,
+                dateStr,
+                instance
+              ) {
+                instance.set(
+                  "minDate",
+                  getTodayDateString()
+                );
+              }
             }
-          }
-        );
-      } else {
-        /*
-         * Flatpickr 로드 실패 시
-         * 브라우저 기본 날짜 입력창 사용
-         */
-        reservationInput.type = "date";
-        reservationInput.readOnly = false;
-        reservationInput.min =
-          getTodayDateString();
-      }
-
-
-      /* 폼 제출 */
-      form.addEventListener(
-        "submit",
-        function (event) {
-          event.preventDefault();
-
-          const name =
-            nameInput.value.trim();
-
-          const phone =
-            phoneInput.value.trim();
-
-          const reservationDate =
-            reservationInput.value.trim();
-
-          const phoneNumbersOnly =
-            phone.replace(/[^0-9]/g, "");
-
-
-          /* 성함 확인 */
-          if (!name) {
-            alert("성함을 입력해 주세요.");
-            nameInput.focus();
-            return;
-          }
-
-
-          /* 연락처 확인 */
-          if (
-            phoneNumbersOnly.length < 10 ||
-            phoneNumbersOnly.length > 11
-          ) {
-            alert(
-              "올바른 연락처를 입력해 주세요."
-            );
-
-            phoneInput.focus();
-            return;
-          }
-
-
-          /* 예약날짜 확인 */
-          if (!reservationDate) {
-            alert(
-              "예약 날짜를 선택해 주세요."
-            );
-
-            if (reservationPicker) {
-              reservationPicker.open();
-            } else {
-              reservationInput.focus();
-            }
-
-            return;
-          }
-
-
-          /* 지난 날짜 확인 */
-          if (
-            reservationDate <
-            getTodayDateString()
-          ) {
-            alert(
-              "오늘 이후의 예약 날짜를 선택해 주세요."
-            );
-
-            if (reservationPicker) {
-              reservationPicker.clear();
-              reservationPicker.open();
-            } else {
-              reservationInput.value = "";
-              reservationInput.focus();
-            }
-
-            return;
-          }
-
-
-          /* 개인정보 동의 확인 */
-          if (!privacyAgree.checked) {
-            alert(
-              "개인정보 수집·이용 및 제3자 제공에 동의해 주세요."
-            );
-
-            privacyAgree.focus();
-            return;
-          }
-
-
-          /* 중복 전송 방지 */
-          if (submitBtn.disabled) {
-            return;
-          }
-
-          submitBtn.disabled = true;
-          submitBtn.innerText = "전송 중...";
-
-
+          );
+        } else {
           /*
-           * 구글 Apps Script에서
-           * reservationDateTime을 읽고 있으므로
-           * 키 이름은 유지하고 날짜만 전송
+           * Flatpickr 로드 실패 시
+           * 브라우저 기본 날짜 입력창 사용
            */
-          const payload = {
-            siteName: CURRENT_SITE_NAME,
-            formPosition:
-              form.dataset.position || "",
-            name: name,
-            phone: phone,
-            reservationDateTime:
-              reservationDate,
-            privacyConsent: true
-          };
+          reservationInput.type = "date";
+          reservationInput.readOnly = false;
+          reservationInput.min =
+            getTodayDateString();
+        }
 
 
-          fetch(GAS_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-              "Content-Type":
-                "application/json"
-            },
-            body: JSON.stringify(payload)
-          })
-            .then(function () {
+        /* 폼 제출 */
+        form.addEventListener(
+          "submit",
+          function (event) {
+            event.preventDefault();
+
+            const name =
+              nameInput.value.trim();
+
+            const phone =
+              phoneInput.value.trim();
+
+            const reservationDate =
+              reservationInput.value.trim();
+
+            const phoneNumbersOnly =
+              phone.replace(/[^0-9]/g, "");
+
+
+            /* 성함 확인 */
+            if (!name) {
+              alert("성함을 입력해 주세요.");
+              nameInput.focus();
+              return;
+            }
+
+
+            /* 연락처 확인 */
+            if (
+              phoneNumbersOnly.length < 10 ||
+              phoneNumbersOnly.length > 11
+            ) {
               alert(
-                CURRENT_SITE_NAME +
-                " 방문·상담 예약이 완료되었습니다."
+                "올바른 연락처를 입력해 주세요."
               );
 
-              form.reset();
+              phoneInput.focus();
+              return;
+            }
+
+
+            /* 예약날짜 확인 */
+            if (!reservationDate) {
+              alert(
+                "예약 날짜를 선택해 주세요."
+              );
+
+              if (reservationPicker) {
+                reservationPicker.open();
+              } else {
+                reservationInput.focus();
+              }
+
+              return;
+            }
+
+
+            /* 지난 날짜 확인 */
+            if (
+              reservationDate <
+              getTodayDateString()
+            ) {
+              alert(
+                "오늘 이후의 예약 날짜를 선택해 주세요."
+              );
 
               if (reservationPicker) {
                 reservationPicker.clear();
+                reservationPicker.open();
               } else {
-                reservationInput.min =
-                  getTodayDateString();
+                reservationInput.value = "";
+                reservationInput.focus();
               }
 
-              nameInput.placeholder =
-                nameInput.dataset.originalPlaceholder;
+              return;
+            }
 
-              phoneInput.placeholder =
-                phoneInput.dataset.originalPlaceholder;
 
-              privacyAgree.checked = false;
-            })
-            .catch(function (error) {
+            /* 개인정보 동의 확인 */
+            if (!privacyAgree.checked) {
               alert(
-                "등록 중 오류가 발생했습니다. 다시 시도해 주세요."
+                "개인정보 수집·이용 및 제3자 제공에 동의해 주세요."
               );
 
-              console.error(error);
+              privacyAgree.focus();
+              return;
+            }
+
+
+            /* 중복 전송 방지 */
+            if (submitBtn.disabled) {
+              return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = "전송 중...";
+
+
+            /*
+             * 구글 Apps Script에서
+             * reservationDateTime을 읽고 있으므로
+             * 키 이름은 유지하고 날짜만 전송
+             */
+            const payload = {
+              siteName: CURRENT_SITE_NAME,
+              formPosition:
+                form.dataset.position || "",
+              name: name,
+              phone: phone,
+              reservationDateTime:
+                reservationDate,
+              privacyConsent: true
+            };
+
+
+            fetch(GAS_URL, {
+              method: "POST",
+              mode: "no-cors",
+              headers: {
+                "Content-Type":
+                  "application/json"
+              },
+              body: JSON.stringify(payload)
             })
-            .finally(function () {
-              submitBtn.disabled = false;
-              submitBtn.innerText =
-                "방문·상담 예약하기";
+              .then(function () {
+                alert(
+                  CURRENT_SITE_NAME +
+                  " 방문·상담 예약이 완료되었습니다."
+                );
+
+                form.reset();
+
+                if (reservationPicker) {
+                  reservationPicker.clear();
+                } else {
+                  reservationInput.min =
+                    getTodayDateString();
+                }
+
+                nameInput.placeholder =
+                  nameInput.dataset.originalPlaceholder;
+
+                phoneInput.placeholder =
+                  phoneInput.dataset.originalPlaceholder;
+
+                privacyAgree.checked = false;
+              })
+              .catch(function (error) {
+                alert(
+                  "등록 중 오류가 발생했습니다. 다시 시도해 주세요."
+                );
+
+                console.error(error);
+              })
+              .finally(function () {
+                submitBtn.disabled = false;
+                submitBtn.innerText =
+                  "방문·상담 예약하기";
+              });
+          }
+        );
+      });
+
+
+      /* 모달 바깥 클릭 시 닫기 */
+      document
+        .querySelectorAll(".modal-overlay")
+        .forEach(function (modal) {
+          modal.addEventListener(
+            "click",
+            function (event) {
+              if (event.target === modal) {
+                closeModal(modal.id);
+              }
+            }
+          );
+        });
+
+
+      /* ESC 키로 모달 닫기 */
+      document.addEventListener(
+        "keydown",
+        function (event) {
+          if (event.key !== "Escape") {
+            return;
+          }
+
+          document
+            .querySelectorAll(".modal-overlay")
+            .forEach(function (modal) {
+              if (
+                modal.style.display === "flex"
+              ) {
+                closeModal(modal.id);
+              }
             });
         }
       );
     });
 
 
-    /* 모달 바깥 클릭 시 닫기 */
-    document
-      .querySelectorAll(".modal-overlay")
-      .forEach(function (modal) {
-        modal.addEventListener(
-          "click",
-          function (event) {
-            if (event.target === modal) {
-              closeModal(modal.id);
-            }
-          }
-        );
-      });
-
-
-    /* ESC 키로 모달 닫기 */
-    document.addEventListener(
-      "keydown",
-      function (event) {
-        if (event.key !== "Escape") {
-          return;
-        }
-
-        document
-          .querySelectorAll(".modal-overlay")
-          .forEach(function (modal) {
-            if (
-              modal.style.display === "flex"
-            ) {
-              closeModal(modal.id);
-            }
-          });
-      }
-    );
-  });
-
-
-    /* 하단 고정바와 전화 버튼 */
-    window.addEventListener("scroll", function () {
+    /* 하단 고정바는 처음부터 표시 */
+    document.addEventListener("DOMContentLoaded", function () {
       const bottomBar = document.getElementById("bottomBar");
-      const callBtn = document.getElementById("callBtn");
 
-      if (window.scrollY > 200) {
-        if (bottomBar) bottomBar.classList.remove("hidden");
-        if (callBtn) callBtn.classList.remove("hidden");
-      } else {
-        if (bottomBar) bottomBar.classList.add("hidden");
-        if (callBtn) callBtn.classList.add("hidden");
+      if (bottomBar) {
+        bottomBar.classList.remove("hidden");
       }
     });
 
-    /* 최상단 부드럽게 이동 */
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    /* 전화 버튼만 스크롤 200px 이후 표시 */
+    window.addEventListener("scroll", function () {
+      const callBtn = document.getElementById("callBtn");
+
+      if (!callBtn) return;
+
+      if (window.scrollY > 200) {
+        callBtn.classList.remove("hidden");
+      } else {
+        callBtn.classList.add("hidden");
+      }
+    });
+
+/* 방문·상담 예약 폼으로 부드럽게 이동 */
+function scrollToReservationForm() {
+  const reservationForm =
+    document.getElementById("reservationForm");
+
+  if (!reservationForm) {
+    console.warn("reservationForm 요소를 찾을 수 없습니다.");
+    return;
+  }
+
+  const bottomBar =
+    document.getElementById("bottomBar");
+
+  const bottomBarHeight =
+    bottomBar ? bottomBar.offsetHeight : 0;
+
+  const targetPosition =
+    reservationForm.getBoundingClientRect().top +
+    window.scrollY -
+    20;
+
+  window.scrollTo({
+    top: Math.max(0, targetPosition),
+    behavior: "smooth"
+  });
+}
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -1146,1176 +1090,1176 @@
     });
   </script>
   <script>
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
 
-  /* ==================================================
-     1. 모델하우스 이미지 갤러리
-  ================================================== */
+      /* ==================================================
+         1. 모델하우스 이미지 갤러리
+      ================================================== */
 
-  function initializeModelGallery() {
-    const gallery =
-      document.getElementById("modelGallery");
+      function initializeModelGallery() {
+        const gallery =
+          document.getElementById("modelGallery");
 
-    if (!gallery) return;
+        if (!gallery) return;
 
-    const viewport =
-      gallery.querySelector(".model-gallery-viewport");
+        const viewport =
+          gallery.querySelector(".model-gallery-viewport");
 
-    const track =
-      gallery.querySelector(".model-gallery-track");
+        const track =
+          gallery.querySelector(".model-gallery-track");
 
-    const slides = Array.from(
-      gallery.querySelectorAll(".model-gallery-slide")
-    );
-
-    const thumbnails = Array.from(
-      gallery.querySelectorAll(".model-gallery-thumb")
-    );
-
-    const previousButton =
-      gallery.querySelector(".model-gallery-prev");
-
-    const nextButton =
-      gallery.querySelector(".model-gallery-next");
-
-    if (
-      !viewport ||
-      !track ||
-      slides.length === 0
-    ) {
-      return;
-    }
-
-    let currentIndex = 0;
-
-    let pointerIsDown = false;
-    let horizontalDragging = false;
-    let pointerDirection = null;
-    let activePointerId = null;
-
-    let startX = 0;
-    let startY = 0;
-    let currentX = 0;
-    let currentY = 0;
-
-    const SWIPE_DISTANCE = 50;
-    const DIRECTION_CHECK_DISTANCE = 8;
-
-
-    function getSlidePosition(index) {
-      return -(
-        index *
-        viewport.clientWidth
-      );
-    }
-
-
-    function moveTrack(
-      position,
-      useAnimation
-    ) {
-      track.style.transition =
-        useAnimation
-          ? "transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)"
-          : "none";
-
-      track.style.transform =
-        "translate3d(" +
-        position +
-        "px, 0, 0)";
-    }
-
-
-    function showSlide(
-      index,
-      useAnimation = true
-    ) {
-      if (index < 0) {
-        index = slides.length - 1;
-      }
-
-      if (index >= slides.length) {
-        index = 0;
-      }
-
-      currentIndex = index;
-
-      moveTrack(
-        getSlidePosition(currentIndex),
-        useAnimation
-      );
-
-      slides.forEach(function (
-        slide,
-        slideIndex
-      ) {
-        const isActive =
-          slideIndex === currentIndex;
-
-        slide.setAttribute(
-          "aria-hidden",
-          String(!isActive)
-        );
-      });
-
-      thumbnails.forEach(function (
-        thumbnail,
-        thumbnailIndex
-      ) {
-        const isActive =
-          thumbnailIndex === currentIndex;
-
-        thumbnail.classList.toggle(
-          "active",
-          isActive
+        const slides = Array.from(
+          gallery.querySelectorAll(".model-gallery-slide")
         );
 
-        if (isActive) {
-          thumbnail.setAttribute(
-            "aria-current",
-            "true"
-          );
-        } else {
-          thumbnail.removeAttribute(
-            "aria-current"
+        const thumbnails = Array.from(
+          gallery.querySelectorAll(".model-gallery-thumb")
+        );
+
+        const previousButton =
+          gallery.querySelector(".model-gallery-prev");
+
+        const nextButton =
+          gallery.querySelector(".model-gallery-next");
+
+        if (
+          !viewport ||
+          !track ||
+          slides.length === 0
+        ) {
+          return;
+        }
+
+        let currentIndex = 0;
+
+        let pointerIsDown = false;
+        let horizontalDragging = false;
+        let pointerDirection = null;
+        let activePointerId = null;
+
+        let startX = 0;
+        let startY = 0;
+        let currentX = 0;
+        let currentY = 0;
+
+        const SWIPE_DISTANCE = 50;
+        const DIRECTION_CHECK_DISTANCE = 8;
+
+
+        function getSlidePosition(index) {
+          return -(
+            index *
+            viewport.clientWidth
           );
         }
-      });
-    }
 
 
-    function showNextSlide() {
-      showSlide(currentIndex + 1);
-    }
+        function moveTrack(
+          position,
+          useAnimation
+        ) {
+          track.style.transition =
+            useAnimation
+              ? "transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)"
+              : "none";
+
+          track.style.transform =
+            "translate3d(" +
+            position +
+            "px, 0, 0)";
+        }
 
 
-    function showPreviousSlide() {
-      showSlide(currentIndex - 1);
-    }
-
-
-    /* 하단 썸네일 클릭 */
-    thumbnails.forEach(function (thumbnail) {
-      thumbnail.addEventListener(
-        "click",
-        function () {
-          const selectedIndex = Number(
-            thumbnail.dataset.index
-          );
-
-          if (
-            Number.isNaN(selectedIndex)
-          ) {
-            return;
+        function showSlide(
+          index,
+          useAnimation = true
+        ) {
+          if (index < 0) {
+            index = slides.length - 1;
           }
 
-          showSlide(selectedIndex);
-        }
-      );
-    });
-
-
-    /* 좌우 버튼 */
-    if (previousButton) {
-      previousButton.addEventListener(
-        "click",
-        showPreviousSlide
-      );
-    }
-
-    if (nextButton) {
-      nextButton.addEventListener(
-        "click",
-        showNextSlide
-      );
-    }
-
-
-    /* 터치·마우스 드래그 시작 */
-    viewport.addEventListener(
-      "pointerdown",
-      function (event) {
-        if (
-          event.pointerType === "mouse" &&
-          event.button !== 0
-        ) {
-          return;
-        }
-
-        pointerIsDown = true;
-        horizontalDragging = false;
-        pointerDirection = null;
-        activePointerId = event.pointerId;
-
-        startX = event.clientX;
-        startY = event.clientY;
-        currentX = event.clientX;
-        currentY = event.clientY;
-
-        viewport.classList.add(
-          "is-dragging"
-        );
-
-        try {
-          viewport.setPointerCapture(
-            event.pointerId
-          );
-        } catch (error) {
-          console.warn(
-            "모델 갤러리 Pointer capture 설정 실패:",
-            error
-          );
-        }
-      }
-    );
-
-
-    /* 드래그 중 */
-    viewport.addEventListener(
-      "pointermove",
-      function (event) {
-        if (
-          !pointerIsDown ||
-          event.pointerId !== activePointerId
-        ) {
-          return;
-        }
-
-        currentX = event.clientX;
-        currentY = event.clientY;
-
-        const distanceX =
-          currentX - startX;
-
-        const distanceY =
-          currentY - startY;
-
-        if (pointerDirection === null) {
-          const movedDistance = Math.max(
-            Math.abs(distanceX),
-            Math.abs(distanceY)
-          );
-
-          if (
-            movedDistance <
-            DIRECTION_CHECK_DISTANCE
-          ) {
-            return;
+          if (index >= slides.length) {
+            index = 0;
           }
 
-          pointerDirection =
-            Math.abs(distanceX) >
-            Math.abs(distanceY)
-              ? "horizontal"
-              : "vertical";
-        }
+          currentIndex = index;
 
-        if (
-          pointerDirection !== "horizontal"
-        ) {
-          return;
-        }
-
-        horizontalDragging = true;
-
-        const currentPosition =
-          getSlidePosition(currentIndex) +
-          distanceX;
-
-        moveTrack(
-          currentPosition,
-          false
-        );
-      }
-    );
-
-
-    /* 드래그 종료 */
-    function finishPointer(event) {
-      if (!pointerIsDown) return;
-
-      if (
-        event.pointerId !== undefined &&
-        activePointerId !== null &&
-        event.pointerId !== activePointerId
-      ) {
-        return;
-      }
-
-      const distanceX =
-        currentX - startX;
-
-      const distanceY =
-        currentY - startY;
-
-      pointerIsDown = false;
-
-      viewport.classList.remove(
-        "is-dragging"
-      );
-
-      const isHorizontalSwipe =
-        horizontalDragging &&
-        Math.abs(distanceX) >
-        Math.abs(distanceY);
-
-      const isLongEnough =
-        Math.abs(distanceX) >=
-        SWIPE_DISTANCE;
-
-      if (
-        isHorizontalSwipe &&
-        isLongEnough
-      ) {
-        if (distanceX < 0) {
-          showNextSlide();
-        } else {
-          showPreviousSlide();
-        }
-      } else {
-        showSlide(currentIndex);
-      }
-
-      if (
-        activePointerId !== null &&
-        viewport.hasPointerCapture(
-          activePointerId
-        )
-      ) {
-        try {
-          viewport.releasePointerCapture(
-            activePointerId
+          moveTrack(
+            getSlidePosition(currentIndex),
+            useAnimation
           );
-        } catch (error) {
-          console.warn(
-            "모델 갤러리 Pointer capture 해제 실패:",
-            error
+
+          slides.forEach(function (
+            slide,
+            slideIndex
+          ) {
+            const isActive =
+              slideIndex === currentIndex;
+
+            slide.setAttribute(
+              "aria-hidden",
+              String(!isActive)
+            );
+          });
+
+          thumbnails.forEach(function (
+            thumbnail,
+            thumbnailIndex
+          ) {
+            const isActive =
+              thumbnailIndex === currentIndex;
+
+            thumbnail.classList.toggle(
+              "active",
+              isActive
+            );
+
+            if (isActive) {
+              thumbnail.setAttribute(
+                "aria-current",
+                "true"
+              );
+            } else {
+              thumbnail.removeAttribute(
+                "aria-current"
+              );
+            }
+          });
+        }
+
+
+        function showNextSlide() {
+          showSlide(currentIndex + 1);
+        }
+
+
+        function showPreviousSlide() {
+          showSlide(currentIndex - 1);
+        }
+
+
+        /* 하단 썸네일 클릭 */
+        thumbnails.forEach(function (thumbnail) {
+          thumbnail.addEventListener(
+            "click",
+            function () {
+              const selectedIndex = Number(
+                thumbnail.dataset.index
+              );
+
+              if (
+                Number.isNaN(selectedIndex)
+              ) {
+                return;
+              }
+
+              showSlide(selectedIndex);
+            }
+          );
+        });
+
+
+        /* 좌우 버튼 */
+        if (previousButton) {
+          previousButton.addEventListener(
+            "click",
+            showPreviousSlide
           );
         }
-      }
 
-      activePointerId = null;
-      horizontalDragging = false;
-      pointerDirection = null;
-    }
-
-
-    viewport.addEventListener(
-      "pointerup",
-      finishPointer
-    );
-
-    viewport.addEventListener(
-      "pointercancel",
-      finishPointer
-    );
+        if (nextButton) {
+          nextButton.addEventListener(
+            "click",
+            showNextSlide
+          );
+        }
 
 
-    /* 이미지 기본 드래그 방지 */
-    gallery
-      .querySelectorAll("img")
-      .forEach(function (image) {
-        image.draggable = false;
-
-        image.addEventListener(
-          "dragstart",
+        /* 터치·마우스 드래그 시작 */
+        viewport.addEventListener(
+          "pointerdown",
           function (event) {
-            event.preventDefault();
+            if (
+              event.pointerType === "mouse" &&
+              event.button !== 0
+            ) {
+              return;
+            }
+
+            pointerIsDown = true;
+            horizontalDragging = false;
+            pointerDirection = null;
+            activePointerId = event.pointerId;
+
+            startX = event.clientX;
+            startY = event.clientY;
+            currentX = event.clientX;
+            currentY = event.clientY;
+
+            viewport.classList.add(
+              "is-dragging"
+            );
+
+            try {
+              viewport.setPointerCapture(
+                event.pointerId
+              );
+            } catch (error) {
+              console.warn(
+                "모델 갤러리 Pointer capture 설정 실패:",
+                error
+              );
+            }
           }
         );
-      });
 
 
-    /* 키보드 방향키 */
-    viewport.addEventListener(
-      "keydown",
-      function (event) {
-        if (event.key === "ArrowLeft") {
-          event.preventDefault();
-          showPreviousSlide();
-        }
+        /* 드래그 중 */
+        viewport.addEventListener(
+          "pointermove",
+          function (event) {
+            if (
+              !pointerIsDown ||
+              event.pointerId !== activePointerId
+            ) {
+              return;
+            }
 
-        if (event.key === "ArrowRight") {
-          event.preventDefault();
-          showNextSlide();
-        }
-      }
-    );
+            currentX = event.clientX;
+            currentY = event.clientY;
 
+            const distanceX =
+              currentX - startX;
 
-    /* 화면 크기 변경 대응 */
-    let resizeTimer = null;
+            const distanceY =
+              currentY - startY;
 
-    window.addEventListener(
-      "resize",
-      function () {
-        clearTimeout(resizeTimer);
+            if (pointerDirection === null) {
+              const movedDistance = Math.max(
+                Math.abs(distanceX),
+                Math.abs(distanceY)
+              );
 
-        resizeTimer = setTimeout(
-          function () {
-            showSlide(
-              currentIndex,
+              if (
+                movedDistance <
+                DIRECTION_CHECK_DISTANCE
+              ) {
+                return;
+              }
+
+              pointerDirection =
+                Math.abs(distanceX) >
+                  Math.abs(distanceY)
+                  ? "horizontal"
+                  : "vertical";
+            }
+
+            if (
+              pointerDirection !== "horizontal"
+            ) {
+              return;
+            }
+
+            horizontalDragging = true;
+
+            const currentPosition =
+              getSlidePosition(currentIndex) +
+              distanceX;
+
+            moveTrack(
+              currentPosition,
               false
             );
-          },
-          100
-        );
-      }
-    );
-
-    showSlide(0, false);
-  }
-
-
-
-  /* ==================================================
-     2. 평면 안내 갤러리
-     84A, 84B 텍스트 버튼 자동 생성
-  ================================================== */
-
-  function initializeFloorplanGallery() {
-    const gallery =
-      document.getElementById(
-        "floorplanGallery"
-      );
-
-    if (!gallery) return;
-
-    const viewport =
-      gallery.querySelector(
-        ".floorplan-viewport"
-      );
-
-    const track =
-      gallery.querySelector(
-        ".floorplan-track"
-      );
-
-    const slides = Array.from(
-      gallery.querySelectorAll(
-        ".floorplan-slide"
-      )
-    );
-
-    /*
-     * 위쪽으로 옮겨둔 버튼 영역
-     */
-    const buttonsContainer =
-      gallery.querySelector(
-        ".floorplan-thumbnails"
-      );
-
-    const currentText =
-      gallery.querySelector(
-        ".floorplan-current"
-      );
-
-    const totalText =
-      gallery.querySelector(
-        ".floorplan-total"
-      );
-
-    const progressBar =
-      gallery.querySelector(
-        ".floorplan-progress-bar"
-      );
-
-    const previousButton =
-      gallery.querySelector(
-        ".floorplan-prev"
-      );
-
-    const nextButton =
-      gallery.querySelector(
-        ".floorplan-next"
-      );
-
-    if (
-      !viewport ||
-      !track ||
-      !buttonsContainer ||
-      slides.length === 0
-    ) {
-      return;
-    }
-
-    let currentIndex = 0;
-
-    let isPointerDown = false;
-    let isHorizontalDragging = false;
-    let pointerDirection = null;
-    let activePointerId = null;
-
-    let startX = 0;
-    let startY = 0;
-    let currentX = 0;
-    let currentY = 0;
-
-    const SWIPE_DISTANCE = 45;
-    const DIRECTION_CHECK_DISTANCE = 8;
-
-
-    /* 전체 개수 표시 */
-    if (totalText) {
-      totalText.textContent =
-        String(slides.length);
-    }
-
-
-    /* 진행바 너비 설정 */
-    if (progressBar) {
-      progressBar.style.width =
-        100 / slides.length + "%";
-    }
-
-
-    /* =========================
-       평면 타입 이름 가져오기
-
-       우선순위
-       1. data-type
-       2. 이미지 alt의 84A/84B
-       3. 이미지 파일명의 84a/84b
-       4. 기본 타입명
-    ========================= */
-
-    function getFloorplanType(
-      slide,
-      index
-    ) {
-      if (slide.dataset.type) {
-        return slide.dataset.type;
-      }
-
-      const image =
-        slide.querySelector("img");
-
-      if (image) {
-        const altText =
-          image.getAttribute("alt") || "";
-
-        const source =
-          image.getAttribute("src") || "";
-
-        const altMatch =
-          altText.match(
-            /(\d{2,3})\s*([a-zA-Z])/i
-          );
-
-        if (altMatch) {
-          return (
-            altMatch[1] +
-            altMatch[2].toUpperCase()
-          );
-        }
-
-        const sourceMatch =
-          source.match(
-            /(\d{2,3})[-_\s]*([a-zA-Z])/i
-          );
-
-        if (sourceMatch) {
-          return (
-            sourceMatch[1] +
-            sourceMatch[2].toUpperCase()
-          );
-        }
-      }
-
-      return (index + 1) + "타입";
-    }
-
-
-    /* =========================
-       기존 이미지 버튼 삭제 후
-       텍스트 버튼 자동 생성
-    ========================= */
-
-    buttonsContainer.innerHTML = "";
-
-    buttonsContainer.classList.add(
-      "floorplan-type-buttons"
-    );
-
-    buttonsContainer.setAttribute(
-      "role",
-      "tablist"
-    );
-
-    slides.forEach(function (
-      slide,
-      index
-    ) {
-      const typeName =
-        getFloorplanType(
-          slide,
-          index
+          }
         );
 
-      const button =
-        document.createElement(
-          "button"
-        );
 
-      button.type = "button";
-
-      button.className =
-        "floorplan-thumb floorplan-type-btn";
-
-      button.dataset.index =
-        String(index);
-
-      button.textContent =
-        typeName;
-
-      button.setAttribute(
-        "role",
-        "tab"
-      );
-
-      button.setAttribute(
-        "aria-label",
-        typeName +
-        " 타입 평면 보기"
-      );
-
-      button.setAttribute(
-        "aria-selected",
-        index === 0
-          ? "true"
-          : "false"
-      );
-
-      buttonsContainer.appendChild(
-        button
-      );
-    });
-
-
-    const typeButtons = Array.from(
-      buttonsContainer.querySelectorAll(
-        ".floorplan-type-btn"
-      )
-    );
-
-
-    /* =========================
-       슬라이드 실제 너비와
-       CSS gap을 자동 계산
-    ========================= */
-
-    function getSlideStep() {
-      const firstSlide = slides[0];
-
-      if (!firstSlide) {
-        return viewport.clientWidth;
-      }
-
-      const slideWidth =
-        firstSlide
-          .getBoundingClientRect()
-          .width;
-
-      const trackStyle =
-        window.getComputedStyle(
-          track
-        );
-
-      const gap =
-        parseFloat(
-          trackStyle.columnGap
-        ) ||
-        parseFloat(
-          trackStyle.gap
-        ) ||
-        0;
-
-      return slideWidth + gap;
-    }
-
-
-    /* 이동할 수 있는 최대 거리 */
-    function getMaximumOffset() {
-      return Math.max(
-        0,
-        track.scrollWidth -
-        viewport.clientWidth
-      );
-    }
-
-
-    /*
-     * 80% 너비 슬라이드에 맞춘
-     * 실제 이동 위치
-     */
-    function getSlidePosition(index) {
-      const targetOffset =
-        index * getSlideStep();
-
-      const maximumOffset =
-        getMaximumOffset();
-
-      return -Math.min(
-        targetOffset,
-        maximumOffset
-      );
-    }
-
-
-    function moveTrack(
-      position,
-      useAnimation
-    ) {
-      track.style.transition =
-        useAnimation
-          ? "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)"
-          : "none";
-
-      track.style.transform =
-        "translate3d(" +
-        position +
-        "px, 0, 0)";
-    }
-
-
-    function showSlide(
-      index,
-      useAnimation = true
-    ) {
-      if (index < 0) {
-        index = slides.length - 1;
-      }
-
-      if (index >= slides.length) {
-        index = 0;
-      }
-
-      currentIndex = index;
-
-      moveTrack(
-        getSlidePosition(
-          currentIndex
-        ),
-        useAnimation
-      );
-
-
-      /* 현재 위치 숫자 */
-      if (currentText) {
-        currentText.textContent =
-          String(currentIndex + 1);
-      }
-
-
-      /* 진행바 이동 */
-      if (progressBar) {
-        progressBar.style.transform =
-          "translateX(" +
-          currentIndex * 100 +
-          "%)";
-      }
-
-
-      /* 이미지 상태 */
-      slides.forEach(function (
-        slide,
-        slideIndex
-      ) {
-        const isActive =
-          slideIndex === currentIndex;
-
-        slide.setAttribute(
-          "aria-hidden",
-          String(!isActive)
-        );
-      });
-
-
-      /* 텍스트 버튼 ON/OFF */
-      typeButtons.forEach(function (
-        button,
-        buttonIndex
-      ) {
-        const isActive =
-          buttonIndex === currentIndex;
-
-        button.classList.toggle(
-          "active",
-          isActive
-        );
-
-        button.setAttribute(
-          "aria-selected",
-          String(isActive)
-        );
-
-        if (isActive) {
-          button.setAttribute(
-            "aria-current",
-            "true"
-          );
-        } else {
-          button.removeAttribute(
-            "aria-current"
-          );
-        }
-      });
-    }
-
-
-    function showPreviousSlide() {
-      showSlide(
-        currentIndex - 1
-      );
-    }
-
-
-    function showNextSlide() {
-      showSlide(
-        currentIndex + 1
-      );
-    }
-
-
-    /* 84A, 84B 텍스트 버튼 클릭 */
-    typeButtons.forEach(function (
-      button
-    ) {
-      button.addEventListener(
-        "click",
-        function () {
-          const selectedIndex =
-            Number(
-              button.dataset.index
-            );
+        /* 드래그 종료 */
+        function finishPointer(event) {
+          if (!pointerIsDown) return;
 
           if (
-            Number.isNaN(
-              selectedIndex
+            event.pointerId !== undefined &&
+            activePointerId !== null &&
+            event.pointerId !== activePointerId
+          ) {
+            return;
+          }
+
+          const distanceX =
+            currentX - startX;
+
+          const distanceY =
+            currentY - startY;
+
+          pointerIsDown = false;
+
+          viewport.classList.remove(
+            "is-dragging"
+          );
+
+          const isHorizontalSwipe =
+            horizontalDragging &&
+            Math.abs(distanceX) >
+            Math.abs(distanceY);
+
+          const isLongEnough =
+            Math.abs(distanceX) >=
+            SWIPE_DISTANCE;
+
+          if (
+            isHorizontalSwipe &&
+            isLongEnough
+          ) {
+            if (distanceX < 0) {
+              showNextSlide();
+            } else {
+              showPreviousSlide();
+            }
+          } else {
+            showSlide(currentIndex);
+          }
+
+          if (
+            activePointerId !== null &&
+            viewport.hasPointerCapture(
+              activePointerId
             )
           ) {
-            return;
+            try {
+              viewport.releasePointerCapture(
+                activePointerId
+              );
+            } catch (error) {
+              console.warn(
+                "모델 갤러리 Pointer capture 해제 실패:",
+                error
+              );
+            }
           }
 
-          showSlide(
-            selectedIndex
-          );
-        }
-      );
-    });
-
-
-    /* 좌우 화살표 */
-    if (previousButton) {
-      previousButton.addEventListener(
-        "click",
-        showPreviousSlide
-      );
-    }
-
-    if (nextButton) {
-      nextButton.addEventListener(
-        "click",
-        showNextSlide
-      );
-    }
-
-
-    /* 터치·마우스 드래그 시작 */
-    viewport.addEventListener(
-      "pointerdown",
-      function (event) {
-        if (
-          event.pointerType ===
-            "mouse" &&
-          event.button !== 0
-        ) {
-          return;
+          activePointerId = null;
+          horizontalDragging = false;
+          pointerDirection = null;
         }
 
-        isPointerDown = true;
-        isHorizontalDragging = false;
-        pointerDirection = null;
-        activePointerId =
-          event.pointerId;
 
-        startX = event.clientX;
-        startY = event.clientY;
-        currentX = event.clientX;
-        currentY = event.clientY;
-
-        viewport.classList.add(
-          "is-dragging"
+        viewport.addEventListener(
+          "pointerup",
+          finishPointer
         );
 
-        try {
-          viewport.setPointerCapture(
-            event.pointerId
-          );
-        } catch (error) {
-          console.warn(
-            "평면 갤러리 Pointer capture 설정 실패:",
-            error
-          );
-        }
+        viewport.addEventListener(
+          "pointercancel",
+          finishPointer
+        );
+
+
+        /* 이미지 기본 드래그 방지 */
+        gallery
+          .querySelectorAll("img")
+          .forEach(function (image) {
+            image.draggable = false;
+
+            image.addEventListener(
+              "dragstart",
+              function (event) {
+                event.preventDefault();
+              }
+            );
+          });
+
+
+        /* 키보드 방향키 */
+        viewport.addEventListener(
+          "keydown",
+          function (event) {
+            if (event.key === "ArrowLeft") {
+              event.preventDefault();
+              showPreviousSlide();
+            }
+
+            if (event.key === "ArrowRight") {
+              event.preventDefault();
+              showNextSlide();
+            }
+          }
+        );
+
+
+        /* 화면 크기 변경 대응 */
+        let resizeTimer = null;
+
+        window.addEventListener(
+          "resize",
+          function () {
+            clearTimeout(resizeTimer);
+
+            resizeTimer = setTimeout(
+              function () {
+                showSlide(
+                  currentIndex,
+                  false
+                );
+              },
+              100
+            );
+          }
+        );
+
+        showSlide(0, false);
       }
-    );
 
 
-    /* 드래그 중 */
-    viewport.addEventListener(
-      "pointermove",
-      function (event) {
+
+      /* ==================================================
+         2. 평면 안내 갤러리
+         84A, 84B 텍스트 버튼 자동 생성
+      ================================================== */
+
+      function initializeFloorplanGallery() {
+        const gallery =
+          document.getElementById(
+            "floorplanGallery"
+          );
+
+        if (!gallery) return;
+
+        const viewport =
+          gallery.querySelector(
+            ".floorplan-viewport"
+          );
+
+        const track =
+          gallery.querySelector(
+            ".floorplan-track"
+          );
+
+        const slides = Array.from(
+          gallery.querySelectorAll(
+            ".floorplan-slide"
+          )
+        );
+
+        /*
+         * 위쪽으로 옮겨둔 버튼 영역
+         */
+        const buttonsContainer =
+          gallery.querySelector(
+            ".floorplan-thumbnails"
+          );
+
+        const currentText =
+          gallery.querySelector(
+            ".floorplan-current"
+          );
+
+        const totalText =
+          gallery.querySelector(
+            ".floorplan-total"
+          );
+
+        const progressBar =
+          gallery.querySelector(
+            ".floorplan-progress-bar"
+          );
+
+        const previousButton =
+          gallery.querySelector(
+            ".floorplan-prev"
+          );
+
+        const nextButton =
+          gallery.querySelector(
+            ".floorplan-next"
+          );
+
         if (
-          !isPointerDown ||
-          event.pointerId !==
-            activePointerId
+          !viewport ||
+          !track ||
+          !buttonsContainer ||
+          slides.length === 0
         ) {
           return;
         }
 
-        currentX = event.clientX;
-        currentY = event.clientY;
+        let currentIndex = 0;
 
-        const distanceX =
-          currentX - startX;
+        let isPointerDown = false;
+        let isHorizontalDragging = false;
+        let pointerDirection = null;
+        let activePointerId = null;
 
-        const distanceY =
-          currentY - startY;
+        let startX = 0;
+        let startY = 0;
+        let currentX = 0;
+        let currentY = 0;
 
-        if (
-          pointerDirection === null
+        const SWIPE_DISTANCE = 45;
+        const DIRECTION_CHECK_DISTANCE = 8;
+
+
+        /* 전체 개수 표시 */
+        if (totalText) {
+          totalText.textContent =
+            String(slides.length);
+        }
+
+
+        /* 진행바 너비 설정 */
+        if (progressBar) {
+          progressBar.style.width =
+            100 / slides.length + "%";
+        }
+
+
+        /* =========================
+           평면 타입 이름 가져오기
+    
+           우선순위
+           1. data-type
+           2. 이미지 alt의 84A/84B
+           3. 이미지 파일명의 84a/84b
+           4. 기본 타입명
+        ========================= */
+
+        function getFloorplanType(
+          slide,
+          index
         ) {
-          const movedDistance =
-            Math.max(
-              Math.abs(distanceX),
-              Math.abs(distanceY)
-            );
-
-          if (
-            movedDistance <
-            DIRECTION_CHECK_DISTANCE
-          ) {
-            return;
+          if (slide.dataset.type) {
+            return slide.dataset.type;
           }
 
-          pointerDirection =
-            Math.abs(distanceX) >
-            Math.abs(distanceY)
-              ? "horizontal"
-              : "vertical";
+          const image =
+            slide.querySelector("img");
+
+          if (image) {
+            const altText =
+              image.getAttribute("alt") || "";
+
+            const source =
+              image.getAttribute("src") || "";
+
+            const altMatch =
+              altText.match(
+                /(\d{2,3})\s*([a-zA-Z])/i
+              );
+
+            if (altMatch) {
+              return (
+                altMatch[1] +
+                altMatch[2].toUpperCase()
+              );
+            }
+
+            const sourceMatch =
+              source.match(
+                /(\d{2,3})[-_\s]*([a-zA-Z])/i
+              );
+
+            if (sourceMatch) {
+              return (
+                sourceMatch[1] +
+                sourceMatch[2].toUpperCase()
+              );
+            }
+          }
+
+          return (index + 1) + "타입";
         }
 
-        if (
-          pointerDirection !==
-          "horizontal"
+
+        /* =========================
+           기존 이미지 버튼 삭제 후
+           텍스트 버튼 자동 생성
+        ========================= */
+
+        buttonsContainer.innerHTML = "";
+
+        buttonsContainer.classList.add(
+          "floorplan-type-buttons"
+        );
+
+        buttonsContainer.setAttribute(
+          "role",
+          "tablist"
+        );
+
+        slides.forEach(function (
+          slide,
+          index
         ) {
-          return;
-        }
+          const typeName =
+            getFloorplanType(
+              slide,
+              index
+            );
 
-        isHorizontalDragging = true;
+          const button =
+            document.createElement(
+              "button"
+            );
 
-        const basePosition =
-          getSlidePosition(
-            currentIndex
+          button.type = "button";
+
+          button.className =
+            "floorplan-thumb floorplan-type-btn";
+
+          button.dataset.index =
+            String(index);
+
+          button.textContent =
+            typeName;
+
+          button.setAttribute(
+            "role",
+            "tab"
           );
 
-        let draggingPosition =
-          basePosition +
-          distanceX;
+          button.setAttribute(
+            "aria-label",
+            typeName +
+            " 타입 평면 보기"
+          );
 
-        const minimumPosition =
-          -getMaximumOffset();
+          button.setAttribute(
+            "aria-selected",
+            index === 0
+              ? "true"
+              : "false"
+          );
+
+          buttonsContainer.appendChild(
+            button
+          );
+        });
+
+
+        const typeButtons = Array.from(
+          buttonsContainer.querySelectorAll(
+            ".floorplan-type-btn"
+          )
+        );
+
+
+        /* =========================
+           슬라이드 실제 너비와
+           CSS gap을 자동 계산
+        ========================= */
+
+        function getSlideStep() {
+          const firstSlide = slides[0];
+
+          if (!firstSlide) {
+            return viewport.clientWidth;
+          }
+
+          const slideWidth =
+            firstSlide
+              .getBoundingClientRect()
+              .width;
+
+          const trackStyle =
+            window.getComputedStyle(
+              track
+            );
+
+          const gap =
+            parseFloat(
+              trackStyle.columnGap
+            ) ||
+            parseFloat(
+              trackStyle.gap
+            ) ||
+            0;
+
+          return slideWidth + gap;
+        }
+
+
+        /* 이동할 수 있는 최대 거리 */
+        function getMaximumOffset() {
+          return Math.max(
+            0,
+            track.scrollWidth -
+            viewport.clientWidth
+          );
+        }
 
 
         /*
-         * 처음과 마지막에서
-         * 과도한 드래그 방지
+         * 80% 너비 슬라이드에 맞춘
+         * 실제 이동 위치
          */
-        if (draggingPosition > 0) {
-          draggingPosition *= 0.25;
-        }
+        function getSlidePosition(index) {
+          const targetOffset =
+            index * getSlideStep();
 
-        if (
-          draggingPosition <
-          minimumPosition
-        ) {
-          const overDistance =
-            draggingPosition -
-            minimumPosition;
+          const maximumOffset =
+            getMaximumOffset();
 
-          draggingPosition =
-            minimumPosition +
-            overDistance * 0.25;
-        }
-
-        moveTrack(
-          draggingPosition,
-          false
-        );
-      }
-    );
-
-
-    /* 드래그 종료 */
-    function finishPointer(event) {
-      if (!isPointerDown) return;
-
-      if (
-        activePointerId !== null &&
-        event.pointerId !== undefined &&
-        event.pointerId !==
-          activePointerId
-      ) {
-        return;
-      }
-
-      const distanceX =
-        currentX - startX;
-
-      const distanceY =
-        currentY - startY;
-
-      isPointerDown = false;
-
-      viewport.classList.remove(
-        "is-dragging"
-      );
-
-      const isHorizontalSwipe =
-        isHorizontalDragging &&
-        Math.abs(distanceX) >
-        Math.abs(distanceY);
-
-      const isLongEnough =
-        Math.abs(distanceX) >=
-        SWIPE_DISTANCE;
-
-      if (
-        isHorizontalSwipe &&
-        isLongEnough
-      ) {
-        if (distanceX < 0) {
-          showNextSlide();
-        } else {
-          showPreviousSlide();
-        }
-      } else {
-        showSlide(
-          currentIndex
-        );
-      }
-
-      if (
-        activePointerId !== null &&
-        viewport.hasPointerCapture(
-          activePointerId
-        )
-      ) {
-        try {
-          viewport.releasePointerCapture(
-            activePointerId
-          );
-        } catch (error) {
-          console.warn(
-            "평면 갤러리 Pointer capture 해제 실패:",
-            error
+          return -Math.min(
+            targetOffset,
+            maximumOffset
           );
         }
-      }
-
-      activePointerId = null;
-      pointerDirection = null;
-      isHorizontalDragging = false;
-    }
 
 
-    viewport.addEventListener(
-      "pointerup",
-      finishPointer
-    );
-
-    viewport.addEventListener(
-      "pointercancel",
-      finishPointer
-    );
-
-
-    /* 키보드 방향키 */
-    viewport.tabIndex = 0;
-
-    viewport.addEventListener(
-      "keydown",
-      function (event) {
-        if (
-          event.key ===
-          "ArrowLeft"
+        function moveTrack(
+          position,
+          useAnimation
         ) {
-          event.preventDefault();
-          showPreviousSlide();
+          track.style.transition =
+            useAnimation
+              ? "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)"
+              : "none";
+
+          track.style.transform =
+            "translate3d(" +
+            position +
+            "px, 0, 0)";
         }
 
-        if (
-          event.key ===
-          "ArrowRight"
+
+        function showSlide(
+          index,
+          useAnimation = true
         ) {
-          event.preventDefault();
-          showNextSlide();
-        }
-      }
-    );
+          if (index < 0) {
+            index = slides.length - 1;
+          }
+
+          if (index >= slides.length) {
+            index = 0;
+          }
+
+          currentIndex = index;
+
+          moveTrack(
+            getSlidePosition(
+              currentIndex
+            ),
+            useAnimation
+          );
 
 
-    /* 이미지 기본 드래그 방지 */
-    slides.forEach(function (slide) {
-      const image =
-        slide.querySelector("img");
-
-      if (!image) return;
-
-      image.draggable = false;
-
-      image.addEventListener(
-        "dragstart",
-        function (event) {
-          event.preventDefault();
-        }
-      );
-    });
+          /* 현재 위치 숫자 */
+          if (currentText) {
+            currentText.textContent =
+              String(currentIndex + 1);
+          }
 
 
-    /* 화면 크기 변경 대응 */
-    let resizeTimer = null;
+          /* 진행바 이동 */
+          if (progressBar) {
+            progressBar.style.transform =
+              "translateX(" +
+              currentIndex * 100 +
+              "%)";
+          }
 
-    window.addEventListener(
-      "resize",
-      function () {
-        clearTimeout(
-          resizeTimer
-        );
 
-        resizeTimer =
-          setTimeout(
-            function () {
-              showSlide(
-                currentIndex,
-                false
+          /* 이미지 상태 */
+          slides.forEach(function (
+            slide,
+            slideIndex
+          ) {
+            const isActive =
+              slideIndex === currentIndex;
+
+            slide.setAttribute(
+              "aria-hidden",
+              String(!isActive)
+            );
+          });
+
+
+          /* 텍스트 버튼 ON/OFF */
+          typeButtons.forEach(function (
+            button,
+            buttonIndex
+          ) {
+            const isActive =
+              buttonIndex === currentIndex;
+
+            button.classList.toggle(
+              "active",
+              isActive
+            );
+
+            button.setAttribute(
+              "aria-selected",
+              String(isActive)
+            );
+
+            if (isActive) {
+              button.setAttribute(
+                "aria-current",
+                "true"
               );
-            },
-            100
+            } else {
+              button.removeAttribute(
+                "aria-current"
+              );
+            }
+          });
+        }
+
+
+        function showPreviousSlide() {
+          showSlide(
+            currentIndex - 1
           );
+        }
+
+
+        function showNextSlide() {
+          showSlide(
+            currentIndex + 1
+          );
+        }
+
+
+        /* 84A, 84B 텍스트 버튼 클릭 */
+        typeButtons.forEach(function (
+          button
+        ) {
+          button.addEventListener(
+            "click",
+            function () {
+              const selectedIndex =
+                Number(
+                  button.dataset.index
+                );
+
+              if (
+                Number.isNaN(
+                  selectedIndex
+                )
+              ) {
+                return;
+              }
+
+              showSlide(
+                selectedIndex
+              );
+            }
+          );
+        });
+
+
+        /* 좌우 화살표 */
+        if (previousButton) {
+          previousButton.addEventListener(
+            "click",
+            showPreviousSlide
+          );
+        }
+
+        if (nextButton) {
+          nextButton.addEventListener(
+            "click",
+            showNextSlide
+          );
+        }
+
+
+        /* 터치·마우스 드래그 시작 */
+        viewport.addEventListener(
+          "pointerdown",
+          function (event) {
+            if (
+              event.pointerType ===
+              "mouse" &&
+              event.button !== 0
+            ) {
+              return;
+            }
+
+            isPointerDown = true;
+            isHorizontalDragging = false;
+            pointerDirection = null;
+            activePointerId =
+              event.pointerId;
+
+            startX = event.clientX;
+            startY = event.clientY;
+            currentX = event.clientX;
+            currentY = event.clientY;
+
+            viewport.classList.add(
+              "is-dragging"
+            );
+
+            try {
+              viewport.setPointerCapture(
+                event.pointerId
+              );
+            } catch (error) {
+              console.warn(
+                "평면 갤러리 Pointer capture 설정 실패:",
+                error
+              );
+            }
+          }
+        );
+
+
+        /* 드래그 중 */
+        viewport.addEventListener(
+          "pointermove",
+          function (event) {
+            if (
+              !isPointerDown ||
+              event.pointerId !==
+              activePointerId
+            ) {
+              return;
+            }
+
+            currentX = event.clientX;
+            currentY = event.clientY;
+
+            const distanceX =
+              currentX - startX;
+
+            const distanceY =
+              currentY - startY;
+
+            if (
+              pointerDirection === null
+            ) {
+              const movedDistance =
+                Math.max(
+                  Math.abs(distanceX),
+                  Math.abs(distanceY)
+                );
+
+              if (
+                movedDistance <
+                DIRECTION_CHECK_DISTANCE
+              ) {
+                return;
+              }
+
+              pointerDirection =
+                Math.abs(distanceX) >
+                  Math.abs(distanceY)
+                  ? "horizontal"
+                  : "vertical";
+            }
+
+            if (
+              pointerDirection !==
+              "horizontal"
+            ) {
+              return;
+            }
+
+            isHorizontalDragging = true;
+
+            const basePosition =
+              getSlidePosition(
+                currentIndex
+              );
+
+            let draggingPosition =
+              basePosition +
+              distanceX;
+
+            const minimumPosition =
+              -getMaximumOffset();
+
+
+            /*
+             * 처음과 마지막에서
+             * 과도한 드래그 방지
+             */
+            if (draggingPosition > 0) {
+              draggingPosition *= 0.25;
+            }
+
+            if (
+              draggingPosition <
+              minimumPosition
+            ) {
+              const overDistance =
+                draggingPosition -
+                minimumPosition;
+
+              draggingPosition =
+                minimumPosition +
+                overDistance * 0.25;
+            }
+
+            moveTrack(
+              draggingPosition,
+              false
+            );
+          }
+        );
+
+
+        /* 드래그 종료 */
+        function finishPointer(event) {
+          if (!isPointerDown) return;
+
+          if (
+            activePointerId !== null &&
+            event.pointerId !== undefined &&
+            event.pointerId !==
+            activePointerId
+          ) {
+            return;
+          }
+
+          const distanceX =
+            currentX - startX;
+
+          const distanceY =
+            currentY - startY;
+
+          isPointerDown = false;
+
+          viewport.classList.remove(
+            "is-dragging"
+          );
+
+          const isHorizontalSwipe =
+            isHorizontalDragging &&
+            Math.abs(distanceX) >
+            Math.abs(distanceY);
+
+          const isLongEnough =
+            Math.abs(distanceX) >=
+            SWIPE_DISTANCE;
+
+          if (
+            isHorizontalSwipe &&
+            isLongEnough
+          ) {
+            if (distanceX < 0) {
+              showNextSlide();
+            } else {
+              showPreviousSlide();
+            }
+          } else {
+            showSlide(
+              currentIndex
+            );
+          }
+
+          if (
+            activePointerId !== null &&
+            viewport.hasPointerCapture(
+              activePointerId
+            )
+          ) {
+            try {
+              viewport.releasePointerCapture(
+                activePointerId
+              );
+            } catch (error) {
+              console.warn(
+                "평면 갤러리 Pointer capture 해제 실패:",
+                error
+              );
+            }
+          }
+
+          activePointerId = null;
+          pointerDirection = null;
+          isHorizontalDragging = false;
+        }
+
+
+        viewport.addEventListener(
+          "pointerup",
+          finishPointer
+        );
+
+        viewport.addEventListener(
+          "pointercancel",
+          finishPointer
+        );
+
+
+        /* 키보드 방향키 */
+        viewport.tabIndex = 0;
+
+        viewport.addEventListener(
+          "keydown",
+          function (event) {
+            if (
+              event.key ===
+              "ArrowLeft"
+            ) {
+              event.preventDefault();
+              showPreviousSlide();
+            }
+
+            if (
+              event.key ===
+              "ArrowRight"
+            ) {
+              event.preventDefault();
+              showNextSlide();
+            }
+          }
+        );
+
+
+        /* 이미지 기본 드래그 방지 */
+        slides.forEach(function (slide) {
+          const image =
+            slide.querySelector("img");
+
+          if (!image) return;
+
+          image.draggable = false;
+
+          image.addEventListener(
+            "dragstart",
+            function (event) {
+              event.preventDefault();
+            }
+          );
+        });
+
+
+        /* 화면 크기 변경 대응 */
+        let resizeTimer = null;
+
+        window.addEventListener(
+          "resize",
+          function () {
+            clearTimeout(
+              resizeTimer
+            );
+
+            resizeTimer =
+              setTimeout(
+                function () {
+                  showSlide(
+                    currentIndex,
+                    false
+                  );
+                },
+                100
+              );
+          }
+        );
+
+        showSlide(0, false);
       }
-    );
-
-    showSlide(0, false);
-  }
 
 
-  /* 두 갤러리 실행 */
-  initializeModelGallery();
-  initializeFloorplanGallery();
-});
-</script>
+      /* 두 갤러리 실행 */
+      initializeModelGallery();
+      initializeFloorplanGallery();
+    });
+  </script>
 </body>
 
 </html>

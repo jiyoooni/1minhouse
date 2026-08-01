@@ -36,7 +36,7 @@ padding-top:20px;
   margin: 0 auto;    /* 좌우 중앙 정렬 핵심 */
 }
 
-.mainimg {text-align:center; max-width: 700px; margin: 0 auto; padding-bottom:50px}
+.mainimg {text-align:center; max-width: 700px; margin: 0 auto}
 .mainimg img{width: 100%}
 /* 하단 고정 바 전체 스타일 */
 .bottom-bar {
