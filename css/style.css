@@ -6,7 +6,7 @@ label { display: block; margin-bottom: 6px; font-weight: bold; }
 input[type="text"], input[type="tel"] { width: 100%; padding: 10px; margin-top:5px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
 button[type="submit"] { width: 100%; padding: 15px; background: #f36d20; color: white; border: none; border-radius: 6px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px; }
 button[type="submit"]:disabled { background: #aaa; }
-section{padding:0 20px}
+section{padding:0 20px; background:#fff}
 
 /* 약관 영역 스타일 */
 .privacy-section { font-size: 13px; color: #444; }
@@ -25,12 +25,12 @@ section{padding:0 20px}
 .modal-body { font-size: 12px; color: #555; line-height: 1.6; margin-top: 10px; }
 .btn-close-modal { margin-top: 15px; width: 100%; padding: 10px; background: #111; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
 
-.container h2{text-align:center; line-height: 1.2;}
+.container h2{text-align:center; line-height: 1.2; margin: 0.93em 0 0.35em;}
 
 .center-logo {
 padding-top:20px;
   display: block;
-  max-width: 170px;
+  max-width: 150px;
   width: 100%;       /* 모바일 등 작은 화면에서 자동으로 비율 맞춰 축소 */
   height: auto;
   margin: 0 auto;    /* 좌우 중앙 정렬 핵심 */
@@ -476,7 +476,6 @@ box-sizing: border-box;
 .model-gallery-slide {
   flex: 0 0 100%;
   width: 100%;
-  aspect-ratio: 3 / 4;
   overflow: hidden;
   background: #f3f1ee;
 }
@@ -685,7 +684,6 @@ textarea {
 .lead-form .reservation-display {
   box-sizing: border-box;
   width: 100%;
-  padding-left: 56px !important;
   padding-right: 18px !important;
   font-size: 16px !important;
   color: #333;
@@ -771,5 +769,455 @@ textarea {
 
   .flatpickr-day {
     max-width: none;
+  }
+}
+
+/* 예약날짜 달력 아이콘 */
+.lead-form .reservation-display {
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='17' rx='2' ry='2'/%3E%3Cline x1='16' y1='2' x2='16' y2='6'/%3E%3Cline x1='8' y1='2' x2='8' y2='6'/%3E%3Cline x1='3' y1='10' x2='21' y2='10'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 22px 22px;
+
+  cursor: pointer;
+}
+.lead-form input[type="date"] {
+  padding-right: 16px;
+  cursor: pointer;
+}
+
+.main-title-badge {
+    display: table;
+    margin: 0 auto 15px;
+    padding: 4px 8px 6px;
+    border-radius: 7px;
+    background: #f4361e;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    box-shadow: 0 4px 10px rgba(217, 37, 37, 0.22);
+}
+
+.main-title-badge span {
+  margin: 0 5px;
+  opacity: 0.65;
+}
+
+@media (max-width: 480px) {
+  .main-title-badge {
+    margin-bottom: 10px;
+    padding: 6px 11px;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   평면 안내 갤러리
+========================= */
+
+.floorplan-gallery {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.floorplan-title {
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.floorplan-title h2 {
+  margin: 0 0 8px;
+  font-size: 34px;
+  line-height: 1.3;
+  letter-spacing: -1px;
+}
+
+.floorplan-title p {
+  margin: 0;
+  color: #777;
+  font-size: 15px;
+}
+
+/* 메인 이미지 영역 */
+.floorplan-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f5f5f5;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.floorplan-viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.floorplan-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.floorplan-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  background: #fff;
+}
+
+.floorplan-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+/* 현재 페이지 숫자 */
+.floorplan-count {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 8px 13px;
+  border-radius: 20px;
+
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+
+  font-size: 14px;
+  line-height: 1;
+}
+
+.floorplan-current {
+  font-size: 16px;
+}
+
+/* 좌우 버튼 */
+.floorplan-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  color: #fff;
+  background: rgba(0, 0, 0, 0.42);
+
+  font-size: 24px;
+  cursor: pointer;
+
+  transform: translateY(-50%);
+  transition:
+    opacity 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.floorplan-arrow:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.floorplan-prev {
+  left: 14px;
+}
+
+.floorplan-next {
+  right: 14px;
+}
+
+/* 하단 썸네일 */
+.floorplan-thumbnails {
+  display: flex;
+  gap: 8px;
+
+  width: 100%;
+  margin-top: 10px;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.floorplan-thumbnails::-webkit-scrollbar {
+  display: none;
+}
+
+.floorplan-thumb {
+  position: relative;
+  flex: 0 0 calc((100% - 24px) / 4);
+
+  min-width: 130px;
+  padding: 0;
+
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: #eee;
+
+  opacity: 0.35;
+  cursor: pointer;
+
+  transition:
+    opacity 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.floorplan-thumb:hover {
+  opacity: 0.7;
+}
+
+.floorplan-thumb.active {
+  border-color: #b96f60;
+  opacity: 1;
+}
+
+.floorplan-thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* 하단 진행 표시 */
+.floorplan-progress {
+  position: relative;
+  width: 100%;
+  height: 7px;
+  margin-top: 14px;
+  overflow: hidden;
+  background: #dedede;
+}
+
+.floorplan-progress-bar {
+  display: block;
+  width: 25%;
+  height: 100%;
+  background: #333;
+  transform: translateX(0);
+  transition: transform 0.4s ease;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .floorplan-gallery {
+    padding: 35px 0;
+  }
+
+  .floorplan-title {
+    padding: 0 16px;
+  }
+
+  .floorplan-title h2 {
+    font-size: 28px;
+  }
+
+  .floorplan-viewport {
+    border-radius: 0;
+  }
+
+  .floorplan-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
+  }
+
+  .floorplan-prev {
+    left: 8px;
+  }
+
+  .floorplan-next {
+    right: 8px;
+  }
+
+  .floorplan-count {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .floorplan-thumbnails {
+    box-sizing: border-box;
+    gap: 5px;
+    padding: 0 10px;
+  }
+
+  .floorplan-thumb {
+    flex-basis: calc((100% - 15px) / 4);
+    min-width: 90px;
+  }
+
+  .floorplan-progress {
+    width: calc(100% - 20px);
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floorplan-track,
+  .floorplan-thumb,
+  .floorplan-progress-bar {
+    transition: none;
+  }
+}
+
+
+/* =========================
+   평면 타입 텍스트 버튼
+========================= */
+
+.floorplan-type-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  margin: 0 0 18px;
+  padding: 0;
+
+  overflow: visible;
+}
+
+.floorplan-type-btn {
+  flex: 0 0 auto;
+  min-width: 130px;
+  padding: 13px 28px;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  background: #f3f3f3;
+  color: #777;
+
+  font-family: inherit;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+
+  opacity: 0.45;
+  cursor: pointer;
+
+  transition:
+    opacity 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.floorplan-type-btn span {
+  display: block;
+  margin-top: 5px;
+
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.floorplan-type-btn:hover {
+  opacity: 0.75;
+  transform: translateY(-1px);
+}
+
+/* 84A 선택 상태 */
+.floorplan-type-btn[data-index="0"].active {
+  border-color: #85b2dc;
+  background: #85b2dc;
+  color: #fff;
+  opacity: 1;
+
+  box-shadow: 0 5px 14px rgba(133, 178, 220, 0.28);
+}
+
+/* 84B 선택 상태 */
+.floorplan-type-btn[data-index="1"].active {
+  border-color: #e7979f;
+  background: #e7979f;
+  color: #fff;
+  opacity: 1;
+
+  box-shadow: 0 5px 14px rgba(231, 151, 159, 0.28);
+}
+
+/* 기존 이미지 썸네일용 가상선 제거 */
+.floorplan-type-btn::after {
+  display: none;
+}
+
+/* 첫 이미지 80%, 다음 이미지 일부 노출 */
+.floorplan-track {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+    padding: 0 15px;
+    background: #fff;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.floorplan-slide {
+  flex: 0 0 calc(80% - 12px);
+  width: calc(80% - 12px);
+  min-width: calc(80% - 12px);
+
+  overflow: hidden;
+  background: #fff;
+}
+
+.floorplan-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+@media (max-width: 768px) {
+  .floorplan-type-buttons {
+    gap: 8px;
+    box-sizing: border-box;
+    padding: 0 14px;
+  }
+
+  .floorplan-type-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 12px 10px;
+    font-size: 18px;
+  }
+
+  .floorplan-track {
+    gap: 8px;
+  }
+
+  .floorplan-slide {
+    flex-basis: calc(84% - 8px);
+    width: calc(84% - 8px);
+    min-width: calc(84% - 8px);
   }
 }
