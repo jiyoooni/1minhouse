@@ -246,9 +246,8 @@ function initEventBanners() {
     startAutoPlay();
   });
 }
-
 /* ==================================================
-   [기능 3] 모델하우스 이미지 갤러리
+   [기능 3] 모델하우스 이미지 갤러리 (터치 복구 완료)
 ================================================== */
 function initModelGallery() {
   const gallery = document.getElementById("modelGallery");
@@ -263,32 +262,82 @@ function initModelGallery() {
 
   if (!viewport || !track || slides.length === 0) return;
 
+  // 모바일에서 좌우 터치 시 브라우저 뒤로가기 방지
+  viewport.style.touchAction = "pan-y";
+
   let currentIndex = 0;
-  function showSlide(index) {
+  let isDragging = false, startX = 0, currentX = 0;
+
+  function moveTrack(position, useAnimation) {
+    track.style.transition = useAnimation ? "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)" : "none";
+    track.style.transform = `translate3d(${position}px, 0, 0)`;
+  }
+
+  function showSlide(index, useAnimation = true) {
     if (index < 0) index = slides.length - 1;
     if (index >= slides.length) index = 0;
     currentIndex = index;
-    track.style.transform = `translate3d(${-(index * viewport.clientWidth)}px, 0, 0)`;
-    
-    thumbnails.forEach((thumb, idx) => thumb.classList.toggle("active", idx === index));
+
+    moveTrack(-(currentIndex * viewport.clientWidth), useAnimation);
+    thumbnails.forEach((thumb, idx) => thumb.classList.toggle("active", idx === currentIndex));
   }
 
-  thumbnails.forEach(thumb => thumb.addEventListener("click", () => showSlide(Number(thumb.dataset.index))));
+  thumbnails.forEach((thumb, idx) => thumb.addEventListener("click", () => showSlide(idx)));
   if (prevBtn) prevBtn.addEventListener("click", () => showSlide(currentIndex - 1));
   if (nextBtn) nextBtn.addEventListener("click", () => showSlide(currentIndex + 1));
+
+  /* --- 드래그 & 스와이프 기능 --- */
+  viewport.addEventListener("pointerdown", (e) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    isDragging = true;
+    startX = e.clientX;
+    currentX = startX;
+    viewport.classList.add("is-dragging");
+    try { viewport.setPointerCapture(e.pointerId); } catch (err) {}
+  });
+
+  viewport.addEventListener("pointermove", (e) => {
+    if (!isDragging) return;
+    currentX = e.clientX;
+    const distanceX = currentX - startX;
+    const currentPosition = -(currentIndex * viewport.clientWidth) + distanceX;
+    moveTrack(currentPosition, false); // 손가락을 따라다니도록 애니메이션 Off
+  });
+
+  function finishDrag() {
+    if (!isDragging) return;
+    isDragging = false;
+    viewport.classList.remove("is-dragging");
+
+    const distanceX = currentX - startX;
+    if (Math.abs(distanceX) >= 50) { // 50px 이상 밀면 페이지 넘김
+      distanceX < 0 ? showSlide(currentIndex + 1) : showSlide(currentIndex - 1);
+    } else {
+      showSlide(currentIndex); // 조금 밀다 말면 원위치
+    }
+  }
+
+  viewport.addEventListener("pointerup", finishDrag);
+  viewport.addEventListener("pointercancel", finishDrag);
   
-  // 브라우저 리사이즈 대응
-  window.addEventListener("resize", () => { setTimeout(() => showSlide(currentIndex), 100); });
-  showSlide(0);
+  viewport.querySelectorAll("img").forEach(img => {
+    img.draggable = false;
+    img.addEventListener("dragstart", e => e.preventDefault());
+  });
+
+  window.addEventListener("resize", () => { setTimeout(() => showSlide(currentIndex, false), 100); });
+  showSlide(0, false);
 }
 
+
 /* ==================================================
-   [기능 4] 평면 안내 갤러리
+   [기능 4] 평면 안내 갤러리 (터치 복구 완료)
 ================================================== */
 function initFloorplanGallery() {
   const gallery = document.getElementById("floorplanGallery");
   if (!gallery) return;
 
+  const viewport = gallery.querySelector(".floorplan-viewport");
   const track = gallery.querySelector(".floorplan-track");
   const slides = Array.from(gallery.querySelectorAll(".floorplan-slide"));
   const buttonsContainer = gallery.querySelector(".floorplan-thumbnails");
@@ -298,13 +347,16 @@ function initFloorplanGallery() {
   const prevBtn = gallery.querySelector(".floorplan-prev");
   const nextBtn = gallery.querySelector(".floorplan-next");
 
-  if (!track || !buttonsContainer || slides.length === 0) return;
+  if (!viewport || !track || !buttonsContainer || slides.length === 0) return;
+
+  viewport.style.touchAction = "pan-y";
 
   let currentIndex = 0;
+  let isDragging = false, startX = 0, currentX = 0;
+
   if (totalText) totalText.textContent = slides.length;
   if (progressBar) progressBar.style.width = (100 / slides.length) + "%";
 
-  /* 타입명 추출 로직 */
   function getFloorplanType(slide, index) {
     if (slide.dataset.type) return slide.dataset.type;
     const img = slide.querySelector("img");
@@ -315,7 +367,6 @@ function initFloorplanGallery() {
     return (index + 1) + "타입";
   }
 
-  /* 텍스트 버튼 생성 */
   buttonsContainer.innerHTML = "";
   const typeButtons = slides.map((slide, index) => {
     const btn = document.createElement("button");
@@ -332,14 +383,22 @@ function initFloorplanGallery() {
     return slideWidth + gap;
   }
 
-  function showSlide(index) {
+  function getSlidePosition(index) {
+    const maxOffset = Math.max(0, track.scrollWidth - viewport.clientWidth);
+    return -Math.min(index * getSlideStep(), maxOffset);
+  }
+
+  function moveTrack(position, useAnimation) {
+    track.style.transition = useAnimation ? "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)" : "none";
+    track.style.transform = `translate3d(${position}px, 0, 0)`;
+  }
+
+  function showSlide(index, useAnimation = true) {
     if (index < 0) index = slides.length - 1;
     if (index >= slides.length) index = 0;
     currentIndex = index;
 
-    const maxOffset = Math.max(0, track.scrollWidth - track.parentElement.clientWidth);
-    const offset = Math.min(index * getSlideStep(), maxOffset);
-    track.style.transform = `translate3d(${-offset}px, 0, 0)`;
+    moveTrack(getSlidePosition(currentIndex), useAnimation);
 
     if (currentText) currentText.textContent = currentIndex + 1;
     if (progressBar) progressBar.style.transform = `translateX(${currentIndex * 100}%)`;
@@ -348,8 +407,58 @@ function initFloorplanGallery() {
 
   if (prevBtn) prevBtn.addEventListener("click", () => showSlide(currentIndex - 1));
   if (nextBtn) nextBtn.addEventListener("click", () => showSlide(currentIndex + 1));
-  window.addEventListener("resize", () => { setTimeout(() => showSlide(currentIndex), 100); });
-  showSlide(0);
+
+  /* --- 드래그 & 스와이프 기능 --- */
+  viewport.addEventListener("pointerdown", (e) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    isDragging = true;
+    startX = e.clientX;
+    currentX = startX;
+    viewport.classList.add("is-dragging");
+    try { viewport.setPointerCapture(e.pointerId); } catch (err) {}
+  });
+
+  viewport.addEventListener("pointermove", (e) => {
+    if (!isDragging) return;
+    currentX = e.clientX;
+    const distanceX = currentX - startX;
+    
+    let draggingPosition = getSlidePosition(currentIndex) + distanceX;
+    const minPosition = -Math.max(0, track.scrollWidth - viewport.clientWidth);
+    
+    // 첫 이미지와 끝 이미지에서 뻑뻑하게 당겨지는 고무줄 효과
+    if (draggingPosition > 0) draggingPosition *= 0.25;
+    if (draggingPosition < minPosition) draggingPosition = minPosition + ((draggingPosition - minPosition) * 0.25);
+    
+    moveTrack(draggingPosition, false);
+  });
+
+  function finishDrag() {
+    if (!isDragging) return;
+    isDragging = false;
+    viewport.classList.remove("is-dragging");
+
+    const distanceX = currentX - startX;
+    if (Math.abs(distanceX) >= 45) {
+      distanceX < 0 ? showSlide(currentIndex + 1) : showSlide(currentIndex - 1);
+    } else {
+      showSlide(currentIndex);
+    }
+  }
+
+  viewport.addEventListener("pointerup", finishDrag);
+  viewport.addEventListener("pointercancel", finishDrag);
+  
+  slides.forEach(slide => {
+    const img = slide.querySelector("img");
+    if (img) {
+      img.draggable = false;
+      img.addEventListener("dragstart", e => e.preventDefault());
+    }
+  });
+
+  window.addEventListener("resize", () => { setTimeout(() => showSlide(currentIndex, false), 100); });
+  showSlide(0, false);
 }
 
 /* ==================================================
