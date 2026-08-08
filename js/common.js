@@ -649,3 +649,70 @@ function scrollToReservationForm() {
     behavior: "smooth"
   });
 }
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+      const typeList = document.querySelector('.floorplan-type-buttons');
+      const typeButtons = Array.from(document.querySelectorAll('.floorplan-type-btn'));
+
+      if (!typeList || !typeButtons.length) return;
+
+      const centerTypeButton = (button, behavior = 'smooth') => {
+        if (!button) return;
+
+        const maxScrollLeft = Math.max(0, typeList.scrollWidth - typeList.clientWidth);
+        const targetLeft = button.offsetLeft - ((typeList.clientWidth - button.offsetWidth) / 2);
+        const nextLeft = Math.min(maxScrollLeft, Math.max(0, targetLeft));
+
+        typeList.scrollTo({
+          left: nextLeft,
+          behavior
+        });
+      };
+
+      const centerCurrentType = (behavior = 'smooth') => {
+        const activeButton = typeList.querySelector(
+          '.floorplan-type-btn.active, .floorplan-type-btn[aria-selected="true"]'
+        );
+        centerTypeButton(activeButton, behavior);
+      };
+
+      /* 타입 버튼 직접 클릭 시 */
+      typeButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          requestAnimationFrame(() => centerTypeButton(button));
+        });
+      });
+
+      /* common.js에서 화살표/스와이프로 active 또는 aria-selected를 변경해도 자동 추적 */
+      const observer = new MutationObserver((mutations) => {
+        const selectedButton = mutations
+          .map((mutation) => mutation.target)
+          .find((target) =>
+            target.classList?.contains('active') ||
+            target.getAttribute?.('aria-selected') === 'true'
+          );
+
+        if (selectedButton) {
+          requestAnimationFrame(() => centerTypeButton(selectedButton));
+        }
+      });
+
+      typeButtons.forEach((button) => {
+        observer.observe(button, {
+          attributes: true,
+          attributeFilter: ['class', 'aria-selected']
+        });
+      });
+
+      /* PC↔모바일 리사이즈 시 현재 버튼 재정렬 */
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => centerCurrentType('auto'), 120);
+      });
+
+      centerCurrentType('auto');
+    });
