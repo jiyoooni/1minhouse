@@ -491,7 +491,7 @@ button[type="submit"]:disabled { background: #aaa; }
 @media (max-width: 768px) {
   /* 섹션 여백 축소 */
   section { padding: 40px 0; }
-  section.no-bg { padding: 30px 0; }
+  section.no-bg { padding: 70px 0; }
   
   /* 컨테이너 좌우 띄우기 */
   .container { 
@@ -676,13 +676,13 @@ button[type="submit"]:disabled { background: #aaa; }
     position: relative;
     z-index: 10;
     padding: 0 24px;
-    margin-top: 60px;
+    margin-top:-100px
   }
 
   .eyebrow {
     display: inline-block;
-    font-size: 13px;
-    letter-spacing: 0.08em;
+    font-size: 12px;
+    letter-spacing: -0.02em;
     color: var(--gold);
     border: 1px solid rgba(201,161,90,0.6);
     border-radius: 999px;
@@ -1010,7 +1010,7 @@ button[type="submit"]:disabled { background: #aaa; }
 
     /* 제목 */
     .overview-title {
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .overview-subtitle {
@@ -1021,7 +1021,7 @@ button[type="submit"]:disabled { background: #aaa; }
             auto
             0;
 
-        font-size: 18px;
+        font-size: 15px;
         line-height: 1.4;
     }
 
@@ -1253,49 +1253,29 @@ button[type="submit"]:disabled { background: #aaa; }
     display: none;
 }
 
+.top-bn-event{
+    position: absolute;
+    bottom: 120px;
+    right: 20px;
+    width: 122px;
+  animation: softBounce 2.2s ease-in-out infinite;
+  will-change: transform;
+}
 
-/* =========================
-   MOBILE
-========================= */
+@keyframes softBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
 
-@media (max-width: 480px) {
+  45% {
+    transform: translateY(-6px);
+  }
 
-    .nature-grid {
-        width: calc(100% - 36px);
+  60% {
+    transform: translateY(-2px);
+  }
 
-        grid-template-columns: 1fr;
-
-        gap: 48px;
-    }
-
-    .nature-image {
-        aspect-ratio: 1.75 / 1;
-
-        border-radius: 0 0 28px 28px;
-    }
-
-    .nature-content {
-        padding-top: 30px;
-    }
-
-    .nature-number {
-        font-size: 28px;
-    }
-
-    .nature-title {
-        font-size: 20px;
-    }
-
-    .nature-desc {
-        max-width: 420px;
-
-        margin:
-            9px
-            auto
-            0;
-
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
+  75% {
+    transform: translateY(-5px);
+  }
 }

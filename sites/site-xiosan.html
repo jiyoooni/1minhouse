@@ -49,6 +49,9 @@
       --text-dark: #222222;
       --text-gray: #555555;
     }
+    button[type="submit"] {
+    background: var(--navy-deep, #333333);
+  }
   </style>
 </head>
 
@@ -72,19 +75,22 @@
     <div class="hero-content">
       <span class="eyebrow">오산 내삼미2구역 A2BL · 1,517세대</span>
       <h1 class="headline">
-        북오산의 풍성한 인프라를 <span class="accent">누리다</span>
-        <span class="sub">북오산자이 드포레</span>
+        동탄의 인프라, 오산의 미래!<br><span class="accent">더블 프리미엄</span>을 누리다
+        <!-- <span class="sub">북오산자이 드포레</span> -->
       </h1>
-      <a href="#reserve" class="cta-inline">모델하우스 방문예약 &rarr;</a>
+      <a href="#reserve" class="cta-inline">방문예약 안내 &rarr;</a>
     </div>
 
     <div class="scroll-hint">SCROLL ↓</div>
+    <div class="top-bn-event">
+      <img alt="사은품배너" src="../img/event_bn.png" />
+    </div> 
   </section>
 
   <section class="premium" id="premium">
     <div class="premium-head">
-      <span class="premium-eyebrow">PREMIUM 6</span>
-      <h2 class="premium-title">북오산자이 드포레 PREMIUM6</h2>
+      <span class="premium-eyebrow">SPECIAL VALUE 6</span>
+      <h2 class="premium-title">북오산이 기다려온 프리미엄 라이프</h2>
     </div>
 
     <div class="premium-grid">
@@ -168,33 +174,16 @@
       </div>
 
     </div>
+
+
   </section>
 
-  <button onclick="scrollToReservationForm()" type="button" class="cta-fixed">모델하우스 방문예약하기</button>
+  <button onclick="scrollToReservationForm()" type="button" class="cta-fixed">모델하우스 방문예약</button>
 
   <div class="mainimg">
     <!-- PDF 1페이지: 단지 메인 비주얼 / 선착순 동·호지정 / 계약금 1차 500만원 -->
     <!-- <img alt="북오산자이 드포레 모델하우스 방문예약 안내" src="../img/site02-img1.png" /> -->
   </div>
-
-  <!-- 이벤트 롤링 배너 -->
-  <section aria-label="방문 예약 고객 이벤트" class="event-banner-slider">
-    <div class="event-banner-list">
-      <!-- 골드바 이벤트 -->
-      <a aria-label="예약 방문 고객 골드바 1돈 증정 이벤트 전화문의" class="event-banner-slide active" href="tel:1600-0640">
-        <img alt="관심고객 등록 후 예약 방문 고객 대상 골드바 1돈 증정 선착순 이벤트, 전화문의 1600-0640" src="../img/event-goldbar.png" />
-      </a>
-      <!-- 백화점 상품권 이벤트 -->
-      <a aria-label="예약 방문 고객 백화점 상품권 증정 이벤트 전화문의" class="event-banner-slide" href="tel:1600-0640">
-        <img alt="관심고객 등록 후 예약 방문 고객 대상 백화점 상품권 증정 선착순 이벤트, 전화문의 1600-0640" src="../img/event-giftcard.png" />
-      </a>
-    </div>
-    <!-- 현재 배너 표시 -->
-    <div aria-label="이벤트 배너 선택" class="event-banner-dots">
-      <button aria-label="골드바 이벤트 배너 보기" class="event-banner-dot active" type="button"></button>
-      <button aria-label="백화점 상품권 이벤트 배너 보기" class="event-banner-dot" type="button"></button>
-    </div>
-  </section>
 
   <!-- 상단 예약 섹션 -->
   <section class="no-bg">
@@ -415,6 +404,7 @@
 
 
   <section class="floorplan-gallery" id="floorplanGallery" aria-label="북오산자이 드포레 평면 안내">
+
     <div class="overview-header">
       <h2 class="main-title">평면 안내</h2>
 
@@ -540,6 +530,9 @@
     <div class="floorplan-progress">
       <span class="floorplan-progress-bar"></span>
     </div>
+
+        <img alt="단지 안내" src="../img/xiosan-community2.jpg" />
+
   </section>
 
 
@@ -571,31 +564,12 @@
     </div>
   </section>
 
-  <!-- 이벤트 롤링 배너 -->
-  <section aria-label="방문 예약 고객 이벤트" class="event-banner-slider">
-    <div class="event-banner-list">
-      <!-- 골드바 이벤트 -->
-      <a aria-label="예약 방문 고객 골드바 1돈 증정 이벤트 전화문의" class="event-banner-slide active" href="tel:1600-0640">
-        <img alt="관심고객 등록 후 예약 방문 고객 대상 골드바 1돈 증정 선착순 이벤트, 전화문의 1600-0640" src="../img/event-goldbar.png" />
-      </a>
-      <!-- 백화점 상품권 이벤트 -->
-      <a aria-label="예약 방문 고객 백화점 상품권 증정 이벤트 전화문의" class="event-banner-slide" href="tel:1600-0640">
-        <img alt="관심고객 등록 후 예약 방문 고객 대상 백화점 상품권 증정 선착순 이벤트, 전화문의 1600-0640" src="../img/event-giftcard.png" />
-      </a>
-    </div>
-    <!-- 현재 배너 표시 -->
-    <div aria-label="이벤트 배너 선택" class="event-banner-dots">
-      <button aria-label="골드바 이벤트 배너 보기" class="event-banner-dot active" type="button"></button>
-      <button aria-label="백화점 상품권 이벤트 배너 보기" class="event-banner-dot" type="button"></button>
-    </div>
-  </section>
-
-  </section>
-
-
-  <div class="mainimg">
+   <div class="mainimg">
     <img alt="비주얼 이미지" src="../img/xiosan-end.png" />
-  </div>
+  </div> 
+  </section>
+
+
 
 
   <!-- 하단 푸터 영역 -->
