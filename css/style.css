@@ -871,7 +871,7 @@ button[type="submit"]:disabled { background: #aaa; }
   .premium-card2.border-navy .tag { color: #4d5a70; }
 
   .premium-card2 .desc {
-    font-size: 13px;
+    font-size: 12px;
     color: #6f6f6f;
     line-height: 1.5;
     margin-top: 7px;
