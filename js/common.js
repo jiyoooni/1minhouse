@@ -367,15 +367,42 @@ function initFloorplanGallery() {
     return (index + 1) + "타입";
   }
 
-  buttonsContainer.innerHTML = "";
-  const typeButtons = slides.map((slide, index) => {
+/* HTML에 타입 버튼이 이미 있는지 확인 */
+let typeButtons = Array.from(
+  buttonsContainer.querySelectorAll(".floorplan-type-btn")
+);
+
+/* 버튼이 없는 페이지에서만 자동 생성 */
+if (typeButtons.length === 0) {
+
+  typeButtons = slides.map((slide, index) => {
+
     const btn = document.createElement("button");
+
+    btn.type = "button";
     btn.className = "floorplan-thumb floorplan-type-btn";
     btn.textContent = getFloorplanType(slide, index);
-    btn.addEventListener("click", () => showSlide(index));
+
+    btn.setAttribute("role", "tab");
+    btn.setAttribute(
+      "aria-selected",
+      index === 0 ? "true" : "false"
+    );
+
     buttonsContainer.appendChild(btn);
+
     return btn;
   });
+}
+
+/* 기존 버튼이든 자동 생성 버튼이든 클릭 기능 연결 */
+typeButtons.forEach((btn, index) => {
+
+  btn.addEventListener("click", () => {
+    showSlide(index);
+  });
+
+});
 
   function getSlideStep() {
     const slideWidth = slides[0].getBoundingClientRect().width;
@@ -402,7 +429,18 @@ function initFloorplanGallery() {
 
     if (currentText) currentText.textContent = currentIndex + 1;
     if (progressBar) progressBar.style.transform = `translateX(${currentIndex * 100}%)`;
-    typeButtons.forEach((btn, idx) => btn.classList.toggle("active", idx === currentIndex));
+    typeButtons.forEach((btn, idx) => {
+
+  const isActive = idx === currentIndex;
+
+  btn.classList.toggle("active", isActive);
+
+  btn.setAttribute(
+    "aria-selected",
+    isActive ? "true" : "false"
+  );
+
+});
   }
 
   if (prevBtn) prevBtn.addEventListener("click", () => showSlide(currentIndex - 1));

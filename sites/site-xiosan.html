@@ -40,6 +40,18 @@
       [현장 전용] 메인 포인트 컬러 설정
       현장마다 이 부분의 헥스코드(#)만 변경하세요.
     ========================================= */
+      /* 이미지 1 → 2 → 1 크로스페이드. 한 사이클 14초, 각 이미지 약 6초 노출 + 1초 전환 */
+  .hero-bg--1 {
+    background-image: linear-gradient(180deg, rgba(7,21,39,0.55), rgba(7,21,39,0.75)),
+      url("../img/xiosan_main01.jpg");
+    animation: fade1 14s infinite;
+  }
+  .hero-bg--2 {
+    background-image: linear-gradient(180deg, rgba(7,21,39,0.55), rgba(7,21,39,0.75)),
+      url("../img/xiosan_main02.jpg");
+    animation: fade2 14s infinite;
+  }
+
     :root {
       --navy: #0b1f3a;
       --navy-deep: #071527;
@@ -61,7 +73,10 @@
   <section class="hero">
 
     <header class="header">
-      <div class="logo">북오산자이<span>|</span><span>드포레</span></div>
+      <div class="logo">
+        <img src="../img/04/xi-white.png" alt="Xi">
+        북오산자이<span>|</span><span>드포레</span>
+      </div>
       <a href="tel:1600-0640" class="icon-btn" aria-label="전화 상담">
         <svg viewBox="0 0 24 24">
           <path
@@ -79,7 +94,7 @@
         동탄의 인프라, 오산의 미래!<br><span class="accent">더블 프리미엄</span>을 누리다
         <!-- <span class="sub">북오산자이 드포레</span> -->
       </h1>
-      <a href="#reserve" class="cta-inline">방문예약 안내 &rarr;</a>
+      <a aria-label="북오산자이 드포레 전화 상담 연결" class="cta-inline" href="tel:1600-0640" id="callBtn">전화 1600-0640 &rarr;</a>
     </div>
 
     <div class="scroll-hint">SCROLL ↓</div>

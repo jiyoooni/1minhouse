@@ -619,6 +619,12 @@ button[type="submit"]:disabled { background: #aaa; }
   }
   .logo span { font-weight: 400; opacity: 0.75; font-size: 15px; }
 
+.logo img {
+  width: 34px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
   /* ---------- 히어로 ---------- */
   .hero {
     position: relative;
@@ -639,17 +645,7 @@ button[type="submit"]:disabled { background: #aaa; }
     opacity: 0;
   }
 
-  /* 이미지 1 → 2 → 1 크로스페이드. 한 사이클 14초, 각 이미지 약 6초 노출 + 1초 전환 */
-  .hero-bg--1 {
-    background-image: linear-gradient(180deg, rgba(7,21,39,0.55), rgba(7,21,39,0.75)),
-      url("../img/xiosan_main01.jpg");
-    animation: fade1 14s infinite;
-  }
-  .hero-bg--2 {
-    background-image: linear-gradient(180deg, rgba(7,21,39,0.55), rgba(7,21,39,0.75)),
-      url("../img/xiosan_main02.jpg");
-    animation: fade2 14s infinite;
-  }
+
 
   @keyframes fade1 {
     0%   { opacity: 1; }
@@ -834,6 +830,59 @@ button[type="submit"]:disabled { background: #aaa; }
     .premium-card .tag { font-size: 14px; }
   }
 
+    .premium-icon2 {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 12px;
+  }
+  .premium-icon2 svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+    .premium-card2.border-navy .premium-icon2 svg { stroke: var(--navy); }
+  .premium-card2:not(.border-navy) .premium-icon2 svg { stroke: var(--gold); }
+
+    @media (max-width: 360px) {
+    .premium-card2 { padding: 20px 8px 28px; }
+    .premium-card2 .tag { font-size: 14px; }
+  }
+
+    .premium-card2 {
+    position: relative;
+    border: 1.5px solid var(--gold);
+    padding: 24px 12px 28px;
+    text-align: center;
+    background: #f7f4ee;
+  }
+  .premium-card2.border-navy { border-color: var(--navy); }
+
+  .premium-card2 .tag {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #a9906a;
+    margin-bottom: 14px;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+  .premium-card2.border-navy .tag { color: #4d5a70; }
+
+  .premium-card2 .desc {
+    font-size: 13px;
+    color: #6f6f6f;
+    line-height: 1.5;
+    margin-top: 7px;
+  }
+
+  .premium-card2 .point {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--navy-deep);
+    line-height: 1.4;
+  }
 
   /* =========================
    OVERVIEW
@@ -1380,3 +1429,243 @@ button[type="submit"]:disabled { background: #aaa; }
     .commute-card{ padding: 14px; gap: 10px; }
     .commute-time{ font-size: 20px; }
   }
+
+  /* ==============================
+   오산헤리티지자이 사업개요
+   ============================== */
+
+.ohx-overview-section {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 50px 20px 70px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+
+/* 상단 제목 */
+
+.ohx-overview-heading {
+  margin-bottom: 30px;
+}
+
+.ohx-overview-heading-title {
+  margin: 0 0 14px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #073951;
+  letter-spacing: -1px;
+}
+
+.ohx-overview-heading-main {
+  margin: 0 0 8px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #222;
+  letter-spacing: -0.7px;
+}
+
+.ohx-overview-heading-sub {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+  letter-spacing: -0.4px;
+}
+
+.ohx-overview-heading-sub strong {
+  color: #073951;
+  font-weight: 800;
+}
+
+
+/* 이미지 */
+
+.ohx-overview-image-wrap {
+  width: 100%;
+  margin-bottom: 35px;
+  overflow: hidden;
+}
+
+.ohx-overview-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* 공통정보 */
+
+.ohx-overview-common {
+  margin-bottom: 32px;
+  border-top: 2px solid #073951;
+}
+
+.ohx-overview-common-row {
+  display: grid;
+  grid-template-columns: 105px 1fr;
+  align-items: start;
+  padding: 8px 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.ohx-overview-common-label {
+  position: relative;
+  padding-left: 13px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #222;
+  letter-spacing: -0.4px;
+}
+
+.ohx-overview-common-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #073951;
+}
+
+.ohx-overview-common-value {
+  padding-left: 18px;
+  border-left: 1px solid #d8d8d8;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+  letter-spacing: -0.4px;
+}
+
+
+/* 비교표 */
+
+.ohx-overview-compare {
+  width: 100%;
+  border-top: 2px solid #073951;
+  border-bottom: 1px solid #ccc;
+}
+
+.ohx-overview-compare-head,
+.ohx-overview-compare-row {
+  display: grid;
+  grid-template-columns: 25% 37.5% 37.5%;
+}
+
+.ohx-overview-compare-head {
+  background: #073951;
+  color: #fff;
+}
+
+.ohx-overview-compare-category,
+.ohx-overview-compare-block {
+  padding: 8px 8px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.ohx-overview-compare-block + .ohx-overview-compare-block {
+  border-left: 1px solid rgba(255,255,255,0.25);
+}
+
+.ohx-overview-compare-row {
+  border-bottom: 1px solid #ddd;
+}
+
+.ohx-overview-compare-row:last-child {
+  border-bottom: 0;
+}
+
+.ohx-overview-compare-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 8px;
+  background: #f6f7f8;
+  font-size: 13px;
+  font-weight: 800;
+  color: #333;
+  text-align: center;
+}
+
+.ohx-overview-compare-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.ohx-overview-compare-value + .ohx-overview-compare-value {
+  border-left: 1px solid #e1e1e1;
+}
+
+.ohx-overview-compare-value sup {
+  font-size: 10px;
+}
+
+
+/* 모바일 */
+
+@media (max-width: 500px) {
+
+  .ohx-overview-section {
+    padding: 40px 16px 55px;
+  }
+
+  .ohx-overview-heading-title {
+    font-size: 25px;
+  }
+
+  .ohx-overview-heading-main {
+    font-size: 18px;
+  }
+
+  .ohx-overview-heading-sub {
+    font-size: 13px;
+  }
+
+  .ohx-overview-common-row {
+    grid-template-columns: 82px 1fr;
+    padding: 7px 2px;
+  }
+
+  .ohx-overview-common-label {
+    font-size: 13px;
+  }
+
+  .ohx-overview-common-value {
+    padding-left: 13px;
+    font-size: 13px;
+  }
+
+  .ohx-overview-compare-head,
+  .ohx-overview-compare-row {
+    grid-template-columns: 23% 38.5% 38.5%;
+  }
+
+  .ohx-overview-compare-category,
+  .ohx-overview-compare-block {
+    padding: 13px 4px;
+    font-size: 14px;
+  }
+
+  .ohx-overview-compare-label {
+    padding: 15px 4px;
+    font-size: 12px;
+  }
+
+  .ohx-overview-compare-value {
+    padding: 7px 5px;
+    font-size: 12px;
+    letter-spacing: -0.3px;
+  }
+}
