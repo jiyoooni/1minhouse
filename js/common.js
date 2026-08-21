@@ -158,7 +158,7 @@ function initLeadForms() {
       })
       .finally(function () {
         submitBtn.disabled = false;
-        submitBtn.innerText = "방문·상담 예약하기";
+        submitBtn.innerText = "방문·상담 혜택받기";
       });
     });
   });
@@ -589,7 +589,7 @@ function injectCommonFormAndModal() {
             </button>
           </div>
         </div>
-        <button type="submit" class="submit-btn">방문·상담 예약하기</button>
+        <button type="submit" class="submit-btn">방문·상담 혜택받기</button>
       </form>
     `;
   });
