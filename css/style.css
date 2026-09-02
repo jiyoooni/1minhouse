@@ -614,7 +614,7 @@ button[type="submit"]:disabled { background: #aaa; }
     font-weight: 700;
     letter-spacing: -0.02em;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 8px;
   }
   .logo span { font-weight: 400; opacity: 0.75; font-size: 15px; }
