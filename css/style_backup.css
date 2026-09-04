@@ -454,7 +454,7 @@ button[type="submit"]:disabled { background: #aaa; }
 .btn-go-top:hover { background-color: #e6b800; }
 
 .btn-call-floating {
-  position: fixed; right: 0; bottom: -5px; width: 56px; height: 56px; background-color: #25d366;
+  position: fixed; right: 20px; bottom: 85px; width: 64px; height: 64px; background-color: #25d366;
   color: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 10000; text-decoration: none; transition: opacity 0.3s;
 }
@@ -472,64 +472,6 @@ button[type="submit"]:disabled { background: #aaa; }
 @keyframes bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(-6px); }
-}
-
-/* 우측 하단 플로팅 액션 그룹 (문자상담 + 대표전화) */
-.floating-actions {
-  position: fixed;
-  right: 20px;
-  bottom: 93px;
-  z-index: 10000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.floating-actions.hidden {
-  opacity: 0;
-  transform: translateY(12px);
-  pointer-events: none;
-}
-/* 그룹 안에서는 개별 버튼의 fixed 위치를 해제하고 flex로 배치 (단독 사용 시엔 기존 .btn-call-floating 위치 그대로 유지) */
-/* position: relative로 두어 내부 .call-tooltip(absolute)의 기준점을 버튼 자신으로 유지합니다 */
-.floating-actions .btn-call-floating,
-.floating-actions .btn-sms-floating {
-  position: relative;
-}
-.btn-sms-floating {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: var(--wine-deep, #4a1329);
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  text-decoration: none;
-}
-
-/* =========================================
-   9. 스크롤 등장 애니메이션 (섹션/카드 공통)
-   - 요소가 뷰포트에 들어오면 .is-visible이 붙습니다 (common.js의 initScrollReveal 참고)
-========================================= */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-  will-change: opacity, transform;
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
 }
 
 .footer-section {
@@ -580,7 +522,7 @@ button[type="submit"]:disabled { background: #aaa; }
   .bottom-bar-text strong { font-size: 14px; }
   .bottom-bar-text span { font-size: 11px; }
   .btn-go-top { padding: 10px 12px; font-size: 14px; }
-  .call-tooltip { bottom: 48px; padding: 4px 8px; }
+  .call-tooltip { bottom: 56px; padding: 4px 8px; }
   
   .footer-info span { display: block; margin-right: 0; }
 }
