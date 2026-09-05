@@ -6,9 +6,8 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <!-- 1. 기본 검색엔진 최적화 (SEO) -->
-  <title>힐스테이트 구월아트파크 | 모델하우스 방문예약</title>
-  <meta content="인천 남동구 구월동(옛 롯데백화점 부지) 힐스테이트 구월아트파크, 총 496세대. 예술회관역 초역세권, GTX-B 인천시청역 정차 예정. 힐스테이트 구월아트파크 모델하우스 방문예약 및 상담 안내."
-    name="description" />
+  <title>힐스테이트 구월아트파크 | 분양정보·모델하우스 방문예약</title>
+ <meta name="description" content="힐스테이트 구월아트파크 분양정보. 인천 구월동 예술회관역 초역세권, 총 496세대. 평면도·입지·모델하우스 방문예약 안내."/>
   <meta content="힐스테이트 구월아트파크, 구월동 아파트 분양, 예술회관역, GTX-B, 모델하우스 방문예약, 전용 84㎡, 전용 101㎡, 관심고객등록" name="keywords" />
   <meta content="힐스테이트 구월아트파크" name="author" />
   <meta content="index, follow" name="robots" />
@@ -18,18 +17,19 @@
   <meta content="힐스테이트 구월아트파크" property="og:site_name" />
   <meta content="힐스테이트 구월아트파크 - 모델하우스 방문예약" property="og:title" />
   <meta content="인천 남동구 구월동, 총 496세대. 예술회관역 초역세권 원도심 랜드마크, 지금 모델하우스 방문예약을 신청하세요." property="og:description" />
-  <meta content="https://jiyoooni.github.io/1minhouse/img/05/og-image.png" property="og:image" />
+  <meta content="https://firstfind.kr/1minhouse/img/05/og-image.png" property="og:image" />
   <!-- 실제 운영 도메인의 절대경로로 변경 -->
-  <!-- <meta property="og:url" content="https://대표도메인주소.com"> -->
-  <!-- 3. 트위터/X 공유용 카드 -->
+<meta property="og:url" content="https://firstfind.kr/1minhouse/site-guwol.html">
+<link href="https://firstfind.kr/1minhouse/site-guwol.html" rel="canonical" />
+<!-- 3. 트위터/X 공유용 카드 -->
   <meta content="summary_large_image" name="twitter:card" />
   <meta content="힐스테이트 구월아트파크 모델하우스 방문예약" name="twitter:title" />
   <meta content="인천 남동구 구월동, 총 496세대. 예술회관역 초역세권. 모델하우스 방문예약제로 진행됩니다." name="twitter:description" />
-  <meta content="https://jiyoooni.github.io/1minhouse/img/05/og-image.png" name="twitter:image" />
+  <meta content="https://firstfind.kr/1minhouse/img/05/og-image.png" name="twitter:image" />
   <!-- 4. 파비콘 (브라우저 탭 아이콘) -->
   <link href="../img/05/favicon.ico" rel="shortcut icon" />
   <!-- 5. 캐노니컬 태그 (대표 URL 설정 - 중복 문서 방지) -->
-  <link href="https://jiyoooni.github.io/1minhouse/site-guwol.html" rel="canonical" />
+  <link href="https://firstfind.kr/1minhouse/site-guwol.html" rel="canonical" />
   <!-- 6. 외부 스타일시트 연결 -->
   <link href="../css/style.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" rel="stylesheet" />
@@ -88,13 +88,20 @@
 
 <body>
 
+  <nav>
+  <a href="#overview">사업개요</a>
+  <a href="#location">입지안내</a>
+  <a href="#floorplan">평면안내</a>
+  <a href="#modelhouse">모델하우스</a>
+</nav>
+
   <section class="hero">
 
     <header class="header">
-      <div class="logo">
+      <h1 class="logo">
         <img src="../img/05/hillstate-white.png" alt="힐스테이트">
         힐스테이트 구월아트파크
-      </div>
+      </h1>
       <a href="tel:1600-0640" class="icon-btn" aria-label="전화 상담">
         <svg viewBox="0 0 24 24">
           <path
@@ -109,12 +116,12 @@
     <div class="hero-content">
             <span class="eyebrow">구월동 원도심 랜드마크, 총 496세대</span>
       <!-- <span class="eyebrow">구월동 원도심 랜드마크, 총 496세대</span> -->
-      <h1 class="headline">
+      <div class="headline">
         예술회관역 초역세권의 중심<br>힐스테이트답게 빛나다!
         <!-- <span class="accent">
           힐스테이트답게 빛나다!</span> -->
         <!-- <span class="sub">힐스테이트 구월아트파크</span> -->
-      </h1>
+      </div>
       <a aria-label="힐스테이트 구월아트파크 전화 상담 연결" class="cta-inline" href="tel:1600-0640" id="callBtn">전화 1600-0640 &rarr;</a>
     </div>
 
@@ -246,7 +253,7 @@
   <div id="commonModalPlace"></div>
 
 
-  <section class="ohx-overview-section">
+  <section id="overview" class="ohx-overview-section">
 
     <!-- 상단 타이틀 -->
     <div class="overview-header">
@@ -294,7 +301,7 @@
 
   </section>
 
-  <section>
+  <section id="location">
     <div class="overview-header">
       <h2 class="main-title">입지 안내</h2>
       <p class="overview-title">
@@ -401,7 +408,7 @@
   </section>
 
 
-  <section>
+  <section  id="floorplan">
     <div class="overview-header">
       <h2 class="main-title">단지 안내</h2>
       <p class="overview-title">
@@ -527,6 +534,7 @@
     </div>
   </section>
 
+<div id="modelhouse" class="anchor-target"></div>
   <section aria-label="모델하우스 사진" class="model-gallery" id="modelGallery">
     <div class="overview-header">
       <h2 class="main-title">모델하우스</h2>
@@ -574,51 +582,143 @@
       <button aria-current="true" aria-label="거실 사진 보기" class="model-gallery-thumb active" data-index="0" type="button">
         <img alt="" src="../img/05/IMG_model_0.jpg" />
       </button>
-      <button aria-current="true" aria-label="거실 사진 보기" class="model-gallery-thumb active" data-index="0" type="button">
+      <button aria-label="거실 사진 보기" class="model-gallery-thumb" data-index="1" type="button">
         <img alt="" src="../img/05/IMG_model_1.jpg" />
       </button>
-      <button aria-label="주방 사진 보기" class="model-gallery-thumb" data-index="1" type="button">
+      <button aria-label="주방 사진 보기" class="model-gallery-thumb" data-index="2" type="button">
         <img alt="" src="../img/05/IMG_model_2.jpg" />
       </button>
-      <button aria-label="안방 사진 보기" class="model-gallery-thumb" data-index="2" type="button">
+      <button aria-label="안방 사진 보기" class="model-gallery-thumb" data-index="3" type="button">
         <img alt="" src="../img/05/IMG_model_3.jpg" />
       </button>
-      <button aria-label="침실 사진 보기" class="model-gallery-thumb" data-index="3" type="button">
+      <button aria-label="침실 사진 보기" class="model-gallery-thumb" data-index="4" type="button">
         <img alt="" src="../img/05/IMG_model_4.jpg" />
       </button>
-      <button aria-label="욕실 사진 보기" class="model-gallery-thumb" data-index="4" type="button">
+      <button aria-label="욕실 사진 보기" class="model-gallery-thumb" data-index="5" type="button">
         <img alt="" src="../img/05/IMG_model_5.jpg" />
       </button>
-      <button aria-label="욕실 사진 보기" class="model-gallery-thumb" data-index="5" type="button">
+      <button aria-label="욕실 사진 보기" class="model-gallery-thumb" data-index="6" type="button">
         <img alt="" src="../img/05/IMG_model_6.jpg" />
       </button>
     </div>
   </section>
 
-  </section>
+
+<section class="faq-section" id="faq">
+
+  <div class="faq-container">
+
+    <div class="faq-header">
+      <span class="faq-eyebrow">Q & A</span>
+
+      <h2>
+        힐스테이트 구월아트파크<br>
+        자주 묻는 질문
+      </h2>
+
+      <p>
+        분양 및 모델하우스 방문과 관련해
+        자주 문의하시는 내용을 안내드립니다.
+      </p>
+    </div>
 
 
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          힐스테이트 구월아트파크 위치는 어디인가요?
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            인천광역시 남동구 구월동 1455번지 일원,
+            옛 롯데백화점 부지에 조성됩니다.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          힐스테이트 구월아트파크는 몇 세대인가요?
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            지하 6층부터 지상 최고 39층,
+            4개 동 총 496세대로 구성됩니다.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          어떤 타입이 공급되나요?
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            전용면적 84㎡A, 84㎡B, 101㎡ 타입을
+            확인하실 수 있습니다.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          모델하우스 방문은 어떻게 하나요?
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            홈페이지 방문예약 또는 전화상담을 통해
+            방문 가능 일정과 상담 내용을 확인하실 수 있습니다.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
   <!-- 하단 푸터 영역 -->
   <footer class="footer-section">
     <div class="footer-container">
-      <!-- 사업자 및 현장 정보 -->
-      <div class="footer-info">
-        <p><span>상호명: 퍼스트파인드</span> <span>대표자: 양보현</span> <span>사업자등록번호: 101-51-01094</span></p>
-        <p><span>주소:경기도 안산시 단원구 원일1길 19, 2층 1호</span> <span>문의전화: 1600-0640</span></p>
-        <p><span>현장: 인천광역시 남동구 구월동 1455번지 일원</span></p>
-      </div>
       <!-- 법적 면책 조항 -->
       <div class="footer-disclaimer">
         ※ 본 웹사이트에 사용된 이미지, CG, 지역도 및 개발 호재 등은 소비자의 이해를 돕기 위해 제작된 것으로 실제 시공, 인허가 및 현황과 차이가 있을 수 있습니다.<br />
         ※ 표기된 학교, 교통망, 개발계획 및 예정사항은 관계기관의 사정에 따라 변경 또는 취소될 수 있으므로 현장 및 관계기관을 통해 직접 확인하시기 바랍니다.<br />
         ※ 본 사이트는 힐스테이트 구월아트파크 분양 정보 제공 및 관심고객 등록 안내를 위한 홍보용 웹사이트입니다.
       </div>
+      <!-- 사업자 및 현장 정보 -->
+      <div class="footer-info">
+        <p><span>상호명: 퍼스트파인드</span> <span>대표자: 양보현</span> <span>사업자등록번호: 101-51-01094</span></p>
+        <p><span>주소:경기도 안산시 단원구 원일1길 19, 2층 1호</span> <span>문의전화: 1600-0640</span></p>
+        <p><span>현장: 인천광역시 남동구 구월동 1455번지 일원</span></p>
+      </div>
       <p class="footer-copy">Copyright © 힐스테이트 구월아트파크. All rights reserved.</p>
     </div>
   </footer>
 
+  <script>
+document.querySelectorAll('.faq-question').forEach(function(button) {
+
+  button.addEventListener('click', function() {
+
+    const item = this.closest('.faq-item');
+
+    item.classList.toggle('active');
+
+  });
+
+});
+</script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/ko.js"></script>
   <!-- 현장 설정 변수 (common.js 보다 먼저 선언되어야 합니다) -->
