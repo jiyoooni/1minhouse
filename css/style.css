@@ -1910,3 +1910,5 @@ nav {display:none}
 .flatpickr-calendar {
   z-index: 999999 !important;
 }
+
+.flatpickr-wrapper{width:100%}

@@ -90,6 +90,8 @@ function initLeadForms() {
         disableMobile: true,
         allowInput: false,
         clickOpens: true,
+        /* ★ 이거 추가 */
+        static: true,
         onReady: function (selectedDates, dateStr, instance) {
           instance.altInput.placeholder = "예약 날짜를 선택하세요";
         },
