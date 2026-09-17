@@ -310,7 +310,7 @@
 
 /* 설명 목록 */
 .location-points{
-  margin: auto 0 0;
+  margin:  0;
   padding: 18px 0 0;
 
   list-style: none;
@@ -1245,7 +1245,7 @@ body.lotte-popup-open{
 .preapply-copy strong{color:#fff;font-weight:800}
 .preapply-benefits{list-style:none;margin-top:30px;padding:0}
 .preapply-benefits li{position:relative;padding-left:22px;color:rgba(255,255,255,.76);font-size:14px;line-height:1.65;word-break:keep-all}
-.preapply-benefits li+li{margin-top:11px}
+.preapply-benefits li+li{margin-top:4px}
 .preapply-benefits li::before{content:"✓";position:absolute;left:0;top:0;color:#d4b98f;font-weight:900}
 
 .form-progress{display:flex;align-items:center;margin-bottom:30px;padding-bottom:20px;border-bottom:1px solid #ece8e2}
@@ -1258,7 +1258,7 @@ body.lotte-popup-open{
 .form-intro{margin-bottom:24px}.form-intro strong{display:block;color:#171717;font-size:18px;line-height:1.45;letter-spacing:-.035em}.form-intro span{display:block;margin-top:6px;color:#8c867f;font-size:12px}
 .lead-form-card .lead-form label{font-size:13px}
 .lead-form-card .lead-form input[type=text],.lead-form-card .lead-form input[type=tel]{height:58px;font-size:17px}
-.field-help{margin-top:10px;padding:10px 12px;border-left:3px solid #9f8165;background:#f7f4ef;color:#5f554d;font-size:13px;line-height:1.6;word-break:keep-all}.field-help strong{color:#352f2a;font-size:13px;font-weight:800}
+.field-help{margin-top:10px;padding:10px 12px;border-left:3px solid #9f8165;background:#f7f4ef;color:#5f554d;font-size:13px;line-height:1.6;word-break:keep-all}.field-help strong{color:#352f2a;font-size:13px;font-weight:800;margin-bottom:4px;display:block}
 .form-mini-note{margin-top:12px;color:#a29b93;font-size:10px;line-height:1.55;text-align:center}
 .lead-next{display:flex!important;align-items:center;justify-content:center;gap:12px}
 .form-step-actions{display:grid;grid-template-columns:90px minmax(0,1fr);gap:10px;margin-top:24px}
@@ -1288,9 +1288,9 @@ body.lotte-popup-open{
   .premium-conversion{margin-top:32px;padding:27px 22px;border-radius:14px}.premium-conversion h3{font-size:24px}.premium-conversion p{font-size:13px}.premium-conversion-btn{height:54px}
   .section-preapply{padding-bottom:78px!important}.preapply-grid{gap:36px!important}.preapply-benefits{margin-top:22px}.preapply-benefits li{font-size:13px}
   .lead-form-card{padding:28px 20px!important;border-radius:10px!important}
-  .lead-form-card .lead-form label{font-size:15px!important;margin-bottom:9px!important}
+  .lead-form-card .lead-form label{font-size:14px!important;margin-bottom:9px!important}
   .lead-form-card .lead-form input[type=text],.lead-form-card .lead-form input[type=tel]{height:62px!important;padding:0 16px!important;font-size:18px!important;border-radius:7px!important}
-  .form-intro strong{font-size:17px}.form-intro span{font-size:12px}.field-help{padding:11px 12px;font-size:14px;line-height:1.65}.field-help strong{font-size:14px}.privacy-notice{font-size:12px!important}.check-item-row label{font-size:12px!important;line-height:1.5}.btn-view-terms{font-size:12px!important}
+  .form-intro strong{font-size:17px}.form-intro span{font-size:12px}.field-help{padding:11px 12px;font-size:13px;line-height:1.55}.field-help strong{font-size:14px}.privacy-notice{font-size:12px!important}.check-item-row label{font-size:12px!important;line-height:1.5}.btn-view-terms{font-size:12px!important}
   .lead-submit,.lead-back{height:60px!important;font-size:16px!important;border-radius:6px!important}
   .form-step-actions{grid-template-columns:78px minmax(0,1fr)}
   .conversion-bottom-bar{position:fixed;left:0;right:0;bottom:0;z-index:20000;display:grid;grid-template-columns:.82fr 1.18fr;height:68px;padding:8px max(10px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.98);border-top:1px solid rgba(5,20,79,.12);box-shadow:0 -8px 28px rgba(0,0,0,.10);transform:translateY(110%);opacity:0;pointer-events:none;transition:transform .28s ease,opacity .28s ease}
