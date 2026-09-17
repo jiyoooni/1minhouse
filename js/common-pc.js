@@ -137,3 +137,58 @@ document.addEventListener("DOMContentLoaded", function () {
   initFloatingActions();
   initScrollReveal();
 });
+/* ==================================================
+   CONVERSION V4 - 모바일 하단 CTA + 클릭 이벤트
+================================================== */
+function initConversionBottomBar(){
+  const bar = document.getElementById('conversionBottomBar');
+  if(!bar) return;
+
+  const preapply = document.getElementById('preapply');
+  let formVisible = false;
+
+  if(preapply && 'IntersectionObserver' in window){
+    const observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        formVisible = entry.isIntersecting;
+        update();
+      });
+    }, { threshold:0.12 });
+    observer.observe(preapply);
+  }
+
+  function update(){
+    if(window.innerWidth > 640){
+      bar.classList.remove('is-visible');
+      return;
+    }
+    const shouldShow = window.scrollY > 220 && !formVisible;
+    bar.classList.toggle('is-visible', shouldShow);
+  }
+
+  update();
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+}
+
+function initConversionTracking(){
+  document.addEventListener('click', function(e){
+    const target = e.target.closest('[data-track]');
+    if(!target) return;
+
+    const eventName = target.getAttribute('data-track');
+    if(!eventName) return;
+
+    if(typeof window.trackLotte === 'function'){
+      window.trackLotte(eventName, {
+        href: target.getAttribute('href') || '',
+        label: (target.textContent || '').trim().replace(/\s+/g,' ').slice(0,80)
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  initConversionBottomBar();
+  initConversionTracking();
+});
