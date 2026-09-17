@@ -1018,3 +1018,191 @@
   }
 
 }
+
+
+/* ========================================
+   관심고객 등록 팝업
+======================================== */
+
+.lotte-popup-overlay{
+  position:fixed;
+  inset:0;
+  z-index:99990;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:24px;
+
+  background:rgba(0,0,0,.58);
+
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
+
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+
+  transition:
+    opacity .35s ease,
+    visibility .35s ease;
+}
+
+
+/* 팝업 노출 */
+.lotte-popup-overlay.is-open{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+
+
+/* 팝업 본체 */
+.lotte-popup{
+  width:500px;
+  max-width:calc(100vw - 40px);
+
+  overflow:hidden;
+
+  background:#fff;
+
+  border-radius:18px;
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.32);
+
+  transform:
+    translateY(18px)
+    scale(.97);
+
+  opacity:0;
+
+  transition:
+    transform .45s cubic-bezier(.22,1,.36,1),
+    opacity .35s ease;
+}
+
+
+.lotte-popup-overlay.is-open .lotte-popup{
+  transform:
+    translateY(0)
+    scale(1);
+
+  opacity:1;
+}
+
+
+/* 배너 */
+.lotte-popup-banner{
+  display:block;
+
+  width:100%;
+
+  padding:0;
+
+  border:0;
+
+  background:#fff;
+
+  cursor:pointer;
+}
+
+
+.lotte-popup-banner img{
+  display:block;
+
+  width:100%;
+  height:auto;
+
+  max-height:78vh;
+
+  object-fit:contain;
+}
+
+
+/* 하단 메뉴 */
+.lotte-popup-bottom{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  height:56px;
+
+  background:#fff;
+
+  border-top:1px solid #e5dfd8;
+}
+
+
+.lotte-popup-bottom button{
+  border:0;
+
+  background:#fff;
+
+  color:#4b4743;
+
+  font-size:14px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:
+    background .2s ease,
+    color .2s ease;
+}
+
+
+.lotte-popup-today{
+  border-right:1px solid #e5dfd8 !important;
+}
+
+
+.lotte-popup-bottom button:hover{
+  background:#f7f4f0;
+
+  color:#9f8165;
+}
+
+
+/* 팝업 노출 중 스크롤 방지 */
+body.lotte-popup-open{
+  overflow:hidden;
+}
+
+
+/* ========================================
+   모바일
+======================================== */
+
+@media(max-width:640px){
+
+  .lotte-popup-overlay{
+    padding:0;
+  }
+
+
+  .lotte-popup{
+    width:80vw;
+    max-width:80vw;
+
+    border-radius:12px;
+  }
+
+
+  .lotte-popup-banner img{
+    width:100%;
+    max-height:72vh;
+  }
+
+
+  .lotte-popup-bottom{
+    height:50px;
+  }
+
+
+  .lotte-popup-bottom button{
+    font-size:12px;
+  }
+
+}

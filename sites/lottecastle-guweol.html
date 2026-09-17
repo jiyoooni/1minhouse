@@ -566,6 +566,42 @@
     </div>
   </div>
 
+  <!-- 관심고객 등록 팝업 -->
+<div class="lotte-popup-overlay" id="lottePromoPopup" aria-hidden="true">
+  <div class="lotte-popup" role="dialog" aria-label="2단지 관심고객 등록 안내">
+    <!-- 배너 전체 클릭 -->
+    <button
+      type="button"
+      class="lotte-popup-banner"
+      id="lottePopupBanner"
+      aria-label="관심고객 등록 바로가기"
+    >
+      <img
+        src="../img/06/popup-register.png?v=1"
+        alt="경기광주역 롯데캐슬 시그니처 2단지 사전청약 관심고객 등록"
+      >
+    </button>
+
+    <!-- 하단 버튼 -->
+    <div class="lotte-popup-bottom">
+      <button
+        type="button"
+        id="lottePopupToday"
+        class="lotte-popup-today"
+      >
+        오늘 하루 안보기
+      </button>
+      <button
+        type="button"
+        id="lottePopupClose"
+        class="lotte-popup-close"
+      >
+        닫기
+      </button>
+    </div>
+  </div>
+</div>
+
   <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/ko.js"></script>
 <script>
@@ -847,7 +883,287 @@ document.addEventListener("DOMContentLoaded", function(){
   );
 
 });
+
+/* ========================================
+   관심고객 등록 팝업
+======================================== */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const popup =
+    document.getElementById("lottePromoPopup");
+
+  const banner =
+    document.getElementById("lottePopupBanner");
+
+  const todayBtn =
+    document.getElementById("lottePopupToday");
+
+  const closeBtn =
+    document.getElementById("lottePopupClose");
+
+
+  if(!popup) return;
+
+
+  /* 오늘 날짜 */
+  function getTodayKey(){
+
+    const now = new Date();
+
+    const year =
+      now.getFullYear();
+
+    const month =
+      String(now.getMonth() + 1)
+        .padStart(2, "0");
+
+    const day =
+      String(now.getDate())
+        .padStart(2, "0");
+
+    return (
+      year +
+      "-" +
+      month +
+      "-" +
+      day
+    );
+
+  }
+
+
+  /* 팝업 열기 */
+  function openPromoPopup(){
+
+    popup.classList.add("is-open");
+
+    popup.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    document.body.classList.add(
+      "lotte-popup-open"
+    );
+
+  }
+
+
+  /* 팝업 닫기 */
+  function closePromoPopup(){
+
+    popup.classList.remove("is-open");
+
+    popup.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.classList.remove(
+      "lotte-popup-open"
+    );
+
+  }
+
+
+  /* 오늘 하루 안보기 기록 */
+  const hiddenDate =
+    localStorage.getItem(
+      "lottePopupHiddenDate"
+    );
+
+
+  /* 이번 접속에서 이미 닫았는지 */
+  const sessionClosed =
+    sessionStorage.getItem(
+      "lottePopupSessionClosed"
+    );
+
+
+  /* 조건에 해당하지 않을 때만 1.2초 후 노출 */
+  if(
+    hiddenDate !== getTodayKey() &&
+    sessionClosed !== "true"
+  ){
+
+    setTimeout(
+      function(){
+
+        openPromoPopup();
+
+      },
+      1200
+    );
+
+  }
+
+
+  /* ========================================
+     배너 클릭
+     → 관심고객등록 영역으로 이동
+  ======================================== */
+
+  if(banner){
+
+    banner.addEventListener(
+      "click",
+      function(){
+
+        sessionStorage.setItem(
+          "lottePopupSessionClosed",
+          "true"
+        );
+
+        closePromoPopup();
+
+
+        setTimeout(
+          function(){
+
+            const target =
+              document.getElementById(
+                "preapply"
+              );
+
+
+            if(!target) return;
+
+
+            const header =
+              document.getElementById(
+                "siteHeader"
+              );
+
+
+            const headerHeight =
+              header
+                ? header.offsetHeight
+                : 0;
+
+
+            const position =
+              target
+                .getBoundingClientRect()
+                .top
+              +
+              window.scrollY
+              -
+              headerHeight;
+
+
+            window.scrollTo({
+              top:position,
+              behavior:"smooth"
+            });
+
+          },
+          250
+        );
+
+      }
+    );
+
+  }
+
+
+  /* ========================================
+     오늘 하루 안보기
+  ======================================== */
+
+  if(todayBtn){
+
+    todayBtn.addEventListener(
+      "click",
+      function(){
+
+        localStorage.setItem(
+          "lottePopupHiddenDate",
+          getTodayKey()
+        );
+
+        sessionStorage.setItem(
+          "lottePopupSessionClosed",
+          "true"
+        );
+
+        closePromoPopup();
+
+      }
+    );
+
+  }
+
+
+  /* ========================================
+     일반 닫기
+     → 현재 세션에서만 다시 안 뜸
+  ======================================== */
+
+  if(closeBtn){
+
+    closeBtn.addEventListener(
+      "click",
+      function(){
+
+        sessionStorage.setItem(
+          "lottePopupSessionClosed",
+          "true"
+        );
+
+        closePromoPopup();
+
+      }
+    );
+
+  }
+
+
+  /* 배경 클릭 시 닫기 */
+  popup.addEventListener(
+    "click",
+    function(e){
+
+      if(e.target === popup){
+
+        sessionStorage.setItem(
+          "lottePopupSessionClosed",
+          "true"
+        );
+
+        closePromoPopup();
+
+      }
+
+    }
+  );
+
+
+  /* ESC 닫기 */
+  document.addEventListener(
+    "keydown",
+    function(e){
+
+      if(
+        e.key === "Escape" &&
+        popup.classList.contains("is-open")
+      ){
+
+        sessionStorage.setItem(
+          "lottePopupSessionClosed",
+          "true"
+        );
+
+        closePromoPopup();
+
+      }
+
+    }
+  );
+
+});
 </script>
+
   <script src="../js/common-pc.js"></script>
 </body>
 </html>
