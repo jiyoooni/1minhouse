@@ -1280,7 +1280,6 @@ body.lotte-popup-open{
 }
 
 @media(max-width:640px){
-  body{padding-bottom:72px}
   .hero-sub{font-size:14px;line-height:1.55}.hero-trust{font-size:12px;margin-top:9px}
   .hero-actions{margin-top:24px;gap:9px}.hero-actions .hero-cta{height:50px;padding:0 18px;font-size:13px}.hero-cta--primary{flex:1.25}.hero-cta--secondary{flex:.75}
   .current-status-inner{width:calc(100% - 28px)}
