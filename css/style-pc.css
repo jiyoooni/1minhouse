@@ -2362,7 +2362,7 @@ img {
     z-index:20000;
     display:grid;
     grid-template-columns:.82fr 1.18fr;
-    height:52px;
+    height:62px;
     background:rgba(255,255,255,.98);
     box-shadow: 0 -8px 28px rgb(0 0 0 / 22%);
     transform:translateY(110%);
@@ -2382,7 +2382,7 @@ img {
     align-items:center;
     justify-content:center;
     gap:7px;
-    height:52px;
+    height:62px;
     font-size:15px;
     font-weight:900
   }
