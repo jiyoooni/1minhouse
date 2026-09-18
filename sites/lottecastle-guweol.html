@@ -1,1166 +1,917 @@
 <!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
   <!-- 기본 SEO -->
-  <title>경기광주역 롯데캐슬 시그니처 2단지 | 분양정보·관심고객등록</title>
-  <meta name="description" content="경기광주역 롯데캐슬 시그니처 2단지 분양정보. 경기도 광주시 쌍령동 산 54-29 일대, 총 1,249세대. 쌍령공원, 경기광주역 교통망, 프리미엄 서비스 및 관심고객등록 안내." />
-  <meta name="keywords" content="경기광주역 롯데캐슬 시그니처 2단지, 경기광주 롯데캐슬, 쌍령동 아파트, 경기광주역 아파트, 쌍령공원, 수서광주선, 관심고객등록, 분양정보" />
-  <meta name="author" content="경기광주역 롯데캐슬 시그니처 2단지" />
-  <meta name="robots" content="index, follow" />
-
+  <title>
+   경기광주역 롯데캐슬 시그니처 2단지 | 분양정보·관심고객등록
+  </title>
+  <meta content="경기광주역 롯데캐슬 시그니처 2단지 분양정보. 경기도 광주시 쌍령동 산 54-29 일대, 총 1,249세대. 쌍령공원, 경기광주역 교통망, 프리미엄 서비스 및 관심고객등록 안내." name="description"/>
+  <meta content="경기광주역 롯데캐슬 시그니처 2단지, 경기광주 롯데캐슬, 쌍령동 아파트, 경기광주역 아파트, 쌍령공원, 수서광주선, 관심고객등록, 분양정보" name="keywords"/>
+  <meta content="경기광주역 롯데캐슬 시그니처 2단지" name="author"/>
+  <meta content="index, follow" name="robots"/>
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="ko_KR" />
-  <meta property="og:site_name" content="경기광주역 롯데캐슬 시그니처 2단지" />
-  <meta property="og:title" content="경기광주역 롯데캐슬 시그니처 2단지 | 관심고객등록" />
-  <meta property="og:description" content="쌍령공원 단 한 걸음, 수서역 단 두 정거장. 경기광주역 롯데캐슬 시그니처 2단지 분양정보와 관심고객등록을 확인하세요." />
-  <meta property="og:image" content="../img/06/og-image.png" />
-  <meta property="og:url" content="https://firstfind.kr/sites/lottecastle-guweol.html" />
-  <link rel="canonical" href="https://firstfind.kr/sites/lottecastle-guweol.html" />
-
+  <meta content="website" property="og:type"/>
+  <meta content="ko_KR" property="og:locale"/>
+  <meta content="경기광주역 롯데캐슬 시그니처 2단지" property="og:site_name"/>
+  <meta content="경기광주역 롯데캐슬 시그니처 2단지 | 관심고객등록" property="og:title"/>
+  <meta content="쌍령공원 단 한 걸음, 수서역 단 두 정거장. 경기광주역 롯데캐슬 시그니처 2단지 분양정보와 관심고객등록을 확인하세요." property="og:description"/>
+  <meta content="../img/06/og-image.png" property="og:image"/>
+  <meta content="https://firstfind.kr/sites/lottecastle-guweol.html" property="og:url"/>
+  <link href="https://firstfind.kr/sites/lottecastle-guweol.html" rel="canonical"/>
   <!-- X / Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="경기광주역 롯데캐슬 시그니처 2단지" />
-  <meta name="twitter:description" content="경기광주역 롯데캐슬 시그니처 2단지 분양정보 및 관심고객등록 안내" />
-  <meta name="twitter:image" content="../img/06/og-image.png" />
-
-  <link rel="shortcut icon" href="../img/06/favicon.ico" />
-  <link rel="stylesheet" href="../css/style-pc.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" />
-  <script src="../js/analytics.js"></script>
-
-  <style>
-    /* 관심고객등록 기능용 보완 스타일 */
-    .lead-form-card{background:#fff;color:#171717;padding:40px;border-radius:2px;box-shadow:0 24px 60px rgba(0,0,0,.12)}
-    .lead-form .form-group{margin-bottom:22px}.lead-form label{display:block;margin-bottom:8px;font-size:12px;font-weight:700;color:#5a5651}
-    .lead-form input[type=text],.lead-form input[type=tel]{width:100%;height:54px;padding:0 14px;border:1px solid #d7d2cb;border-radius:4px;background:#fff;font-size:16px;outline:none}
-    .lead-form input:focus{border-color:#9f8165;box-shadow:0 0 0 3px rgba(159,129,101,.10)}
-    .lead-form .reservation-display{cursor:pointer;background:#fff}
-    .required-star{color:#a61f37}.privacy-section{margin-top:20px;font-size:12px;color:#67615b}.privacy-notice{font-size:11px;line-height:1.6;color:#8a847d;margin-bottom:12px}
-    .check-item-row{display:flex;justify-content:space-between;align-items:center;gap:12px}.check-item-row label{display:flex;align-items:center;gap:7px;margin:0;font-weight:500;color:#666}.check-item-row input{accent-color:#9f8165}
-    .btn-view-terms{border:0;background:transparent;color:#888;text-decoration:underline;font-size:11px;padding:0;white-space:nowrap}
-    .lead-submit{width:100%;height:58px;margin-top:15px;border:0;background:#9f8165;color:#fff;font-size:16px;font-weight:800;cursor:pointer}.lead-submit:disabled{background:#aaa;cursor:not-allowed}
-    .modal-overlay{display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.55);align-items:center;justify-content:center;padding:20px}.modal-content{width:min(92vw,520px);max-height:80vh;overflow:auto;background:#fff;padding:28px;color:#222}.modal-content h3{margin:0 0 14px}.modal-body{font-size:13px;line-height:1.7;color:#555}.modal-body h4{margin:18px 0 6px;color:#222}.btn-close-modal{width:100%;height:46px;margin-top:20px;border:0;background:#111;color:#fff}
-    .footer-section{padding:44px 20px 100px;background:#151414;color:#8f8a84;font-size:12px;line-height:1.65}.footer-container{width:min(1400px,100%);margin:0 auto}.footer-disclaimer{padding-bottom:18px;border-bottom:1px solid #302e2c;font-size:11px;color:#77716c}.footer-info{padding-top:16px}.footer-info p{margin:5px 0}.footer-info span{display:inline-block;margin-right:14px}.footer-copy{margin-top:18px;color:#5f5a56;font-size:11px}
-    @media(max-width:640px){.lead-form-card{padding:26px 20px}.check-item-row{align-items:flex-start}}
-
-    /* PC 전화상담 대체 모달 */
-    .pc-call-modal{display:none;position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.58);align-items:center;justify-content:center;padding:20px}
-    .pc-call-modal.is-open{display:flex}
-    .pc-call-dialog{position:relative;width:min(92vw,460px);background:#fff;color:#171717;padding:34px 30px 28px;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.28)}
-    .pc-call-close{position:absolute;top:14px;right:14px;width:40px;height:40px;border:0;background:transparent;color:#777;font-size:30px;line-height:1}
-    .pc-call-eyebrow{display:block;margin-bottom:10px;color:#9f8165;font-size:11px;font-weight:800;letter-spacing:.14em}
-    .pc-call-dialog h3{margin:0 0 12px;font-size:30px;line-height:1.25;letter-spacing:-.04em}
-    .pc-call-number{display:block;margin:8px 0 14px;color:#071b58;font-size:38px;font-weight:900;letter-spacing:-.03em}
-    .pc-call-desc{margin:0 0 24px;color:#6b6762;font-size:14px;line-height:1.7}
-    .pc-call-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .pc-call-actions button,.pc-call-actions a{height:54px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:15px;font-weight:800;text-decoration:none}
-    .pc-call-copy{border:1px solid #d7d2cb;background:#fff;color:#222}
-    .pc-call-lead{border:1px solid #9f8165;background:#9f8165;color:#fff}
-    .pc-call-copy.is-copied{border-color:#071b58;color:#071b58}
-    .pc-call-note{margin-top:13px;color:#99938c;font-size:11px;line-height:1.5;text-align:center}
-    @media(max-width:980px){.pc-call-modal{display:none!important}}
-  </style>
-</head>
-<body>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="경기광주역 롯데캐슬 시그니처 2단지" name="twitter:title"/>
+  <meta content="경기광주역 롯데캐슬 시그니처 2단지 분양정보 및 관심고객등록 안내" name="twitter:description"/>
+  <meta content="../img/06/og-image.png" name="twitter:image"/>
+  <link href="../img/06/favicon.ico" rel="shortcut icon"/>
+  <link href="../css/style-pc.css" rel="stylesheet"/>
+  <script src="../js/analytics.js">
+  </script>
+ </head>
+ <body>
   <header class="site-header" id="siteHeader">
-    <div class="nav-shell">
-      <a class="brand-logo" href="#top" aria-label="경기광주역 롯데캐슬 시그니처 홈으로 이동">
-        <img class="logo-default" src="../img/06/logo.png" alt="LOTTE CASTLE 경기광주역 롯데캐슬 시그니처" />
-        <img class="logo-scrolled" src="../img/06/logo-gold.png" alt="LOTTE CASTLE 경기광주역 롯데캐슬 시그니처" />
-
-      </a>
-
-<nav class="desktop-nav" aria-label="주요 메뉴">
-  <a class="nav-link active" href="#overview">사업개요</a>
-  <a class="nav-link" href="#location">입지환경</a>
-  <a class="nav-link" href="#premium">프리미엄</a>
-
-  <!--
-  <a class="nav-link" href="#complex">단지안내<span class="menu-note">미정</span></a>
-  <a class="nav-link" href="#floorplan">평면안내<span class="menu-note">미정</span></a>
-  <a class="nav-link" href="#modelhouse">모델하우스<span class="menu-note">미정</span></a>
-  -->
-
-  <a class="nav-link nav-register-btn" href="#preapply" data-track="nav_lead">
-    관심고객등록
-  </a>
-
-  <a class="nav-link nav-phone-btn" href="tel:1600-0640" data-track="nav_call" aria-label="대표번호 1600-0640 전화연결">
-    <span>대표번호</span>
-    1600-0640
-  </a>
-</nav>
-
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="메뉴 열기"
-        aria-expanded="false"
-        aria-controls="mobileMenu"
-      >
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+   <div class="nav-shell">
+    <a aria-label="경기광주역 롯데캐슬 시그니처 홈으로 이동" class="brand-logo" href="#top">
+     <img alt="LOTTE CASTLE 경기광주역 롯데캐슬 시그니처" class="logo-default" src="../img/06/logo.png"/>
+     <img alt="LOTTE CASTLE 경기광주역 롯데캐슬 시그니처" class="logo-scrolled" src="../img/06/logo-gold.png"/>
+    </a>
+    <nav aria-label="주요 메뉴" class="desktop-nav">
+     <a class="nav-link active" href="#overview">
+      사업개요
+     </a>
+     <a class="nav-link" href="#location">
+      입지환경
+     </a>
+     <a class="nav-link" href="#premium">
+      프리미엄
+     </a>
+     <a class="nav-link nav-register-btn" data-track="nav_lead" href="#preapply">
+      관심고객등록
+     </a>
+     <a aria-label="대표번호 1600-0640 전화연결" class="nav-link nav-phone-btn" data-track="nav_call" href="tel:1600-0640">
+      <span>
+       대표번호
+      </span>
+      1600-0640
+     </a>
+    </nav>
+    <button aria-controls="mobileMenu" aria-expanded="false" aria-label="메뉴 열기" class="menu-toggle" id="menuToggle" type="button">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+   </div>
   </header>
-
-  <div class="mobile-nav" id="menuBackdrop" hidden></div>
-  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <div class="mobile-menu-head">
-      <span>MENU</span>
-      <button class="mobile-close" id="mobileClose" type="button" aria-label="메뉴 닫기">×</button>
-    </div>
-
-<nav class="mobile-nav" aria-label="모바일 메뉴">
-  <a href="#overview"><span>01</span>사업개요</a>
-  <a href="#location"><span>02</span>입지환경</a>
-  <a href="#premium"><span>03</span>프리미엄</a>
-
-  <!--
-  <a href="#complex"><span>04</span>단지안내 <em>미정</em></a>
-  <a href="#floorplan"><span>05</span>평면안내 <em>미정</em></a>
-  <a href="#modelhouse"><span>06</span>모델하우스 <em>미정</em></a>
-  -->
-
-  <a class="mobile-nav-accent" href="#preapply" data-track="mobile_menu_lead">
-    <span>04</span>관심고객등록
-  </a>
-
-  <a class="mobile-phone-btn" href="tel:1600-0640" data-track="mobile_menu_call">
-    <span>CALL</span>
-    대표번호 1600-0640
-  </a>
-</nav>
-
-
-    <div class="mobile-menu-foot">경기광주역 롯데캐슬 시그니처 2단지</div>
+  <div class="mobile-menu-backdrop" hidden="" id="menuBackdrop">
+  </div>
+  <aside aria-hidden="true" class="mobile-menu" id="mobileMenu">
+   <div class="mobile-menu-head">
+    <span>
+     MENU
+    </span>
+    <button aria-label="메뉴 닫기" class="mobile-close" id="mobileClose" type="button">
+     ×
+    </button>
+   </div>
+   <nav aria-label="모바일 메뉴" class="mobile-nav">
+    <a href="#overview">
+     <span>
+      01
+     </span>
+     사업개요
+    </a>
+    <a href="#location">
+     <span>
+      02
+     </span>
+     입지환경
+    </a>
+    <a href="#premium">
+     <span>
+      03
+     </span>
+     프리미엄
+    </a>
+    <a class="mobile-nav-accent" data-track="mobile_menu_lead" href="#preapply">
+     <span>
+      04
+     </span>
+     관심고객등록
+    </a>
+    <a class="mobile-phone-btn" data-track="mobile_menu_call" href="tel:1600-0640">
+     <span>
+      CALL
+     </span>
+     대표번호 1600-0640
+    </a>
+   </nav>
+   <div class="mobile-menu-foot">
+    경기광주역 롯데캐슬 시그니처 2단지
+   </div>
   </aside>
-
   <main id="top">
-    <section class="hero" aria-label="메인 비주얼">
-<div class="hero-slider" aria-hidden="true">
-  <img
-    class="hero-slide hero-slide--1"
-    src="../img/06/hero-sunset.png"
-    alt=""
-  >
-
-  <img
-    class="hero-slide hero-slide--2"
-    src="../img/06/hero-sunset2.png"
-    alt=""
-  >
-</div>
-
-      <div class="hero-overlay"></div>
-      <div class="hero-inner">
-        <p class="hero-kicker">LOTTE CASTLE SIGNATURE</p>
-        <h1>
-          쌍령공원 단 한걸음<br />
-          <span>수서역 단 두 정거장</span>
-        </h1>
-        <p class="hero-sub">2026년 10월 오픈 예정 · 분양가·평면도·유니트 공개 전</p>
-        <p class="hero-trust">주요 분양정보가 확정되는 대로 문자로 안내드립니다.</p>
-        <div class="hero-actions">
-          <a class="hero-cta hero-cta--primary" href="#preapply" data-track="hero_lead">분양정보 먼저 받기 <span>↘</span></a>
-          <a class="hero-cta hero-cta--secondary" href="tel:1600-0640" data-track="hero_call">전화 상담 <span>☎</span></a>
-        </div>
-      </div>
-      <a class="scroll-guide" href="#overview" aria-label="사업개요로 이동">
-        <span>SCROLL</span><i></i>
+   <section aria-label="메인 비주얼" class="hero">
+    <div aria-hidden="true" class="hero-slider">
+     <img alt="" class="hero-slide hero-slide--1" src="../img/06/hero-sunset.png"/>
+     <img alt="" class="hero-slide hero-slide--2" src="../img/06/hero-sunset2.png"/>
+    </div>
+    <div class="hero-overlay">
+    </div>
+    <div class="hero-inner">
+     <p class="hero-kicker">
+      LOTTE CASTLE SIGNATURE
+     </p>
+     <h1>
+      쌍령공원 단 한걸음
+      <br/>
+      <span>
+       수서역 단 두 정거장
+      </span>
+     </h1>
+     <p class="hero-sub">
+      2026년 10월 오픈 예정 · 분양가·평면도·유니트 공개 전
+     </p>
+     <p class="hero-trust">
+      주요 분양정보가 확정되는 대로 문자로 안내드립니다.
+     </p>
+     <div class="hero-actions">
+      <a class="hero-cta hero-cta--primary" data-track="hero_lead" href="#preapply">
+       분양정보 먼저 받기
+       <span>
+        ↘
+       </span>
       </a>
-    </section>
-
-    <section class="current-status" aria-label="현재 분양정보 공개 현황">
-      <div class="section-inner current-status-inner reveal">
-        <div class="current-status-copy">
-          <span>NOW</span>
-          <strong>현재 공개 현황</strong>
-          <p>세부 정보가 확정되는 대로 관심고객에게 안내드립니다.</p>
-        </div>
-        <div class="current-status-grid">
-          <div class="status-item status-item--accent"><span>오픈 일정</span><strong>2026년 10월 예정</strong></div>
-          <div class="status-item"><span>분양가</span><strong>공개 전</strong></div>
-          <div class="status-item"><span>평면도</span><strong>공개 전</strong></div>
-          <div class="status-item"><span>유니트</span><strong>공개 전</strong></div>
-        </div>
-        <a class="status-cta" href="#preapply" data-track="status_lead">정보 공개 시 안내받기 <span>→</span></a>
+      <a class="hero-cta hero-cta--secondary" data-track="hero_call" href="tel:1600-0640">
+       전화 상담
+       <span>
+        ☎
+       </span>
+      </a>
+     </div>
+    </div>
+    <a aria-label="사업개요로 이동" class="scroll-guide" href="#overview">
+     <span>
+      SCROLL
+     </span>
+     <i>
+     </i>
+    </a>
+   </section>
+   <section aria-label="현재 분양정보 공개 현황" class="current-status">
+    <div class="section-inner current-status-inner reveal">
+     <div class="current-status-copy">
+      <span>
+       NOW
+      </span>
+      <strong>
+       현재 공개 현황
+      </strong>
+      <p>
+       세부 정보가 확정되는 대로 관심고객에게 안내드립니다.
+      </p>
+     </div>
+     <div class="current-status-grid">
+      <div class="status-item status-item--accent">
+       <span>
+        오픈 일정
+       </span>
+       <strong>
+        2026년 10월 예정
+       </strong>
       </div>
-    </section>
-
-    <section class="section section-overview" id="overview">
-      <div class="section-inner section-grid">
-        <div class="section-heading reveal">
-          <!-- <span class="section-num">01</span> -->
-          <p class="section-eyebrow">PROJECT OVERVIEW</p>
-          <h2>사업개요</h2>
-          <p class="section-lead">도시의 비전과 자연의 여유가 하나로! 경기광주역 롯데캐슬 시그니처 2단지</p>
-        </div>
-        <div class="overview-panel reveal">
-          <dl>
-            <div><dt>단지명</dt><dd>경기광주역 롯데캐슬 시그니처 2단지</dd></div>
-            <div><dt>규모</dt><dd>B10 ~ 26F, 10개동, 1,249세대</dd></div>
-            <div><dt>위치</dt><dd>경기도 광주시 쌍령동 산 54-29일대</dd></div>
-            <div><dt>분양시기</dt><dd>2026년 10월 예정</dd></div>
-            <div><dt>시행사</dt><dd>주식회사 쌍령파크개발</dd></div>
-          </dl>
-          <!-- <p class="data-note">※ 현재는 홈페이지 레이아웃 시안이며 세부 사업정보는 공식 자료 기준으로 교체해 주세요.</p> -->
-        </div>
+      <div class="status-item">
+       <span>
+        분양가
+       </span>
+       <strong>
+        공개 전
+       </strong>
       </div>
-    </section>
-
-    <section class="section section-location" id="location">
-      <div class="section-inner">
-
-        <div class="section-heading section-heading--horizontal reveal">
-          <div>
-            <!-- <span class="section-num">02</span> -->
-            <p class="section-eyebrow">LOCATION</p>
-            <h2>입지환경</h2>
-          </div>
-
-          <p class="section-lead">
-            자연과 교통, 교육과 생활까지 일상의 가치를 높이는 입지를 만나보세요.
-          </p>
+      <div class="status-item">
+       <span>
+        평면도
+       </span>
+       <strong>
+        공개 전
+       </strong>
+      </div>
+      <div class="status-item">
+       <span>
+        유니트
+       </span>
+       <strong>
+        공개 전
+       </strong>
+      </div>
+     </div>
+     <a class="status-cta" data-track="status_lead" href="#preapply">
+      정보 공개 시 안내받기
+      <span>
+       →
+      </span>
+     </a>
+    </div>
+   </section>
+   <section class="section section-overview" id="overview">
+    <div class="section-inner section-grid">
+     <div class="section-heading reveal">
+      <p class="section-eyebrow">
+       PROJECT OVERVIEW
+      </p>
+      <h2>
+       사업개요
+      </h2>
+      <p class="section-lead">
+       도시의 비전과 자연의 여유가 하나로, 경기광주역 롯데캐슬 시그니처 2단지
+      </p>
+     </div>
+     <div class="overview-panel reveal">
+      <dl>
+       <div>
+        <dt>
+         단지명
+        </dt>
+        <dd>
+         경기광주역 롯데캐슬 시그니처 2단지
+        </dd>
+       </div>
+       <div>
+        <dt>
+         규모
+        </dt>
+        <dd>
+         B10 ~ 26F, 10개동, 1,249세대
+        </dd>
+       </div>
+       <div>
+        <dt>
+         위치
+        </dt>
+        <dd>
+         경기도 광주시 쌍령동 산 54-29일대
+        </dd>
+       </div>
+       <div>
+        <dt>
+         분양시기
+        </dt>
+        <dd>
+         2026년 10월 예정
+        </dd>
+       </div>
+       <div>
+        <dt>
+         시행사
+        </dt>
+        <dd>
+         주식회사 쌍령파크개발
+        </dd>
+       </div>
+      </dl>
+     </div>
+    </div>
+   </section>
+   <section class="section section-location" id="location">
+    <div class="section-inner">
+     <div class="section-heading section-heading--horizontal reveal">
+      <div>
+       <p class="section-eyebrow">
+        LOCATION
+       </p>
+       <h2>
+        입지환경
+       </h2>
+      </div>
+      <p class="section-lead">
+       자연과 교통, 교육과 생활까지 일상의 가치를 높이는 입지를 만나보세요.
+      </p>
+     </div>
+     <div class="location-cards location-cards--detail">
+      <!-- 01 -->
+      <article class="location-card location-card--detail reveal">
+       <div class="location-image">
+        <!-- 이미지 연결 -->
+        <img alt="쌍령공원 입지환경" src="../img/06/location01.png"/>
+       </div>
+       <div class="location-card-content">
+        <div class="location-card-head">
+         <span class="location-index">
+          01
+         </span>
+         <span class="location-category">
+          입지환경
+         </span>
         </div>
-
-
-        <div class="location-cards location-cards--detail">
-
-          <!-- 01 -->
-          <article class="location-card location-card--detail reveal">
-
-            <div class="location-image">
-              <!-- 이미지 연결 -->
-              <img src="../img/06/location01.png" alt="쌍령공원 입지환경">
-            </div>
-
-            <div class="location-card-content">
-              <div class="location-card-head">
-                <span class="location-index">01</span>
-                <span class="location-category">입지환경</span>
-              </div>
-
-              <h3>
-                쌍령공원 바로 앞,<br>
-                공세권 프리미엄
-              </h3>
-
-              <ul class="location-points">
-                <li>축구장 57개 규모 복합테마공원 인접</li>
-                <li>고지대 입지로 탁 트인 조망 기대</li>
-              </ul>
-            </div>
-
-          </article>
-
-
-          <!-- 02 -->
-          <article class="location-card location-card--detail reveal">
-
-            <div class="location-image">
-              <!-- 이미지 연결 -->
-              <img src="../img/06/location02.png" alt="경기광주역 교통환경">
-            </div>
-
-            <div class="location-card-content">
-              <div class="location-card-head">
-                <span class="location-index">02</span>
-                <span class="location-category">교육환경</span>
-              </div>
-
-              <h3>
-                수서 2정거장,<br>
-                더 가까워지는 강남
-              </h3>
-
-              <ul class="location-points">
-                <li>수서~광주선 경기광주역 2031년 예정</li>
-                <li>경강선, GTX-D(계획) 우수한 접근성</li>
-              </ul>
-            </div>
-
-          </article>
-
-
-          <!-- 03 -->
-          <article class="location-card location-card--detail reveal">
-
-            <div class="location-image">
-              <!-- 이미지 연결 -->
-              <img src="../img/06/location03.png" alt="생활 및 교육환경">
-            </div>
-
-            <div class="location-card-content">
-              <div class="location-card-head">
-                <span class="location-index">03</span>
-                <span class="location-category">생활환경</span>
-              </div>
-
-              <h3>
-                학교와 생활 인프라를<br>
-                더 가까이
-              </h3>
-
-              <ul class="location-points">
-                <li>광주푸른초 도보권, 중학교 계획중</li>
-                <li>반경 1km 상권·대형마트·학원가 생활권</li>
-              </ul>
-            </div>
-
-          </article>
-
-
-          <!-- 04 -->
-          <article class="location-card location-card--detail reveal">
-
-            <div class="location-image">
-              <!-- 이미지 연결 -->
-              <img src="../img/06/location04.png" alt="경기광주 미래가치">
-            </div>
-
-            <div class="location-card-content">
-              <div class="location-card-head">
-                <span class="location-index">04</span>
-                <span class="location-category">미래가치</span>
-              </div>
-
-              <h3>
-                새롭게 커지는<br>
-                경기광주의 가치
-              </h3>
-
-              <ul class="location-points">
-                <li>쌍령지구·역세권 개발 예정</li>
-                <li>약 8,660세대 뉴타운 형성, 랜드마크 단지 기대</li>
-              </ul>
-            </div>
-
-          </article>
-
+        <h3>
+         쌍령공원 바로 앞,
+         <br/>
+         공세권 프리미엄
+        </h3>
+        <ul class="location-points">
+         <li>
+          축구장 57개 규모 복합테마공원 인접
+         </li>
+         <li>
+          고지대 입지로 탁 트인 조망 기대
+         </li>
+        </ul>
+       </div>
+      </article>
+      <!-- 02 -->
+      <article class="location-card location-card--detail reveal">
+       <div class="location-image">
+        <!-- 이미지 연결 -->
+        <img alt="경기광주역 교통환경" src="../img/06/location02.png"/>
+       </div>
+       <div class="location-card-content">
+        <div class="location-card-head">
+         <span class="location-index">
+          02
+         </span>
+         <span class="location-category">
+          교통환경
+         </span>
         </div>
-                
-        <div class="location-main-visual reveal">
-          <div class="location-main-title">
-            <span class="location-main-eyebrow">TRANSPORTATION</span>
-            <p>
-              경기광주역을 더 빠르게,
+        <h3>
+         수서 2정거장,
+         <br/>
+         더 가까워지는 강남
+        </h3>
+        <ul class="location-points">
+         <li>
+          수서~광주선 경기광주역 2031년 예정
+         </li>
+         <li>
+          경강선, GTX-D(계획) 우수한 접근성
+         </li>
+        </ul>
+       </div>
+      </article>
+      <!-- 03 -->
+      <article class="location-card location-card--detail reveal">
+       <div class="location-image">
+        <!-- 이미지 연결 -->
+        <img alt="생활 및 교육환경" src="../img/06/location03.png"/>
+       </div>
+       <div class="location-card-content">
+        <div class="location-card-head">
+         <span class="location-index">
+          03
+         </span>
+         <span class="location-category">
+          생활환경
+         </span>
+        </div>
+        <h3>
+         학교와 생활 인프라를
+         <br/>
+         더 가까이
+        </h3>
+        <ul class="location-points">
+         <li>
+          광주푸른초 도보권, 중학교 계획중
+         </li>
+         <li>
+          반경 1km 상권·대형마트·학원가 생활권
+         </li>
+        </ul>
+       </div>
+      </article>
+      <!-- 04 -->
+      <article class="location-card location-card--detail reveal">
+       <div class="location-image">
+        <!-- 이미지 연결 -->
+        <img alt="경기광주 미래가치" src="../img/06/location04.png"/>
+       </div>
+       <div class="location-card-content">
+        <div class="location-card-head">
+         <span class="location-index">
+          04
+         </span>
+         <span class="location-category">
+          미래가치
+         </span>
+        </div>
+        <h3>
+         새롭게 커지는
+         <br/>
+         경기광주의 가치
+        </h3>
+        <ul class="location-points">
+         <li>
+          쌍령지구·역세권 개발 예정
+         </li>
+         <li>
+          약 8,660세대 뉴타운 형성, 랜드마크 단지 기대
+         </li>
+        </ul>
+       </div>
+      </article>
+     </div>
+     <div class="location-main-visual reveal">
+      <div class="location-main-title">
+       <span class="location-main-eyebrow">
+        TRANSPORTATION
+       </span>
+       <p>
+        경기광주역을 더 빠르게,
               셔틀버스로 더 편리하게
-            </p>
-
-            <h3>
-              강남과 판교가
-              <strong>더 가까워지다</strong>
-            </h3>
-          </div>
-
-          <div class="location-visual-grid">
-
-            <!-- 왼쪽 : 지하철 노선도 -->
-            <div class="location-route-box">
-              <img
-                src="../img/06/location-route.png"
-                alt="경기광주역 강남 판교 교통 노선 안내"
-              >
-            </div>
-
-            <!-- 오른쪽 : 광역 지도 -->
-            <div class="location-map-box">
-              <img
-                src="../img/06/location-map.png"
-                alt="경기광주역 롯데캐슬 시그니처 2단지 광역 입지 안내도"
-              >
-            </div>
-          </div>
-        </div>
-
+       </p>
+       <h3>
+        강남과 판교가
+        <strong>
+         더 가까워지다
+        </strong>
+       </h3>
       </div>
-    </section>
-
-    <section class="section section-premium" id="premium">
-
-      <div class="section-inner premium-wrap">
-        <div class="premium-head reveal">
-          <p class="premium-kicker">더 특별해진 2단지만의</p>
-          <div class="premium-title-row">
-            <h2>CASTLE <strong>PREMIUM</strong></h2>
-            <span class="premium-big-num">5</span>
-          </div>
-        </div>
-
-              <!-- 상단 비주얼 -->
-    <div class="premium-master-map reveal">
-      <img
-        src="../img/06/premium-map.png"
-        alt="상단 프리미엄 비주얼"
-      >
+      <div class="location-visual-grid">
+       <!-- 왼쪽 : 지하철 노선도 -->
+       <div class="location-route-box">
+        <img alt="경기광주역 강남 판교 교통 노선 안내" src="../img/06/location-route.png"/>
+       </div>
+       <!-- 오른쪽 : 광역 지도 -->
+       <div class="location-map-box">
+        <img alt="경기광주역 롯데캐슬 시그니처 2단지 광역 입지 안내도" src="../img/06/location-map.png"/>
+       </div>
+      </div>
+     </div>
     </div>
-
-        <div class="premium-list">
-          <article class="premium-item premium-item--navy reveal">
-            <div class="premium-side">
-              <!-- <div class="premium-iconbox" aria-hidden="true">BUS</div> -->
-              <strong class="premium-no">01</strong>
-            </div>
-            <div class="premium-body">
-              <h3>입주민 전용 셔틀버스</h3>
-              <p>경기광주역까지 출퇴근과 일상의 편리한 이동을 지원하는 입주민을 위한 전용 셔틀버스 서비스<span>(예정)</span></p>
-            </div>
-          </article>
-
-          <article class="premium-item premium-item--gold reveal">
-            <div class="premium-side">
-              <!-- <div class="premium-iconbox" aria-hidden="true">DINING</div> -->
-              <strong class="premium-no">02</strong>
-            </div>
-            <div class="premium-body">
-              <h3>L 다이닝 서비스</h3>
-              <p>입주민의 편리한 식생활을 위해 전문 식음업체의 체계적 운영으로 제공되는 <strong>중·석식 다이닝 서비스</strong></p>
-            </div>
-          </article>
-
-          <article class="premium-item premium-item--navy reveal">
-            <div class="premium-side">
-              <!-- <div class="premium-iconbox" aria-hidden="true">GOLF</div> -->
-              <strong class="premium-no">03</strong>
-            </div>
-            <div class="premium-body">
-              <h3>단지 내 인도어 골프장</h3>
-              <p>실내 스크린 골프는 물론, 실제 탄도와 구질까지 확인되는 <strong>광주 최초 단지 내 실내 인도어 골프장</strong></p>
-            </div>
-          </article>
-
-          <article class="premium-item premium-item--gold reveal">
-            <div class="premium-side">
-              <!-- <div class="premium-iconbox" aria-hidden="true">LIBRARY</div> -->
-              <strong class="premium-no">04</strong>
-            </div>
-            <div class="premium-body">
-              <h3>대치동 명문 관리형 독서실</h3>
-              <p>2026학년도 <strong>SKY·의치한 415건</strong>, <strong>인서울 TOP 10 1,017건</strong> 배출한 대치동 명문 <strong>그린램프 라이브러리</strong> 단지 내 입점</p>
-            </div>
-          </article>
-
-          <article class="premium-item premium-item--navy reveal">
-            <div class="premium-side">
-              <!-- <div class="premium-iconbox" aria-hidden="true">RESORT</div> -->
-              <strong class="premium-no">05</strong>
-            </div>
-            <div class="premium-body">
-              <h3>롯데리조트 울산 특별회원가 혜택</h3>
-              <p>아시아 최초 익스트림 리버 컨셉이 계획된 <strong>롯데리조트 울산 특별회원가 혜택</strong><span>(27.07 오픈예정)</span></p>
-              <small>※ 본 혜택은 개시일 이후 일정 기간 매년 한정 수량 제공됩니다.</small>
-            </div>
-          </article>
+   </section>
+   <section class="section section-premium" id="premium">
+    <div class="section-inner premium-wrap">
+     <div class="premium-head reveal">
+      <p class="premium-kicker">
+       더 특별해진 2단지만의
+      </p>
+      <div class="premium-title-row">
+       <h2>
+        SPECIAL
+        <strong>
+         SERVICE
+        </strong>
+       </h2>
+       <span class="premium-big-num">
+        5
+       </span>
+      </div>
+     </div>
+     <!-- 상단 비주얼 -->
+     <div class="premium-master-map reveal">
+      <img alt="상단 프리미엄 비주얼" src="../img/06/premium-map.png"/>
+     </div>
+     <div class="premium-list">
+      <article class="premium-item premium-item--navy reveal">
+       <div class="premium-side">
+        <strong class="premium-no">
+         01
+        </strong>
+       </div>
+       <div class="premium-body">
+        <h3>
+         입주민 전용 셔틀버스
+        </h3>
+        <p>
+         경기광주역까지 출퇴근과 일상의 편리한 이동을 지원하는 입주민을 위한 전용 셔틀버스 서비스
+         <span>
+          (예정)
+         </span>
+        </p>
+       </div>
+      </article>
+      <article class="premium-item premium-item--gold reveal">
+       <div class="premium-side">
+        <strong class="premium-no">
+         02
+        </strong>
+       </div>
+       <div class="premium-body">
+        <h3>
+         L 다이닝 서비스
+        </h3>
+        <p>
+         입주민의 편리한 식생활을 위해 전문 식음업체의 체계적 운영으로 제공되는
+         <strong>
+          중·석식 다이닝 서비스
+         </strong>
+        </p>
+       </div>
+      </article>
+      <article class="premium-item premium-item--navy reveal">
+       <div class="premium-side">
+        <strong class="premium-no">
+         03
+        </strong>
+       </div>
+       <div class="premium-body">
+        <h3>
+         단지 내 인도어 골프장
+        </h3>
+        <p>
+         실내 스크린 골프는 물론, 실제 탄도와 구질까지 확인되는
+         <strong>
+          광주 최초 단지 내 실내 인도어 골프장
+         </strong>
+        </p>
+       </div>
+      </article>
+      <article class="premium-item premium-item--gold reveal">
+       <div class="premium-side">
+        <strong class="premium-no">
+         04
+        </strong>
+       </div>
+       <div class="premium-body">
+        <h3>
+         대치동 명문 관리형 독서실
+        </h3>
+        <p>
+         2026학년도
+         <strong>
+          SKY·의치한 415건
+         </strong>
+         ,
+         <strong>
+          인서울 TOP 10 1,017건
+         </strong>
+         배출한 대치동 명문
+         <strong>
+          그린램프 라이브러리
+         </strong>
+         단지 내 입점
+        </p>
+       </div>
+      </article>
+      <article class="premium-item premium-item--navy reveal">
+       <div class="premium-side">
+        <strong class="premium-no">
+         05
+        </strong>
+       </div>
+       <div class="premium-body">
+        <h3>
+         롯데리조트 울산 특별회원가 혜택
+        </h3>
+        <p>
+         아시아 최초 익스트림 리버 컨셉이 계획된
+         <strong>
+          롯데리조트 울산 특별회원가 혜택
+         </strong>
+         <span>
+          (27.07 오픈예정)
+         </span>
+        </p>
+        <small>
+         ※ 본 혜택은 개시일 이후 일정 기간 매년 한정 수량 제공됩니다.
+        </small>
+       </div>
+      </article>
+     </div>
+     <!-- 본 페이지 등록 고객 전용 이벤트 -->
+     <section class="special-register-event" id="specialEvent">
+      <div class="special-register-event__inner">
+       <!-- LEFT -->
+       <div class="special-register-event__title">
+        <span class="special-register-event__eyebrow">
+         SPECIAL EVENT
+        </span>
+        <h2>
+         본 페이지 등록
+         <br/>
+         고객 전용 혜택
+        </h2>
+       </div>
+       <!-- CENTER -->
+       <div class="special-register-event__benefits">
+        <!-- 상품권 -->
+        <div class="special-register-event__item">
+         <span class="special-register-event__badge">
+          선착순 50명
+         </span>
+         <strong>
+          백화점 상품권
+          <em>
+           1만원권
+          </em>
+         </strong>
+         <p>
+          본 페이지를 통한
+          <br/>
+          신규 관심고객 등록 시
+         </p>
         </div>
-
-        <div class="premium-conversion reveal">
-          <div class="premium-conversion-copy">
-            <span class="premium-conversion-eyebrow">INFORMATION ALERT</span>
-            <h3>결정은 나중에, 정보는 먼저.</h3>
-            <p>현재 분양가·평면도·유니트는 공개 전입니다.<br>확정되는 주요 분양정보를 문자로 받아보세요.</p>
-          </div>
-          <a href="#preapply" class="premium-conversion-btn" data-track="premium_lead">분양정보 먼저 받기 <span>→</span></a>
+        <div class="special-register-event__divider">
         </div>
-      </div>
-    </section>
-<!-- 
-    <section class="section coming-section" id="complex">
-      <div class="section-inner coming-inner reveal">
-        <span class="section-num">04</span>
-        <p class="section-eyebrow">COMPLEX</p>
-        <h2>단지안내</h2>
-        <div class="coming-line"></div>
-        <p>단지배치도 · 커뮤니티 · 조경계획</p>
-        <strong>COMING SOON</strong>
-      </div>
-    </section>
-
-    <section class="section coming-section coming-section--light" id="floorplan">
-      <div class="section-inner coming-inner reveal">
-        <span class="section-num">05</span>
-        <p class="section-eyebrow">FLOOR PLAN</p>
-        <h2>평면안내</h2>
-        <div class="coming-line"></div>
-        <p>타입별 평면도 및 세대 구성</p>
-        <strong>COMING SOON</strong>
-      </div>
-    </section>
-
-    <section class="section coming-section" id="modelhouse">
-      <div class="section-inner coming-inner reveal">
-        <span class="section-num">06</span>
-        <p class="section-eyebrow">MODEL HOUSE</p>
-        <h2>모델하우스</h2>
-        <div class="coming-line"></div>
-        <p>모델하우스 위치 · 운영시간 · 방문예약</p>
-        <strong>COMING SOON</strong>
-      </div>
-    </section> -->
-
-  <!-- 기존 우측 플로팅 문자/전화 버튼은 모바일 하단 전환바로 대체하여 비활성화 -->
-
-    <section class="section section-preapply" id="preapply">
-      <div class="section-inner preapply-grid">
-        <div class="preapply-copy reveal">
-          <p class="section-eyebrow">PRE-REGISTRATION</p>
-          <h2>2단지 분양정보<br>알림 신청</h2>
-          <!-- <p>현재 <strong>분양가·평면도·유니트는 공개 전</strong>입니다. 정확한 오픈 일정과 주요 분양정보가 확정되는 대로 문자로 안내드립니다.</p> -->
-          <ul class="preapply-benefits">
-            <li>분양가·평면도 등 주요 정보 공개 시 안내</li>
-            <li>등록만으로 청약이나 계약이 진행되지 않습니다</li>
-            <li>정보 확인 후 고객님이 직접 비교·판단하실 수 있습니다</li>
-          </ul>
+        <!-- 순금 -->
+        <div class="special-register-event__item">
+         <span class="special-register-event__badge special-register-event__badge--gold">
+          1명 추첨
+         </span>
+         <strong>
+          순금
+          <em>
+           1돈
+          </em>
+         </strong>
+         <p>
+          본 페이지 최초 등록 후
+          <br/>
+          청약 당첨 · 계약 완료 시
+         </p>
         </div>
-
-        <div class="lead-form-card reveal">
-          <form class="lead-form" id="lotteLeadForm" data-position="관심고객등록" novalidate>
-
-            <div class="form-group">
-              <label for="lotteName">성함 <span class="required-star">*</span></label>
-              <input type="text" id="lotteName" class="lead-name" placeholder="홍길동" autocomplete="name" required />
-            </div>
-
-            <div class="form-group">
-              <label for="lottePhone">연락처 <span class="required-star">*</span></label>
-              <input type="tel" id="lottePhone" class="lead-phone" placeholder="010-1234-5678" autocomplete="tel" inputmode="tel" maxlength="13" required />
-            </div>
-
-            <div class="form-group birth-form-group">
-              <label for="birthDate">생년월일 앞 6자리 <span class="required-star">*</span></label>
-              <input type="text" id="birthDate" class="lead-birth" name="birthDate" inputmode="numeric" maxlength="6" placeholder="예) 670102" autocomplete="off" required />
-              <p class="field-help" role="note"><strong>왜 필요한가요?</strong>기존 관심고객 및 중복 등록 확인을 위한 전산 식별용입니다. 주민등록번호 뒷자리는 수집하지 않습니다.</p>
-            </div>
-
-            <div class="privacy-section">
-              <!-- <p class="privacy-notice">수집된 개인정보는 분양 상담, 관심고객 등록 및 관련 정보 제공 목적으로 활용됩니다.</p> -->
-              <div class="check-item-row">
-                <label>
-                  <input type="checkbox" class="privacy-agree" />
-                  개인정보 수집·이용 및 제3자 제공에 동의합니다 <span class="required-star">*</span>
-                </label>
-                <button type="button" class="btn-view-terms" onclick="openLottePrivacyModal()">약관보기</button>
-              </div>
-            </div>
-
-            <button type="submit" class="lead-submit submit-btn">분양정보 받아보기</button>
-            <p class="form-mini-note">수집된 개인정보는 분양 상담, 관심고객 등록 및 관련 정보 제공 목적으로 활용됩니다.</p>
-          </form>
-
-          <div class="lead-success" id="lotteLeadSuccess" hidden>
-            <span class="lead-success-icon">✓</span>
-            <strong>접수 요청이 전송되었습니다.</strong>
-            <p>입력하신 연락처로 주요 분양정보가 확정되는 대로 안내드리겠습니다.</p>
-            <a href="tel:1600-0640" data-track="success_call">지금 전화로 문의하기</a>
-          </div>
-        </div>
+       </div>
+       <!-- CTA -->
+       <div class="special-register-event__action">
+        <a class="special-register-event__button" data-track="event_lead" href="#preapply">
+         혜택 받고
+         <br/>
+         분양정보 신청하기
+         <span>
+          →
+         </span>
+        </a>
+       </div>
       </div>
-    </section>
+      <!-- 유의사항 -->
+      <div class="special-register-event__notice">
+       <p class="special-register-event__notice-title">
+        이벤트 유의사항
+       </p>
+       <p>
+        ※ 본 이벤트는 퍼스트파인드가 본 페이지를 통해 진행하는 자체 프로모션입니다.
+       </p>
+       <p>
+        ※ 이벤트 기간 내 본 페이지를 통해 최초 관심고객 등록을 완료한 신규 고객에 한합니다.
+      기존 관심고객 및 중복 등록 고객은 상품권 지급 대상에서 제외됩니다.
+       </p>
+       <p>
+        ※ 백화점 상품권은 선착순 50명 한정이며 조기 소진될 수 있습니다.
+       </p>
+       <p>
+        ※ 순금 1돈은 본 페이지를 통해 최초 관심고객 등록을 완료하고,
+      추후 청약 당첨 후 계약까지 완료한 고객 중 1명을 추첨하여 증정합니다.
+       </p>
+       <p>
+        ※ 경품 지급 일정 및 방법은 대상 고객에게 개별 안내됩니다.
+       </p>
+      </div>
+     </section>
+    </div>
+   </section>
+   <section class="section section-preapply" id="preapply">
+    <div class="section-inner preapply-grid">
+     <div class="preapply-copy reveal">
+      <p class="section-eyebrow">
+       PRE-REGISTRATION
+      </p>
+      <h2>
+       2단지 분양정보
+       <br/>
+       알림 신청
+      </h2>
+      <ul class="preapply-benefits">
+       <li>
+        분양가·평면도 등 주요 정보 공개 시 안내
+       </li>
+       <li>
+        등록만으로 청약이나 계약이 진행되지 않습니다
+       </li>
+       <li>
+        정보 확인 후 고객님이 직접 비교·판단하실 수 있습니다
+       </li>
+      </ul>
+     </div>
+     <div class="lead-form-card reveal">
+      <form class="lead-form" data-position="관심고객등록" id="lotteLeadForm" novalidate="">
+       <div class="form-group">
+        <label for="lotteName">
+         성함
+         <span class="required-star">
+          *
+         </span>
+        </label>
+        <input autocomplete="name" class="lead-name" id="lotteName" placeholder="홍길동" required="" type="text"/>
+       </div>
+       <div class="form-group">
+        <label for="lottePhone">
+         연락처
+         <span class="required-star">
+          *
+         </span>
+        </label>
+        <input autocomplete="tel" class="lead-phone" id="lottePhone" inputmode="tel" maxlength="13" placeholder="010-1234-5678" required="" type="tel"/>
+       </div>
+       <div class="form-group birth-form-group">
+        <label for="birthDate">
+         생년월일 앞 6자리
+         <span class="required-star">
+          *
+         </span>
+        </label>
+        <input autocomplete="off" class="lead-birth" id="birthDate" inputmode="numeric" maxlength="6" name="birthDate" placeholder="예) 670102" required="" type="text"/>
+        <p class="field-help" role="note">
+         <strong>
+          왜 필요한가요?
+         </strong>
+         기존 관심고객 및 중복 등록 확인을 위한 전산 식별용입니다. 주민등록번호 뒷자리는 수집하지 않습니다.
+        </p>
+       </div>
+       <div class="privacy-section">
+        <div class="check-item-row">
+         <label>
+          <input class="privacy-agree" type="checkbox"/>
+          개인정보 수집·이용 및 제3자 제공에 동의합니다
+          <span class="required-star">
+           *
+          </span>
+         </label>
+         <button class="btn-view-terms" type="button">
+          약관보기
+         </button>
+        </div>
+       </div>
+       <button class="lead-submit submit-btn" type="submit">
+        분양정보 받아보기
+       </button>
+       <p class="form-mini-note">
+        수집된 개인정보는 분양 상담, 관심고객 등록 및 관련 정보 제공 목적으로 활용됩니다.
+       </p>
+      </form>
+      <div aria-live="polite" class="lead-success" hidden="" id="lotteLeadSuccess">
+       <span class="lead-success-icon">
+        ✓
+       </span>
+       <strong>
+        접수 요청이 전송되었습니다.
+       </strong>
+       <p>
+        입력하신 연락처로 주요 분양정보가 확정되는 대로 안내드리겠습니다.
+       </p>
+       <a data-track="success_call" href="tel:1600-0640">
+        지금 전화로 문의하기
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
   </main>
-
-  <div class="conversion-bottom-bar" id="conversionBottomBar" aria-label="빠른 상담 메뉴">
-    <a class="conversion-bottom-call" href="tel:1600-0640" data-track="sticky_call"><span>☎</span> 전화 상담</a>
-    <a class="conversion-bottom-lead" href="#preapply" data-track="sticky_lead">분양정보 받기 <span>→</span></a>
+  <div aria-label="빠른 상담 메뉴" class="conversion-bottom-bar" id="conversionBottomBar">
+   <a class="conversion-bottom-call" data-track="sticky_call" href="tel:1600-0640">
+    <span>
+     ☎
+    </span>
+    전화 상담
+   </a>
+   <a class="conversion-bottom-lead" data-track="sticky_lead" href="#preapply">
+    분양정보 받기
+    <span>
+     →
+    </span>
+   </a>
   </div>
-
   <!-- PC 전화상담 대체 모달: 모바일은 기존 tel: 링크로 바로 연결 -->
-  <div class="pc-call-modal" id="pcCallModal" aria-hidden="true">
-    <div class="pc-call-dialog" role="dialog" aria-modal="true" aria-labelledby="pcCallTitle">
-      <button type="button" class="pc-call-close" id="pcCallClose" aria-label="전화 상담 팝업 닫기">×</button>
-      <span class="pc-call-eyebrow">PHONE CONSULTATION</span>
-      <h3 id="pcCallTitle">전화 상담</h3>
-      <strong class="pc-call-number">1600-0640</strong>
-      <p class="pc-call-desc">PC에서는 전화 연결 대신 대표번호를 복사하거나, 상담 정보를 남겨 안내받으실 수 있습니다.</p>
-      <div class="pc-call-actions">
-        <button type="button" class="pc-call-copy" id="pcCallCopy">전화번호 복사</button>
-        <a href="#preapply" class="pc-call-lead" id="pcCallLead">상담 요청 남기기</a>
-      </div>
-      <p class="pc-call-note">모바일에서는 전화 상담 버튼을 누르면 바로 전화 연결됩니다.</p>
+  <div aria-hidden="true" class="pc-call-modal" id="pcCallModal">
+   <div aria-labelledby="pcCallTitle" aria-modal="true" class="pc-call-dialog" role="dialog">
+    <button aria-label="전화 상담 팝업 닫기" class="pc-call-close" id="pcCallClose" type="button">
+     ×
+    </button>
+    <span class="pc-call-eyebrow">
+     PHONE CONSULTATION
+    </span>
+    <h3 id="pcCallTitle">
+     전화 상담
+    </h3>
+    <strong class="pc-call-number">
+     1600-0640
+    </strong>
+    <p class="pc-call-desc">
+     PC에서는 전화 연결 대신 대표번호를 복사하거나, 상담 정보를 남겨 안내받으실 수 있습니다.
+    </p>
+    <div class="pc-call-actions">
+     <button class="pc-call-copy" id="pcCallCopy" type="button">
+      전화번호 복사
+     </button>
+     <a class="pc-call-lead" href="#preapply" id="pcCallLead">
+      상담 요청 남기기
+     </a>
     </div>
+    <p class="pc-call-note">
+     모바일에서는 전화 상담 버튼을 누르면 바로 전화 연결됩니다.
+    </p>
+   </div>
   </div>
-
   <footer class="footer-section">
-    <div class="footer-container">
-      <div class="footer-disclaimer">
-        ※ 본 웹사이트에 사용된 이미지, CG, 지역도 및 개발 호재 등은 소비자의 이해를 돕기 위해 제작된 것으로 실제 시공, 인허가 및 현황과 차이가 있을 수 있습니다.<br />
-        ※ 표기된 학교, 교통망, 개발계획 및 예정사항은 관계기관의 사정에 따라 변경 또는 취소될 수 있으므로 현장 및 관계기관을 통해 직접 확인하시기 바랍니다.<br />
-        ※ 본 사이트는 경기광주역 롯데캐슬 시그니처 2단지 분양 정보 제공 및 관심고객 등록 안내를 위한 홍보용 웹사이트입니다.
-      </div>
-      <div class="footer-info">
-        <p><span>사업명: 경기광주역 롯데캐슬 시그니처 2단지</span></p>
-        <p><span>현장: 경기도 광주시 쌍령동 산 54-29 일대</span></p>
-        <p><span>상호명: 퍼스트파인드</span><span>대표자: 양보현</span><span>사업자등록번호: 101-51-01094</span></p>
-        <p><span>주소: 경기도 안산시 단원구 원일1길 19, 2층 1호</span><span>대표전화: 1600-0640</span></p>
-      </div>
-      <p class="footer-copy">Copyright © 경기광주역 롯데캐슬 시그니처 2단지. All rights reserved.</p>
+   <div class="footer-container">
+    <div class="footer-disclaimer">
+     ※ 본 웹사이트에 사용된 이미지, CG, 지역도 및 개발 호재 등은 소비자의 이해를 돕기 위해 제작된 것으로 실제 시공, 인허가 및 현황과 차이가 있을 수 있습니다.
+     <br>
+      ※ 표기된 학교, 교통망, 개발계획 및 예정사항은 관계기관의 사정에 따라 변경 또는 취소될 수 있으므로 현장 및 관계기관을 통해 직접 확인하시기 바랍니다.
+      <br>
+       ※ 본 사이트는 경기광주역 롯데캐슬 시그니처 2단지 분양 정보 제공 및 관심고객 등록 안내를 위한 홍보용 웹사이트입니다.
+      </br>
+     </br>
     </div>
+    <div class="footer-info">
+     <p>
+      <span>
+       사업명: 경기광주역 롯데캐슬 시그니처 2단지
+      </span>
+     </p>
+     <p>
+      <span>
+       현장: 경기도 광주시 쌍령동 산 54-29 일대
+      </span>
+     </p>
+     <p>
+      <span>
+       상호명: 퍼스트파인드
+      </span>
+      <span>
+       대표자: 양보현
+      </span>
+      <span>
+       사업자등록번호: 101-51-01094
+      </span>
+     </p>
+     <p>
+      <span>
+       주소: 경기도 안산시 단원구 원일1길 19, 2층 1호
+      </span>
+      <span>
+       대표전화: 1600-0640
+      </span>
+     </p>
+    </div>
+    <p class="footer-copy">
+     Copyright © 경기광주역 롯데캐슬 시그니처 2단지. All rights reserved.
+    </p>
+   </div>
   </footer>
-
-  <div class="modal-overlay" id="lottePrivacyModal" role="dialog" aria-modal="true" aria-labelledby="lottePrivacyTitle">
-    <div class="modal-content">
-      <h3 id="lottePrivacyTitle">개인정보 수집·이용 동의</h3>
-      <div class="modal-body">
-        <h4>1. 개인정보 수집 및 이용</h4>
-        <p><strong>수집 항목</strong>: 성함, 연락처(휴대전화번호), 생년월일(앞 6자리)</p>
-        <p><strong>수집 및 이용 목적</strong>: 분양 정보 안내, 관심고객 등록, 상담 접수, 고객 문의 응대 및 관련 정보 제공</p>
-        <p><strong>보유 및 이용 기간</strong>: 수집 목적 달성 시 또는 고객의 삭제 요청 시까지 보관합니다. 단, 관계 법령에 따라 보존할 필요가 있는 경우에는 해당 기간 동안 보관합니다.</p>
-        <h4>2. 개인정보 제3자 제공</h4>
-        <p><strong>제공받는 자</strong>: 분양 대행사 및 협력 분양 상담사</p>
-        <p><strong>제공 목적</strong>: 분양 상담, 관심고객 등록 확인, 맞춤형 분양 정보 제공 및 고객 문의 응대</p>
-        <p><strong>제공 항목</strong>: 성함, 연락처, 생년월일(앞 6자리)</p>
-        <h4>3. 동의 거부 권리</h4>
-        <p>이용자는 개인정보 수집·이용 및 제3자 제공에 대한 동의를 거부할 수 있습니다. 다만 동의를 거부할 경우 관심고객 등록 및 분양 상담 서비스 이용이 제한될 수 있습니다.</p>
-      </div>
-      <button type="button" class="btn-close-modal" onclick="closeLottePrivacyModal()">닫기</button>
+  <div aria-labelledby="lottePrivacyTitle" aria-modal="true" class="modal-overlay" id="lottePrivacyModal" role="dialog">
+   <div class="modal-content">
+    <h3 id="lottePrivacyTitle">
+     개인정보 수집·이용 동의
+    </h3>
+    <div class="modal-body">
+     <h4>
+      1. 개인정보 수집 및 이용
+     </h4>
+     <p>
+      <strong>
+       수집 항목
+      </strong>
+      : 성함, 연락처(휴대전화번호), 생년월일(앞 6자리)
+     </p>
+     <p>
+      <strong>
+       수집 및 이용 목적
+      </strong>
+      : 분양 정보 안내, 관심고객 등록, 상담 접수, 고객 문의 응대 및 관련 정보 제공
+     </p>
+     <p>
+      <strong>
+       보유 및 이용 기간
+      </strong>
+      : 수집 목적 달성 시 또는 고객의 삭제 요청 시까지 보관합니다. 단, 관계 법령에 따라 보존할 필요가 있는 경우에는 해당 기간 동안 보관합니다.
+     </p>
+     <h4>
+      2. 개인정보 제3자 제공
+     </h4>
+     <p>
+      <strong>
+       제공받는 자
+      </strong>
+      : 분양 대행사 및 협력 분양 상담사
+     </p>
+     <p>
+      <strong>
+       제공 목적
+      </strong>
+      : 분양 상담, 관심고객 등록 확인, 맞춤형 분양 정보 제공 및 고객 문의 응대
+     </p>
+     <p>
+      <strong>
+       제공 항목
+      </strong>
+      : 성함, 연락처, 생년월일(앞 6자리)
+     </p>
+     <h4>
+      3. 동의 거부 권리
+     </h4>
+     <p>
+      이용자는 개인정보 수집·이용 및 제3자 제공에 대한 동의를 거부할 수 있습니다. 다만 동의를 거부할 경우 관심고객 등록 및 분양 상담 서비스 이용이 제한될 수 있습니다.
+     </p>
     </div>
+    <button class="btn-close-modal" type="button">
+     닫기
+    </button>
+   </div>
   </div>
-
-  <!-- 관심고객 등록 팝업 임시 비활성화(v4.2)
-       전환 데이터 확인 후 필요 시 기존 팝업 마크업을 다시 활성화하세요. -->
-
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/ko.js"></script>
-<script>
-const LOTTE_GAS_URL = "https://script.google.com/macros/s/AKfycbwJh34BIDRg65M-tawmZi82LLGfgeYW1m4vMHcAJQHEv9shra4vuONW0wKwZITvJCQ_/exec";
-const LOTTE_SITE_NAME = "경기광주역 롯데캐슬 시그니처 2단지";
-
-
-function openLottePrivacyModal(){
-  const modal = document.getElementById("lottePrivacyModal");
-
-  if(modal){
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
-  }
-}
-
-
-function closeLottePrivacyModal(){
-  const modal = document.getElementById("lottePrivacyModal");
-
-  if(modal){
-    modal.style.display = "none";
-    document.body.style.overflow = "";
-  }
-}
-
-
-/* 전화번호 자동 하이픈 */
-function formatLottePhone(value){
-  const number = value.replace(/[^0-9]/g, "").slice(0, 11);
-
-  if(number.length <= 3){
-    return number;
-  }
-
-  if(number.length <= 7){
-    return number.slice(0, 3) + "-" + number.slice(3);
-  }
-
-  return (
-    number.slice(0, 3) +
-    "-" +
-    number.slice(3, 7) +
-    "-" +
-    number.slice(7, 11)
-  );
-}
-
-
-function trackLotte(eventName, params){
-  const detail = params || {};
-
-  if(typeof window.gtag === "function"){
-    window.gtag("event", eventName, detail);
-  }else{
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(Object.assign({ event:eventName }, detail));
-  }
-}
-window.trackLotte = trackLotte;
-
-
-document.addEventListener("DOMContentLoaded", function(){
-
-  const form = document.getElementById("lotteLeadForm");
-  if(!form) return;
-
-  const nameInput = form.querySelector(".lead-name");
-  const phoneInput = form.querySelector(".lead-phone");
-  const birthInput = form.querySelector(".lead-birth");
-  const agree = form.querySelector(".privacy-agree");
-  const submitBtn = form.querySelector(".submit-btn");
-  const success = document.getElementById("lotteLeadSuccess");
-
-  let formStarted = false;
-
-  function validateBasic(){
-    const name = nameInput.value.trim();
-    const phoneOnly = phoneInput.value.replace(/[^0-9]/g, "");
-
-    if(!name){
-      alert("성함을 입력해 주세요.");
-      nameInput.focus();
-      return false;
-    }
-
-    if(phoneOnly.length < 10 || phoneOnly.length > 11){
-      alert("올바른 연락처를 입력해 주세요.");
-      phoneInput.focus();
-      return false;
-    }
-
-    return true;
-  }
-
-  form.addEventListener("focusin", function(){
-    if(formStarted) return;
-    formStarted = true;
-    trackLotte("lead_form_start", { form_position:form.dataset.position || "관심고객등록" });
-  });
-
-  phoneInput.addEventListener("input", function(){
-    phoneInput.value = formatLottePhone(phoneInput.value);
-  });
-
-  if(birthInput){
-    birthInput.addEventListener("input", function(){
-      birthInput.value = birthInput.value.replace(/[^0-9]/g, "").slice(0, 6);
-    });
-  }
-
-  form.addEventListener("submit", function(e){
-    e.preventDefault();
-
-    if(!validateBasic()) return;
-
-    const name = nameInput.value.trim();
-    const phone = phoneInput.value.trim();
-    const birthDate = birthInput ? birthInput.value.trim() : "";
-
-    if(!/^\d{6}$/.test(birthDate)){
-      alert("생년월일 앞 6자리를 입력해 주세요. 예) 670102");
-      birthInput.focus();
-      return;
-    }
-
-    if(!agree.checked){
-      alert("개인정보 수집·이용 및 제3자 제공에 동의해 주세요.");
-      agree.focus();
-      return;
-    }
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = "전송 중...";
-    trackLotte("lead_form_submit", {});
-
-    const query = new URLSearchParams(window.location.search);
-    const payload = {
-      siteName: LOTTE_SITE_NAME,
-      formPosition: form.dataset.position || "관심고객등록",
-      name: name,
-      phone: phone,
-      birthDate: birthDate,
-      note: "",
-      privacyConsent: true,
-      utmSource: query.get("utm_source") || "",
-      utmMedium: query.get("utm_medium") || "",
-      utmCampaign: query.get("utm_campaign") || "",
-      utmContent: query.get("utm_content") || "",
-      utmTerm: query.get("utm_term") || "",
-      referrer: document.referrer || "",
-      landingUrl: window.location.href
-    };
-
-    fetch(LOTTE_GAS_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    })
-    .then(function(){
-      trackLotte("lead_form_request_sent", {
-        utm_source: payload.utmSource,
-        utm_medium: payload.utmMedium,
-        utm_campaign: payload.utmCampaign
-      });
-
-      form.reset();
-      form.hidden = true;
-
-      if(success){
-        success.hidden = false;
-        success.scrollIntoView({ behavior:"smooth", block:"center" });
-      }
-    })
-    .catch(function(error){
-      console.error(error);
-      trackLotte("lead_form_error", {});
-      alert("등록 요청 전송 중 오류가 발생했습니다. 다시 시도해 주세요.");
-    })
-    .finally(function(){
-      submitBtn.disabled = false;
-      submitBtn.textContent = "분양정보 받아보기";
-    });
-  });
-
-  const modal = document.getElementById("lottePrivacyModal");
-  if(modal){
-    modal.addEventListener("click", function(e){
-      if(e.target === modal) closeLottePrivacyModal();
-    });
-  }
-
-  document.addEventListener("keydown", function(e){
-    if(e.key === "Escape") closeLottePrivacyModal();
-  });
-
-});
-
-/* ========================================
-   관심고객 등록 팝업
-======================================== */
-
-document.addEventListener("DOMContentLoaded", function(){
-
-  const popup =
-    document.getElementById("lottePromoPopup");
-
-  const banner =
-    document.getElementById("lottePopupBanner");
-
-  const todayBtn =
-    document.getElementById("lottePopupToday");
-
-  const closeBtn =
-    document.getElementById("lottePopupClose");
-
-
-  if(!popup) return;
-
-
-  /* 오늘 날짜 */
-  function getTodayKey(){
-
-    const now = new Date();
-
-    const year =
-      now.getFullYear();
-
-    const month =
-      String(now.getMonth() + 1)
-        .padStart(2, "0");
-
-    const day =
-      String(now.getDate())
-        .padStart(2, "0");
-
-    return (
-      year +
-      "-" +
-      month +
-      "-" +
-      day
-    );
-
-  }
-
-
-  /* 팝업 열기 */
-  function openPromoPopup(){
-
-    popup.classList.add("is-open");
-
-    popup.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-    document.body.classList.add(
-      "lotte-popup-open"
-    );
-
-  }
-
-
-  /* 팝업 닫기 */
-  function closePromoPopup(){
-
-    popup.classList.remove("is-open");
-
-    popup.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-    document.body.classList.remove(
-      "lotte-popup-open"
-    );
-
-  }
-
-
-  /* 오늘 하루 안보기 기록 */
-  const hiddenDate =
-    localStorage.getItem(
-      "lottePopupHiddenDate"
-    );
-
-
-  /* 이번 접속에서 이미 닫았는지 */
-  const sessionClosed =
-    sessionStorage.getItem(
-      "lottePopupSessionClosed"
-    );
-
-
-  /* 조건에 해당하지 않을 때만 1.2초 후 노출 */
-  if(
-    hiddenDate !== getTodayKey() &&
-    sessionClosed !== "true"
-  ){
-
-    setTimeout(
-      function(){
-
-        openPromoPopup();
-
-      },
-      1200
-    );
-
-  }
-
-
-  /* ========================================
-     배너 클릭
-     → 관심고객등록 영역으로 이동
-  ======================================== */
-
-  if(banner){
-
-    banner.addEventListener(
-      "click",
-      function(){
-
-        sessionStorage.setItem(
-          "lottePopupSessionClosed",
-          "true"
-        );
-
-        closePromoPopup();
-
-
-        setTimeout(
-          function(){
-
-            const target =
-              document.getElementById(
-                "preapply"
-              );
-
-
-            if(!target) return;
-
-
-            const header =
-              document.getElementById(
-                "siteHeader"
-              );
-
-
-            const headerHeight =
-              header
-                ? header.offsetHeight
-                : 0;
-
-
-            const position =
-              target
-                .getBoundingClientRect()
-                .top
-              +
-              window.scrollY
-              -
-              headerHeight;
-
-
-            window.scrollTo({
-              top:position,
-              behavior:"smooth"
-            });
-
-          },
-          250
-        );
-
-      }
-    );
-
-  }
-
-
-  /* ========================================
-     오늘 하루 안보기
-  ======================================== */
-
-  if(todayBtn){
-
-    todayBtn.addEventListener(
-      "click",
-      function(){
-
-        localStorage.setItem(
-          "lottePopupHiddenDate",
-          getTodayKey()
-        );
-
-        sessionStorage.setItem(
-          "lottePopupSessionClosed",
-          "true"
-        );
-
-        closePromoPopup();
-
-      }
-    );
-
-  }
-
-
-  /* ========================================
-     일반 닫기
-     → 현재 세션에서만 다시 안 뜸
-  ======================================== */
-
-  if(closeBtn){
-
-    closeBtn.addEventListener(
-      "click",
-      function(){
-
-        sessionStorage.setItem(
-          "lottePopupSessionClosed",
-          "true"
-        );
-
-        closePromoPopup();
-
-      }
-    );
-
-  }
-
-
-  /* 배경 클릭 시 닫기 */
-  popup.addEventListener(
-    "click",
-    function(e){
-
-      if(e.target === popup){
-
-        sessionStorage.setItem(
-          "lottePopupSessionClosed",
-          "true"
-        );
-
-        closePromoPopup();
-
-      }
-
-    }
-  );
-
-
-  /* ESC 닫기 */
-  document.addEventListener(
-    "keydown",
-    function(e){
-
-      if(
-        e.key === "Escape" &&
-        popup.classList.contains("is-open")
-      ){
-
-        sessionStorage.setItem(
-          "lottePopupSessionClosed",
-          "true"
-        );
-
-        closePromoPopup();
-
-      }
-
-    }
-  );
-
-});
-
-/* PC 전화상담: tel 링크 대신 상담 모달 표시 / 모바일은 기존 전화 연결 */
-(function(){
-  const PC_BREAKPOINT = 981;
-  const modal = document.getElementById('pcCallModal');
-  const closeBtn = document.getElementById('pcCallClose');
-  const copyBtn = document.getElementById('pcCallCopy');
-  const leadBtn = document.getElementById('pcCallLead');
-  const phoneNumber = '1600-0640';
-  if(!modal) return;
-
-  function isPc(){ return window.innerWidth >= PC_BREAKPOINT; }
-  function openPcCall(){
-    modal.classList.add('is-open');
-    modal.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden';
-    if(typeof window.trackLotte === 'function') window.trackLotte('pc_call_modal_open', {});
-    setTimeout(()=>copyBtn && copyBtn.focus(), 0);
-  }
-  function closePcCall(){
-    modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
-  }
-
-  document.addEventListener('click', function(e){
-    const tel = e.target.closest('a[href^="tel:1600-0640"]');
-    if(!tel || !isPc()) return;
-    e.preventDefault();
-    openPcCall();
-  });
-
-  closeBtn && closeBtn.addEventListener('click', closePcCall);
-  modal.addEventListener('click', function(e){ if(e.target === modal) closePcCall(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal.classList.contains('is-open')) closePcCall(); });
-
-  copyBtn && copyBtn.addEventListener('click', async function(){
-    try{
-      if(navigator.clipboard && window.isSecureContext){
-        await navigator.clipboard.writeText(phoneNumber);
-      }else{
-        const ta=document.createElement('textarea');
-        ta.value=phoneNumber;
-        ta.style.position='fixed'; ta.style.opacity='0';
-        document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
-      }
-      copyBtn.textContent='복사 완료';
-      copyBtn.classList.add('is-copied');
-      if(typeof window.trackLotte === 'function') window.trackLotte('pc_phone_copy', {});
-      setTimeout(function(){ copyBtn.textContent='전화번호 복사'; copyBtn.classList.remove('is-copied'); }, 1800);
-    }catch(err){
-      alert('대표번호는 1600-0640입니다.');
-    }
-  });
-
-  leadBtn && leadBtn.addEventListener('click', function(){
-    if(typeof window.trackLotte === 'function') window.trackLotte('pc_call_modal_lead', {});
-    closePcCall();
-  });
-})();
-</script>
-
-  <script src="../js/common-pc.js"></script>
-</body>
+  <script src="../js/common-pc.js">
+  </script>
+ </body>
 </html>
