@@ -2118,6 +2118,10 @@ img {
   font-size:13px
 }
 
+.lead-form-card .lead-form label span.bold {
+    color: #7b746c; font-weight: 500;
+}
+
 .lead-form-card .lead-form input[type=text],.lead-form-card .lead-form input[type=tel] {
   height:58px;
   font-size:17px
