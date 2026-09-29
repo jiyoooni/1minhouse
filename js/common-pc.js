@@ -457,6 +457,11 @@
             utm_campaign: payload.utmCampaign,
           });
 
+          // Meta Pixel - 잠재 고객(Lead) 전환
+          if (typeof window.fbq === "function") {
+          window.fbq("track", "Lead");
+          }
+
           form.reset();
           form.hidden = true;
 
