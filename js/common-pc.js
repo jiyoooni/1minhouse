@@ -462,6 +462,19 @@
           window.fbq("track", "Lead");
           }
 
+          // NAVER - 신청 완료(Lead) 전환
+          if (typeof wcs !== "undefined") {
+            if (window.wcs) {
+              if (!wcs_add) var wcs_add = {};
+              wcs_add["wa"] = "s_4631a861069b";
+
+              var _conv = {};
+              _conv.type = "lead";
+              wcs.trans(_conv);
+            }
+          }
+          
+
           form.reset();
           form.hidden = true;
 
