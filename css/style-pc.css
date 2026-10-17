@@ -312,7 +312,7 @@ img {
 
 .overview-panel dl>div {
   display:grid;
-  grid-template-columns:145px 1fr;
+  grid-template-columns:105px 1fr;
   gap:30px;
   padding:24px 4px;
   border-bottom:1px solid rgba(21,21,21,.14)
@@ -992,10 +992,14 @@ img {
     font-size:14px
   }
 
+  .overview-panel dd {
+  font-size:15px;
+}
+
   .overview-panel dl>div {
-    grid-template-columns:92px 1fr;
+    grid-template-columns:72px 1fr;
     gap:18px;
-    padding:20px 2px
+    padding:16px 2px
   }
 
   .section-heading--horizontal {
