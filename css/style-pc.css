@@ -2328,7 +2328,6 @@ img {
 
   .lead-form-card .lead-form label {
     font-size:14px!important;
-    margin-bottom:9px!important
   }
 
   .lead-form-card .lead-form input[type=text],.lead-form-card .lead-form input[type=tel] {
@@ -2690,8 +2689,7 @@ img {
   padding: 40px;
   background: #fff;
   color: #171717;
-  border-radius: 2px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, .12);
+  border-radius: 15px;
 }
 
 .lead-form .form-group {
@@ -2743,6 +2741,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 10px;
   gap: 12px;
 }
 
@@ -2772,7 +2771,7 @@ img {
 .lead-submit {
   width: 100%;
   height: 58px;
-  margin-top: 15px;
+  margin-top: 5px;
   border: 0;
   background: #9f8165;
   color: #fff;
@@ -2997,7 +2996,7 @@ img {
   }
 
   .check-item-row {
-    align-items: flex-start;
+    align-items: center;
   }
 
 }
@@ -3086,3 +3085,108 @@ img {
     color: #b59466; /* 롯데캐슬 골드 계열 */
     font-weight: 700;
 }
+/* ===== 분양 정보 확장 4개 영역 ===== */
+.new-section{padding:105px 0;scroll-margin-top:85px}.new-plans,.new-sale-section{background:#fff}.new-gallery-section{background:#f3f0ea}.new-showroom-section{background:#ebe7df}
+.new-heading{margin-bottom:38px}.new-heading h2{font-size:clamp(32px,3.8vw,52px);font-weight:600;letter-spacing:-.055em;color:#071845}.new-heading>p:last-child{margin-top:14px;color:#716d68;font-size:15px;line-height:1.75;word-break:keep-all}
+.new-tabs{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:19px}.new-unit-tab{border:1px solid #d6d0c7;background:#fff;color:#252a35;padding:13px 20px;min-width:85px;font-size:14px;font-weight:700;border-radius:5px}.new-unit-tab.is-active,.new-unit-tab:hover{background:#081b55;border-color:#081b55;color:#fff}
+.new-panel{border:1px solid #e2ddd6;background:#fff;overflow:hidden}.new-placeholder{min-height:390px;padding:38px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;background:#faf9f7}.new-placeholder-icon{font-size:52px;color:#b59a76}.new-placeholder strong{font-size:24px;color:#16295c}.new-placeholder p{color:#868079;font-size:14px}.new-placeholder img{max-width:100%;max-height:680px;object-fit:contain}.new-placeholder.has-image{background:#fff}.new-placeholder.has-image .new-placeholder-icon,.new-placeholder.has-image>strong,.new-placeholder.has-image>p{display:none}.new-panel-bottom{padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:15px}.new-panel-bottom span,.new-footnote{font-size:12px;color:#777;line-height:1.7}.new-panel-bottom a,.new-phone-link{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;background:#081b55;color:#fff;font-weight:700;font-size:14px;white-space:nowrap}
+.new-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.new-gallery-empty{grid-column:1/-1;min-height:300px;background:#fff;border:1px dashed #bcb1a1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:25px;gap:12px}.new-gallery-empty span{font-size:11px;letter-spacing:.2em;color:#b38b61}.new-gallery-empty strong{font-size:22px;color:#152854}.new-gallery-empty p{color:#777;font-size:13px;line-height:1.65}.new-gallery-card{background:#fff;overflow:hidden}.new-gallery-card img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}.new-gallery-card figcaption{padding:16px 18px;font-size:14px;font-weight:700}.new-footnote{margin-top:20px}
+.new-sale-layout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.new-info-card{display:flex;flex-direction:column;align-items:flex-start;min-height:245px;padding:28px;border:1px solid #e5e2db;background:#faf9f7}.new-info-card>span,.new-showroom-details span{font-size:12px;color:#7d7972}.new-info-card strong{font-size:23px;margin:15px 0 12px;color:#10285c;word-break:keep-all}.new-info-card p{font-size:13px;color:#777;line-height:1.75;word-break:keep-all}.new-info-card a{margin-top:auto}.new-info-card-gold{background:#0b1b4b;border-color:#0b1b4b}.new-info-card-gold>span,.new-info-card-gold p{color:#d8d5d0}.new-info-card-gold strong{color:#e4bf83}.new-info-card-gold .new-phone-link{margin-top:20px;background:#b38b61;color:#fff}.new-outline-link{display:inline-flex;padding:12px 16px;border:1px solid #9d907b;color:#0b1b4b;font-size:13px;font-weight:700}
+.new-showroom-panel{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;box-shadow:0 20px 45px rgba(0,0,0,.05)}.new-showroom-main{background:#081b55;color:white;padding:46px}.new-small-label{color:#ddb78a;font-size:12px;letter-spacing:.16em}.new-showroom-main h3{font-size:clamp(25px,3vw,38px);margin:20px 0;font-weight:700}.new-showroom-main p{font-size:14px;color:#d3d8e6;line-height:1.8}.new-showroom-details{padding:42px;display:flex;flex-direction:column;gap:23px}.new-showroom-details>div{display:flex;flex-direction:column;gap:9px}.new-showroom-details strong{font-size:18px;color:#182c58}.new-showroom-details>a{align-self:flex-start}
+@media(max-width:980px){.new-sale-layout{grid-template-columns:1fr 1fr}.new-info-card-gold{grid-column:1/-1}.new-section{padding:80px 0}}
+@media(max-width:640px){.new-section{padding:65px 0}.new-heading{margin-bottom:26px}.new-heading>p:last-child{font-size:13px}.new-tabs{gap:6px}.new-unit-tab{flex:1 1 28%;min-width:0;padding:12px 7px;font-size:13px}.new-placeholder{min-height:270px;padding:22px}.new-panel-bottom{align-items:stretch;flex-direction:column;padding:16px}.new-panel-bottom a{width:100%}.new-gallery,.new-sale-layout,.new-showroom-panel{grid-template-columns:1fr}.new-info-card-gold{grid-column:auto}.new-info-card{min-height:215px;padding:24px}.new-showroom-main,.new-showroom-details{padding:28px}.new-gallery-empty{min-height:230px}}
+
+/* hidden 요소는 사용자 에이전트 기본 표시보다 우선 */
+.new-section [hidden]{display:none!important}
+@media(min-width:981px){.desktop-nav{gap:clamp(9px,1.05vw,17px)}.desktop-nav .nav-link{font-size:clamp(12px,1.07vw,15px)}}
+
+/* Conversion-first layout additions */
+.section-preapply{scroll-margin-top:80px;padding:76px 0 86px}
+.conversion-trust-note{margin-top:12px;font-size:12px;line-height:1.6;color:#776d69;text-align:center}
+.conversion-prompt{padding:35px 0;background:#091a48;color:#fff}
+.conversion-prompt-inner{display:flex;align-items:center;justify-content:space-between;gap:28px}
+.conversion-prompt-kicker{display:block;color:#d6b98d;font-size:10px;font-weight:750;letter-spacing:.19em;margin-bottom:8px}
+.conversion-prompt h3{font-size:clamp(19px,2vw,26px);line-height:1.45;letter-spacing:-.045em}
+.conversion-prompt p{font-size:13px;color:rgba(255,255,255,.74);line-height:1.7;margin-top:8px}
+.conversion-prompt-button{display:inline-flex;justify-content:center;white-space:nowrap;padding:16px 24px;background:#b48a5c;color:#fff;font-weight:750;font-size:14px;transition:background .2s}
+.conversion-prompt-button:hover{background:#967049}
+.conversion-sale-register{margin-top:12px;display:inline-flex}
+@media(max-width:980px){.section-preapply{padding:70px 0}.conversion-prompt-inner{align-items:flex-start;flex-direction:column;gap:20px}}
+@media(max-width:640px){.section-preapply{padding:50px 0 60px}.conversion-prompt{padding:28px 0}.conversion-prompt-button{width:100%}}
+
+/* CONVERSION V5 — 입력창 내부 안내 + 컴팩트한 등록 폼 */
+.lead-form-card .lead-form .visually-hidden {
+  position:absolute!important; width:1px!important; height:1px!important;
+  padding:0!important; margin:-1px!important; overflow:hidden!important;
+  clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important;
+}
+.lead-form-card .lead-form .compact-field { margin-bottom:12px; }
+.lead-form-card .lead-form .compact-field input::placeholder { color:#847e77; opacity:1; font-size:17px; }
+.lead-form-card .lead-form .compact-field input:focus::placeholder { color:#a4a09b; }
+.lead-form-card .lead-form .field-help--compact {
+  margin-top:7px; padding:0; background:transparent; border:0;
+  color:#756f69; font-size:12px; line-height:1.5;
+}
+.lead-form-card .lead-form .field-help--compact span { color:#9f8165; font-weight:700; }
+.lead-form-card .lead-form .birth-form-group { margin-bottom:8px; }
+.lead-form-card .lead-form .privacy-section { margin-top:25px; }
+@media(max-width:640px) {
+  .lead-form-card .lead-form .compact-field { margin-bottom:10px; }
+  .lead-form-card .lead-form .compact-field input::placeholder { font-size:16px; }
+  .lead-form-card .lead-form .field-help--compact { font-size:11px; line-height:1.45; }
+}
+
+/* Birthdate reassurance: restore green shield-check icon */
+.lead-form-card .lead-form .field-help--compact { display:flex; align-items:center; gap:7px; }
+.lead-form-card .lead-form .field-help--compact .trust-shield-icon { flex:0 0 16px; width:16px; height:16px; margin-top:0; color:#9f8164; }
+.lead-form-card .lead-form .field-help--compact > span { color:#756f69; font-weight:400; line-height:1.3; }
+
+/* FINAL: registration benefit adjacent to form, compact across devices */
+.preapply-event{margin-top:30px;border:1px solid rgba(210,174,124,.55);border-radius:10px;padding:20px 22px;background:rgba(255,255,255,.045);max-width:510px}
+.preapply-event__eyebrow{font-size:13px;color:#e4c18f;font-weight:700;letter-spacing:.015em;margin-bottom:14px}
+.preapply-event__row{display:flex;flex-direction:column;gap:5px;margin-top:13px;padding-bottom:13px;border-bottom:1px solid rgba(255,255,255,.14)}
+.preapply-event__row:last-child{border-bottom:0;padding-bottom:0;margin-bottom:0}
+.preapply-event__row strong{color:#fff;font-size:16px;font-weight:750}
+.preapply-event__row span{color:#e0cbd0;font-size:12px;line-height:1.55;word-break:keep-all}
+.preapply-event__terms{display:inline-block;color:#ead3b0;font-size:12px;margin-top:14px;text-decoration:underline;text-underline-offset:4px}
+.event-terms-section{padding:30px 0 55px;background:#f3efea;scroll-margin-top:100px}
+.event-terms-detail{border-top:1px solid #c9bdb0;border-bottom:1px solid #c9bdb0;padding:19px 0}
+.event-terms-detail summary{cursor:pointer;font-size:15px;font-weight:700;color:#302721}
+.event-terms-content{padding:18px 0 0;color:#6b635a;font-size:12px;line-height:1.75}
+.event-terms-content p{margin-bottom:7px}
+@media(max-width:980px){.preapply-event{max-width:none}}
+@media(max-width:640px){.preapply-event{margin-top:22px;padding:14px 16px}.preapply-event__row{margin-top:10px;padding-bottom:10px}.preapply-event__row strong{font-size:15px}.preapply-event__row span{font-size:12px}.event-terms-section{padding:18px 0 35px}}
+
+/* ===== UPDATE 2026-10-19 : 공개 예정 자료 / FAQ / 폼 오류 / 허니팟 ===== */
+.lead-form-card .lead-form .field-error,.lead-form .field-error{display:block;margin:6px 2px 0;color:#c0392b;font-size:12px;line-height:1.45;font-weight:600}
+.lead-form-card .lead-form .field-error[hidden],.lead-form .field-error[hidden]{display:none}
+.lead-form-card .lead-form input.is-invalid{border-color:#c0392b}
+.lead-form-card .lead-form .privacy-section .field-error{margin-top:10px}
+.lead-form .hp-field{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+@media(max-width:640px){.lead-form-card .lead-form .field-help--compact{font-size:12px;line-height:1.45}}
+
+.upcoming-section{background:#f3f0ea}
+.upcoming-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}
+.upcoming-card{display:flex;flex-direction:column;gap:12px;min-height:175px;padding:26px 22px;background:#fff;border:1px solid #e5e2db}
+.upcoming-tag{align-self:flex-start;padding:4px 11px;border:1px solid #cdbfa8;border-radius:99px;color:#9a7a52;font-size:12px;font-weight:700}
+.upcoming-card h3{font-size:19px;color:#10285c;letter-spacing:-.04em;word-break:keep-all}
+.upcoming-card p{font-size:13px;color:#777;line-height:1.7;word-break:keep-all}
+@media(max-width:980px){.upcoming-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.upcoming-grid{gap:10px}.upcoming-card{min-height:0;padding:20px 16px;gap:10px}.upcoming-card h3{font-size:17px}}
+
+.faq-section{padding:95px 0;background:#fff;scroll-margin-top:85px}
+.faq-list{max-width:860px}
+.faq-group{margin:38px 0 6px;font-size:13px;letter-spacing:.14em;color:#b38b61;font-weight:700}
+.faq-group:first-child{margin-top:0}
+.faq-item{border-bottom:1px solid #e2ddd6}
+.faq-item summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 4px;cursor:pointer;list-style:none;font-size:16px;font-weight:650;color:#16295c;word-break:keep-all}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";flex:none;font-size:22px;line-height:1;color:#b38b61}
+.faq-item[open] summary::after{content:"\2212"}
+.faq-answer{padding:0 4px 22px;color:#6b635a;font-size:14px;line-height:1.8;word-break:keep-all}
+.faq-answer p+p{margin-top:8px}
+.faq-answer .btn-view-terms{font-size:inherit;color:#9a7a52}
+@media(max-width:640px){.faq-section{padding:65px 0}.faq-item summary{padding:18px 2px;font-size:15px}.faq-answer{font-size:13px}}
+
+.footer-privacy{margin-top:12px}
+.footer-privacy-link{font-size:12px;color:#9a948e}

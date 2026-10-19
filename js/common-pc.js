@@ -285,7 +285,7 @@
 
   function initPrivacyModal() {
     const modal = document.getElementById("lottePrivacyModal");
-    const openButton = document.querySelector(".btn-view-terms");
+    const openButtons = Array.from(document.querySelectorAll(".btn-view-terms"));
     const closeButton = document.querySelector(".btn-close-modal");
 
     if (!modal) return;
@@ -300,9 +300,9 @@
       document.body.style.overflow = "";
     }
 
-    if (openButton) {
-      openButton.addEventListener("click", openModal);
-    }
+    openButtons.forEach(function (button) {
+      button.addEventListener("click", openModal);
+    });
 
     if (closeButton) {
       closeButton.addEventListener("click", closeModal);
@@ -350,30 +350,143 @@
     const birthInput = form.querySelector(".lead-birth");
     const agreeInput = form.querySelector(".privacy-agree");
     const submitButton = form.querySelector(".submit-btn");
+    const honeypot = form.querySelector('input[name="website"]');
     const success = document.getElementById("lotteLeadSuccess");
 
-    if (!nameInput || !phoneInput || !agreeInput || !submitButton) return;
+    if (!nameInput || !phoneInput || !birthInput || !agreeInput || !submitButton) {
+      return;
+    }
 
+    const defaultSubmitText = submitButton.textContent.trim();
+    const SUBMIT_TIMEOUT_MS = 15000;
+    const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    const errorEls = new Map();
     let formStarted = false;
+    let isSubmitting = false;
 
-    function validateBasic() {
-      const name = nameInput.value.trim();
-      const phoneOnly = phoneInput.value.replace(/[^0-9]/g, "");
+    // ---------- 인라인 오류 표시 (alert 대체) ----------
+    function getErrorEl(field) {
+      if (errorEls.has(field)) return errorEls.get(field);
 
-      if (!name) {
-        alert("성함을 입력해 주세요.");
-        nameInput.focus();
-        return false;
+      const el = document.createElement("p");
+      el.className = "field-error";
+      el.setAttribute("role", "alert");
+      el.hidden = true;
+
+      if (field === agreeInput) {
+        const wrap = field.closest(".privacy-section") || field.parentNode;
+        wrap.appendChild(el);
+      } else if (field === submitButton) {
+        field.insertAdjacentElement("beforebegin", el);
+      } else {
+        field.insertAdjacentElement("afterend", el);
       }
 
-      if (phoneOnly.length < 10 || phoneOnly.length > 11) {
-        alert("올바른 연락처를 입력해 주세요.");
-        phoneInput.focus();
+      errorEls.set(field, el);
+      return el;
+    }
+
+    function showError(field, message, fieldName) {
+      const el = getErrorEl(field);
+      el.textContent = message;
+      el.hidden = false;
+
+      if (field !== agreeInput && field !== submitButton) {
+        field.classList.add("is-invalid");
+        field.setAttribute("aria-invalid", "true");
+      }
+
+      trackLotte("lead_form_invalid", { field: fieldName });
+    }
+
+    function clearError(field) {
+      const el = errorEls.get(field);
+      if (el) el.hidden = true;
+      field.classList.remove("is-invalid");
+      field.removeAttribute("aria-invalid");
+    }
+
+    // ---------- 검증 ----------
+    function isValidName(value) {
+      return value.length >= 2 && value.length <= 30;
+    }
+
+    function isValidPhone(digits) {
+      return /^01[016789]\d{7,8}$/.test(digits);
+    }
+
+    function isValidBirth(value) {
+      if (!/^\d{6}$/.test(value)) return false;
+
+      const month = Number(value.slice(2, 4));
+      const day = Number(value.slice(4, 6));
+
+      if (month < 1 || month > 12 || day < 1) return false;
+      return day <= DAYS_IN_MONTH[month - 1];
+    }
+
+    function validate() {
+      [nameInput, phoneInput, birthInput, agreeInput, submitButton].forEach(
+        clearError
+      );
+
+      const invalid = [];
+      const name = nameInput.value.trim();
+      const phoneDigits = phoneInput.value.replace(/[^0-9]/g, "");
+      const birth = birthInput.value.trim();
+
+      if (!isValidName(name)) {
+        showError(nameInput, "성함을 2자 이상 입력해 주세요.", "name");
+        invalid.push(nameInput);
+      }
+
+      if (!isValidPhone(phoneDigits)) {
+        showError(
+          phoneInput,
+          "휴대전화 번호를 확인해 주세요. 예) 010-1234-5678",
+          "phone"
+        );
+        invalid.push(phoneInput);
+      }
+
+      if (!isValidBirth(birth)) {
+        showError(
+          birthInput,
+          "생년월일 앞 6자리를 확인해 주세요. 예) 900101",
+          "birth"
+        );
+        invalid.push(birthInput);
+      }
+
+      if (!agreeInput.checked) {
+        showError(
+          agreeInput,
+          "개인정보 수집·이용 및 제공 동의가 필요합니다.",
+          "consent"
+        );
+        invalid.push(agreeInput);
+      }
+
+      if (invalid.length) {
+        invalid[0].focus();
+        if (invalid[0].scrollIntoView) {
+          invalid[0].scrollIntoView({ behavior: "smooth", block: "center" });
+        }
         return false;
       }
 
       return true;
     }
+
+    [nameInput, phoneInput, birthInput].forEach(function (input) {
+      input.addEventListener("input", function () {
+        clearError(input);
+      });
+    });
+
+    agreeInput.addEventListener("change", function () {
+      clearError(agreeInput);
+    });
 
     form.addEventListener("focusin", function () {
       if (formStarted) return;
@@ -388,38 +501,46 @@
       phoneInput.value = formatPhone(phoneInput.value);
     });
 
-    if (birthInput) {
-      birthInput.addEventListener("input", function () {
-        birthInput.value = birthInput.value
-          .replace(/[^0-9]/g, "")
-          .slice(0, 6);
-      });
+    birthInput.addEventListener("input", function () {
+      birthInput.value = birthInput.value.replace(/[^0-9]/g, "").slice(0, 6);
+    });
+
+    function showSuccess() {
+      form.reset();
+      form.hidden = true;
+
+      if (success) {
+        success.hidden = false;
+        success.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }
+    }
+
+    function resetSubmitButton() {
+      isSubmitting = false;
+      submitButton.disabled = false;
+      submitButton.textContent = defaultSubmitText;
     }
 
     form.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      if (!validateBasic()) return;
+      if (isSubmitting) return;
+      if (!validate()) return;
+
+      // 봇 차단: 사람 눈에 보이지 않는 입력칸이 채워지면 저장하지 않고 성공처럼 처리
+      if (honeypot && honeypot.value) {
+        showSuccess();
+        return;
+      }
 
       const name = nameInput.value.trim();
       const phone = phoneInput.value.trim();
-      const birthDate = birthInput ? birthInput.value.trim() : "";
+      const birthDate = birthInput.value.trim();
 
-      if (!/^\d{6}$/.test(birthDate)) {
-        alert("생년월일 앞 6자리를 입력해 주세요. 예) 670102");
-
-        if (birthInput) {
-          birthInput.focus();
-        }
-        return;
-      }
-
-      if (!agreeInput.checked) {
-        alert("개인정보 수집·이용 및 제3자 제공에 동의해 주세요.");
-        agreeInput.focus();
-        return;
-      }
-
+      isSubmitting = true;
       submitButton.disabled = true;
       submitButton.textContent = "전송 중...";
       trackLotte("lead_form_submit", {});
@@ -442,6 +563,13 @@
         landingUrl: window.location.href,
       };
 
+      const controller =
+        "AbortController" in window ? new AbortController() : null;
+      const timer = window.setTimeout(function () {
+        if (controller) controller.abort();
+      }, SUBMIT_TIMEOUT_MS);
+
+      // 참고: no-cors 요청은 서버 응답을 읽을 수 없어 '요청이 나갔는지'까지만 확인됩니다.
       fetch(LOTTE_GAS_URL, {
         method: "POST",
         mode: "no-cors",
@@ -449,8 +577,11 @@
           "Content-Type": "application/json",
         },
         body: JSON.stringify(payload),
+        signal: controller ? controller.signal : undefined,
       })
         .then(function () {
+          window.clearTimeout(timer);
+
           trackLotte("lead_form_request_sent", {
             utm_source: payload.utmSource,
             utm_medium: payload.utmMedium,
@@ -459,41 +590,33 @@
 
           // Meta Pixel - 잠재 고객(Lead) 전환
           if (typeof window.fbq === "function") {
-          window.fbq("track", "Lead");
+            window.fbq("track", "Lead");
           }
 
           // NAVER - 신청 완료(Lead) 전환
-          if (typeof wcs !== "undefined") {
-            if (window.wcs) {
-              if (!wcs_add) var wcs_add = {};
-              wcs_add["wa"] = "s_4631a861069b";
-
-              var _conv = {};
-              _conv.type = "lead";
-              wcs.trans(_conv);
-            }
+          if (window.wcs && typeof window.wcs.trans === "function") {
+            window.wcs_add = window.wcs_add || {};
+            window.wcs_add["wa"] = "s_4631a861069b";
+            window.wcs.trans({ type: "lead" });
           }
-          
 
-          form.reset();
-          form.hidden = true;
-
-          if (success) {
-            success.hidden = false;
-            success.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-            });
-          }
+          resetSubmitButton();
+          showSuccess();
         })
         .catch(function (error) {
+          window.clearTimeout(timer);
           console.error(error);
-          trackLotte("lead_form_error", {});
-          alert("등록 요청 전송 중 오류가 발생했습니다. 다시 시도해 주세요.");
-        })
-        .finally(function () {
-          submitButton.disabled = false;
-          submitButton.textContent = "분양정보 받아보기";
+
+          trackLotte("lead_form_error", {
+            reason: error && error.name ? error.name : "unknown",
+          });
+
+          resetSubmitButton();
+          showError(
+            submitButton,
+            "전송에 실패했습니다. 네트워크를 확인 후 다시 시도해 주세요. 계속되면 1600-0640으로 문의해 주세요.",
+            "submit"
+          );
         });
     });
   }
@@ -593,6 +716,44 @@
     }
   }
 
+
+  // 공개 전에는 실제 자료가 없어도 안전하게 '공개 전'으로 표시합니다.
+  // 자료 공개 승인을 받은 후 아래 값만 수정하면 '공개 예정 자료' 섹션에 반영됩니다.
+  const SITE_RELEASE = {
+    priceStatus: "공개 전",
+    planStatus: "공개 전",
+    unitStatus: "공개 전",
+    noticeUrl: "", // 공식 모집공고 PDF 또는 공식 공고 링크 (https://)
+    noticeStatus: "발표 전",
+    subscriptionSchedule: "공고 발표 후 안내",
+    showroomDate: "2026년 10월 30일 예정",
+    showroomAddress: "공식 안내 전",
+    showroomVisit: "상세 일정 확인 후 안내",
+    showroomMapUrl: "" // https:// 지도 링크
+  };
+
+  function initUpcomingSection() {
+    const setText = function (id, value) {
+      const el = document.getElementById(id);
+      if (el && value) el.textContent = value;
+    };
+
+    setText("priceStatus", SITE_RELEASE.priceStatus);
+    setText("planStatus", SITE_RELEASE.planStatus);
+    setText("unitStatus", SITE_RELEASE.unitStatus);
+    setText("officialNoticeStatus", SITE_RELEASE.noticeStatus);
+    setText("subscriptionSchedule", SITE_RELEASE.subscriptionSchedule);
+    setText("showroomOpenDate", SITE_RELEASE.showroomDate);
+    setText("showroomAddress", SITE_RELEASE.showroomAddress);
+    setText("showroomVisit", SITE_RELEASE.showroomVisit);
+
+    const mapLink = document.getElementById("showroomMapLink");
+    if (mapLink && /^https:\/\//i.test(SITE_RELEASE.showroomMapUrl)) {
+      mapLink.href = SITE_RELEASE.showroomMapUrl;
+      mapLink.hidden = false;
+    }
+  }
+
   ready(function () {
     initHeaderAndNavigation();
     initReveal();
@@ -601,5 +762,6 @@
     initPrivacyModal();
     initLeadForm();
     initPcCallModal();
+    initUpcomingSection();
   });
 })();
