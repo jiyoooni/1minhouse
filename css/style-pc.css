@@ -296,12 +296,16 @@ img {
   letter-spacing:-.045em
 }
 
+.section-heading h2 br,.coming-inner h2 br,.preapply-copy h2 br{
+  display:none
+}
+
 .section-lead {
   max-width:570px;
   margin-top:30px;
   color:#6b6762;
   font-size:16px;
-  line-height:1.8;
+  line-height:1.5;
   word-break:keep-all
 }
 
@@ -981,12 +985,16 @@ img {
   }
 
   .section-grid {
-    gap:48px
+    gap:28px
   }
 
   .section-heading h2,.coming-inner h2,.preapply-copy h2 {
-    font-size:40px
+    font-size:30px
   }
+
+  .section-heading h2 br,.coming-inner h2 br,.preapply-copy h2 br{
+  display:inline
+}
 
   .section-lead {
     font-size:14px
@@ -1004,7 +1012,7 @@ img {
 
   .section-heading--horizontal {
     display:block;
-    margin-bottom:40px
+    margin-bottom:25px
   }
 
   .section-heading--horizontal .section-lead {
@@ -1028,7 +1036,7 @@ img {
   }
 
   .premium-title-row h2 {
-    font-size:36px
+    font-size:30px
   }
 
   .premium-big-num {
@@ -1074,7 +1082,7 @@ img {
 
   .premium-body p {
     font-size:13px;
-    line-height:1.65
+    line-height:1.45
   }
 
   .premium-body small {
@@ -3165,7 +3173,7 @@ img {
 .lead-form .hp-field{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 @media(max-width:640px){.lead-form-card .lead-form .field-help--compact{font-size:12px;line-height:1.45}}
 
-.upcoming-section{background:#f3f0ea}
+.upcoming-section{background:#ece8e1}
 .upcoming-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}
 .upcoming-card{display:flex;flex-direction:column;gap:12px;min-height:175px;padding:26px 22px;background:#fff;border:1px solid #e5e2db}
 .upcoming-tag{align-self:flex-start;padding:4px 11px;border:1px solid #cdbfa8;border-radius:99px;color:#9a7a52;font-size:12px;font-weight:700}
