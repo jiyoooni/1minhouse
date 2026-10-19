@@ -3178,7 +3178,7 @@ img {
 .upcoming-card{display:flex;flex-direction:column;gap:12px;min-height:175px;padding:26px 22px;background:#fff;border:1px solid #e5e2db}
 .upcoming-tag{align-self:flex-start;padding:4px 11px;border:1px solid #cdbfa8;border-radius:99px;color:#9a7a52;font-size:12px;font-weight:700}
 .upcoming-card h3{font-size:19px;color:#10285c;letter-spacing:-.04em;word-break:keep-all}
-.upcoming-card p{font-size:13px;color:#777;line-height:1.7;word-break:keep-all}
+.upcoming-card p{font-size:13px;color:#777;line-height:1.5;word-break:keep-all}
 @media(max-width:980px){.upcoming-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.upcoming-grid{gap:10px}.upcoming-card{min-height:0;padding:20px 16px;gap:10px}.upcoming-card h3{font-size:17px}}
 
