@@ -799,33 +799,67 @@
   }
 
 
-  function initMapModal() {
-    const modal = document.getElementById("mapModal");
-    const open = document.getElementById("mapOpen");
-    const close = document.getElementById("mapClose");
-    if (!modal || !open) return;
-    function show() {
-      modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-      const body = modal.querySelector(".map-modal-body");
-      if (body && window.innerWidth <= 980) body.scrollLeft = (body.scrollWidth - body.clientWidth) * 0.3;
-      trackLotte("map_open", {});
+  
+function initMapModal() {
+  const modal = document.getElementById("mapModal");
+  const open = document.getElementById("mapOpen");
+  const close = document.getElementById("mapClose");
+
+  if (!modal || !open) return;
+
+  document.body.appendChild(modal);
+
+  let previousOverflow = "";
+
+  function show() {
+    previousOverflow = document.body.style.overflow;
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("map-modal-open");
+    document.body.style.overflow = "hidden";
+
+    const body = modal.querySelector(".map-modal-body");
+
+    if (body && window.innerWidth <= 980) {
+      body.scrollLeft =
+        (body.scrollWidth - body.clientWidth) * 0.3;
     }
-    function hide() {
-      modal.classList.remove("is-open");
-      modal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    }
-    open.addEventListener("click", show);
-    if (close) close.addEventListener("click", hide);
-    modal.addEventListener("click", function (e) {
-      if (e.target === modal || e.target.classList.contains("map-modal-body")) hide();
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && modal.classList.contains("is-open")) hide();
-    });
+
+    if (close) close.focus();
+
+    trackLotte("map_open", {});
   }
+
+  function hide() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("map-modal-open");
+    document.body.style.overflow = previousOverflow;
+
+    open.focus();
+  }
+
+  open.addEventListener("click", show);
+
+  if (close) {
+    close.addEventListener("click", hide);
+  }
+
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) hide();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (
+      e.key === "Escape" &&
+      modal.classList.contains("is-open")
+    ) {
+      hide();
+    }
+  });
+}
+
 
   ready(function () {
     initHeaderAndNavigation();
