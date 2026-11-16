@@ -343,6 +343,66 @@
   }
 
   // 방문예약 폼(날짜·시간 포함)과 빠른 상담폼(이름·연락처만)을 함께 처리합니다.
+  // ---------- 메인 문구 A/B (?hero=price → 가격·동호수형) ----------
+  function getHeroVariant() {
+    try {
+      return new URLSearchParams(window.location.search).get("hero") === "price" ? "price" : "value";
+    } catch (e) {
+      return "value";
+    }
+  }
+
+  function initHeroVariant() {
+    if (getHeroVariant() !== "price") return;
+    const l1 = document.querySelector("[data-hero-l1]");
+    const l2 = document.querySelector("[data-hero-l2]");
+    const sub = document.querySelector("[data-hero-sub]");
+    if (l1) l1.textContent = "거모지구에서 귀한 84㎡";
+    if (l2) l2.textContent = "잔여 동·호수, 먼저 상담하세요";
+    if (sub) sub.textContent = "전세대 84㎡ · 5억 6,910만원부터 · 일반분양 사전 상담";
+  }
+
+  // "동·호수 상담 신청" 버튼: 문의 유형 선택 후 빠른 상담 폼 성함 칸으로 이동
+  function initInquiryPicker() {
+    document.querySelectorAll("[data-pick-inquiry]").forEach(function (btn) {
+      btn.addEventListener("click", function (event) {
+        const form = document.getElementById("quickLeadForm");
+        if (!form || form.hidden) return;
+        event.preventDefault();
+        const radio = form.querySelector('input[name="inquiryType"][value="' + btn.dataset.pickInquiry + '"]');
+        if (radio && !radio.checked) {
+          radio.checked = true;
+          radio.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+        form.scrollIntoView({ behavior: "smooth", block: "center" });
+        const name = form.querySelector(".lead-name");
+        if (name) setTimeout(function () { name.focus({ preventScroll: true }); }, 400);
+      });
+    });
+  }
+
+  // 시트 "접수 위치" 칸: 위치 + 문의 유형 (+ 가격형 메인일 때 표시)
+  //   예) 빠른상담·일반분양 / 빠른상담·모델하우스방문 / 관심고객등록(방문예약폼)
+  function buildFormPosition(form) {
+    let position = form.dataset.position || "관심고객등록";
+    const checked = form.querySelector('input[name="inquiryType"]:checked');
+    if (checked) {
+      position += checked.value.indexOf("모델하우스") > -1 ? "·모델하우스방문" : "·일반분양";
+    }
+    if (getHeroVariant() === "price") position += "(가격형)";
+    return position;
+  }
+
+  // 시트 메모 칸: 문의 유형 + 메인 문구 버전
+  function buildLeadNote(form) {
+    const parts = [];
+    const checked = form.querySelector('input[name="inquiryType"]:checked');
+    if (checked) parts.push("문의유형:" + checked.value);
+    else if (form.querySelector(".lead-visit-date")) parts.push("문의유형:모델하우스 방문예약");
+    parts.push("메인:" + (getHeroVariant() === "price" ? "가격형" : "가치형"));
+    return parts.join(" / ");
+  }
+
   function initLeadForm(form, success) {
     if (!form) return;
 
@@ -523,10 +583,23 @@
       }
     }
 
+    // 문의 유형에 따라 신청 버튼 문구 변경
+    function currentSubmitLabel() {
+      const checked = form.querySelector('input[name="inquiryType"]:checked');
+      return (checked && checked.dataset.submitLabel) || defaultSubmitText;
+    }
+
+    form.querySelectorAll('input[name="inquiryType"]').forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        if (!isSubmitting) submitButton.textContent = currentSubmitLabel();
+        trackLotte("inquiry_type_select", { inquiry_type: radio.value });
+      });
+    });
+
     function resetSubmitButton() {
       isSubmitting = false;
       submitButton.disabled = false;
-      submitButton.textContent = defaultSubmitText;
+      submitButton.textContent = currentSubmitLabel();
     }
 
     form.addEventListener("submit", function (event) {
@@ -563,12 +636,12 @@
       const query = new URLSearchParams(window.location.search);
       const payload = {
         siteName: LOTTE_SITE_NAME,
-        formPosition: form.dataset.position || "관심고객등록",
+        formPosition: buildFormPosition(form),
         name: name,
         phone: phone,
         visitDate: visitDate,
         visitTime: visitTime,
-        note: "",
+        note: buildLeadNote(form),
         privacyConsent: true,
         utmSource: query.get("utm_source") || "",
         utmMedium: query.get("utm_medium") || "",
@@ -867,6 +940,8 @@ function initMapModal() {
     initConversionBottomBar();
     initConversionTracking();
     initPrivacyModal();
+    initHeroVariant();
+    initInquiryPicker();
     initLeadForm(document.getElementById("lotteLeadForm"), document.getElementById("lotteLeadSuccess"));
     initLeadForm(document.getElementById("quickLeadForm"), document.getElementById("quickLeadSuccess"));
     initPcCallModal();

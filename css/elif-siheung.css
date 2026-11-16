@@ -175,34 +175,6 @@
 /* 안내글(※) 9px 통일 */
 .footer-disclaimer { font-size:9px !important; line-height:1.6 !important; }
 
-/* 신도시 중심 띠배너 (가로형, 높이 약 200px) */
-.city-band { position:relative; overflow:hidden; color:#fff; height:200px; isolation:isolate; }
-.city-band-bg { position:absolute; inset:0; background-size:cover; background-position:center 62%; z-index:-2; }
-.city-band::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(2,26,21,.93) 0%,rgba(3,38,31,.84) 38%,rgba(4,48,40,.62) 62%,rgba(2,26,21,.86) 100%); }
-.city-band-inner { width:min(1400px,calc(100% - 64px)); height:100%; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:40px; }
-.city-band-eyebrow { font-size:12px; font-weight:700; letter-spacing:.3em; color:#f0d3a4; }
-.city-band-title { margin-top:10px; font-size:clamp(26px,2.7vw,40px); line-height:1.3; font-weight:800; letter-spacing:-.02em; word-break:keep-all; text-shadow:0 2px 18px rgba(0,0,0,.55); }
-.city-band-title em { font-style:normal; color:#f3d39b; }
-.city-band-stats { list-style:none; margin:0; padding:0; display:flex; flex:none; }
-.city-band-stats li { padding:0 26px; text-align:center; text-shadow:0 2px 12px rgba(0,0,0,.35); }
-.city-band-stats li + li { border-left:1px solid rgba(255,255,255,.3); }
-.city-band-stats b { display:block; font-size:32px; font-weight:800; letter-spacing:-.02em; }
-.city-band-stats span { display:block; margin-top:4px; font-size:14px; color:rgba(255,255,255,.9); }
-.city-band-note { position:absolute; right:32px; bottom:8px; margin:0; font-size:9px; color:rgba(255,255,255,.6); }
-@media (max-width:980px) {
-  .city-band { height:150px; }
-  .city-band-inner { width:calc(100% - 32px); gap:10px; padding-bottom:10px; }
-  .city-band-copy { min-width:0; }
-  .city-band-eyebrow { font-size:8px; letter-spacing:.14em; white-space:nowrap; }
-  .city-band-title { margin-top:5px; font-size:18px; line-height:1.3; }
-  .city-band-title em { display:block; }
-  .city-band-stats li { padding:0 9px; }
-  .city-band-stats li:last-child { padding-right:0; }
-  .city-band-stats b { font-size:15px; white-space:nowrap; }
-  .city-band-stats span { font-size:10px; margin-top:2px; white-space:nowrap; }
-  .city-band-note { left:16px; right:16px; bottom:5px; font-size:9px; line-height:1.35; }
-}
-
 /* 광역 위치도 크게 보기 */
 .map-open { display:flex; align-items:center; gap:18px; width:100%; margin:0 0 40px; padding:14px 22px 14px 14px; background:#fff; border:1px solid var(--line); border-radius:12px; cursor:pointer; text-align:left; font-family:inherit; transition:box-shadow .2s, border-color .2s; }
 .map-open:hover { border-color:#054438; box-shadow:0 8px 24px rgba(5,68,56,.12); }
@@ -262,4 +234,69 @@ body.map-modal-open .conversion-bottom-bar { visibility: hidden !important; }
   .map-modal-head { padding: 12px 16px; }
   .map-modal-body { touch-action: pan-x pan-y pinch-zoom; }
   .map-modal-body img { height: auto; }
+}
+
+/* ===== 2026-11-17 히어로 가치형 · 핵심 가치 3장 · 문의 유형 ===== */
+.hero h1 .hero-l1 { font-weight:500; }
+.inquiry-type { display:flex; gap:8px; margin:0 0 18px; }
+.inquiry-type label { flex:1; cursor:pointer; }
+.inquiry-type input { position:absolute; opacity:0; pointer-events:none; }
+.inquiry-type span { display:block; text-align:center; padding:11px 6px; border:1px solid var(--line); border-radius:8px; font-size:14px; font-weight:700; color:var(--muted); background:#fff; transition:all .15s; }
+.inquiry-type input:checked + span { border-color:#054438; background:#054438; color:#fff; }
+.inquiry-type input:focus-visible + span { outline:2px solid var(--gold); outline-offset:2px; }
+@media (max-width: 768px) {
+  .inquiry-type span { font-size:13px; padding:10px 4px; }
+}
+
+/* 핵심 가치: 아이콘형 띠 (이미지 없음) */
+.section-values { padding:40px 0 0; background:#f4f0ea; }
+.value-cards { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); background:#fff; border:1px solid var(--line); border-radius:12px; }
+.value-card { display:flex; align-items:center; gap:16px; padding:22px 26px; }
+.value-card + .value-card { border-left:1px solid var(--line); }
+.value-icon { flex:none; display:grid; place-items:center; width:48px; height:48px; border-radius:50%; background:#eef4f1; color:#054438; }
+.value-icon svg { width:26px; height:26px; }
+.value-card-body strong { display:block; font-size:18px; font-weight:800; color:#054438; line-height:1.3; word-break:keep-all; }
+.value-card-body p { margin-top:3px; font-size:13.5px; color:var(--muted); }
+.section-values + .section-offer { padding-top:40px; }
+
+/* 모델하우스 내부 사진 */
+.section-modelhouse { padding:120px 0; background:#fff; }
+.mh-gallery { display:grid; grid-template-columns:1.6fr 1fr; grid-template-rows:1fr 1fr; gap:12px; margin-top:40px; }
+.mh-shot { position:relative; margin:0; overflow:hidden; border-radius:10px; background:#eee; }
+.mh-shot img { display:block; width:100%; height:100%; object-fit:cover; aspect-ratio:4/3; }
+.mh-shot--main { grid-row:1 / span 2; }
+.mh-shot--main img { aspect-ratio:auto; }
+.mh-shot figcaption { position:absolute; left:14px; bottom:12px; padding:5px 11px; border-radius:999px; background:rgba(5,68,56,.86); color:#fff; font-size:13px; font-weight:700; }
+.mh-cta { display:flex; justify-content:center; align-items:center; gap:8px; width:fit-content; margin:28px auto 0; padding:16px 34px; border-radius:999px; background:#054438; color:#fff; font-size:16px; font-weight:800; text-decoration:none; }
+.mh-cta span { color:#e3c79f; }
+@media (max-width: 768px) {
+  .section-modelhouse { padding:72px 0; }
+  .section-values { padding:20px 0 0; }
+  .value-card { flex-direction:column; text-align:center; gap:8px; padding:14px 6px; }
+  .value-icon { width:38px; height:38px; }
+  .value-icon svg { width:21px; height:21px; }
+  .value-card-body strong { font-size:13px; }
+  .value-card-body p { font-size:11px; }
+  .section-values + .section-offer { padding-top:24px; }
+  .mh-gallery { grid-template-columns:1fr 1fr; grid-template-rows:auto; gap:8px; margin-top:24px; }
+  .mh-shot--main { grid-column:1 / -1; grid-row:auto; }
+  .mh-shot--main img { aspect-ratio:4/3; }
+  .mh-shot figcaption { left:8px; bottom:8px; font-size:11px; padding:4px 9px; }
+  .mh-cta { width:100%; margin-top:18px; padding:15px; font-size:15px; }
+}
+
+/* 분양 조건 3개 + 간단 상담 폼 */
+.offer-grid { grid-template-columns:1.1fr 1fr; }
+.quick-form-title { margin-bottom:18px; }
+.quick-form .form-group { margin-bottom:10px; }
+@media (max-width: 980px) {
+  .offer-grid { grid-template-columns:1fr; }
+}
+
+/* 핵심 가치 줄바꿈: 모바일에서만 의도한 위치에서 끊기 */
+.value-card-body .m-br { display:none; }
+@media (max-width: 768px) {
+  .value-card-body .m-br { display:inline; }
+  .value-card-body .pc-dot { display:none; }
+  .value-card-body strong { font-size:14px; line-height:1.35; }
 }
