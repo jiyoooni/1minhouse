@@ -603,6 +603,11 @@
           window.wcs.trans({ type: "lead" });
         }
 
+        // 당근 픽셀 - 상담·방문예약 신청 완료 전환 (당근 표준 이벤트: CompleteRegistration)
+        if (window.karrotPixel && typeof window.karrotPixel.track === "function") {
+          window.karrotPixel.track("CompleteRegistration");
+        }
+
         resetSubmitButton();
         showSuccess();
       }
