@@ -274,14 +274,38 @@
       const eventName = target.getAttribute("data-track");
       if (!eventName) return;
 
-      trackLotte(eventName, {
-        href: target.getAttribute("href") || "",
-        label: (target.textContent || "")
-          .trim()
-          .replace(/\s+/g, " ")
-          .slice(0, 80),
-      });
+      const href = target.getAttribute("href") || "";
+      const label = (target.textContent || "").trim().replace(/\s+/g, " ").slice(0, 80);
+      trackLotte(eventName, { href: href, label: label });
+
+      // 전화 버튼은 위치와 상관없이 phone_click 하나로도 집계
+      if (href.indexOf("tel:") === 0) {
+        trackLotte("phone_click", { cta_name: eventName, hero_variant: getHeroVariant() });
+      }
     });
+  }
+
+  // 스크롤 깊이 25·50·75·90% (GA4 기본 scroll 이벤트는 90%만 잡힘)
+  function initScrollDepth() {
+    const marks = [25, 50, 75, 90];
+    const sent = {};
+    let ticking = false;
+    function check() {
+      ticking = false;
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      if (max <= 0) return;
+      const pct = (window.scrollY / max) * 100;
+      marks.forEach(function (m) {
+        if (pct >= m && !sent[m]) {
+          sent[m] = true;
+          trackLotte("scroll_depth", { percent: m, hero_variant: getHeroVariant() });
+        }
+      });
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(check); }
+    }, { passive: true });
   }
 
   function initPrivacyModal() {
@@ -378,6 +402,267 @@
         const name = form.querySelector(".lead-name");
         if (name) setTimeout(function () { name.focus({ preventScroll: true }); }, 400);
       });
+    });
+  }
+
+  // GA4 리드 이벤트 공통 파라미터
+  function leadEventParams(form) {
+    const checked = form.querySelector('input[name="inquiryType"]:checked');
+    return {
+      form_position: form.dataset.position || "관심고객등록",
+      inquiry_type: checked
+        ? checked.value
+        : form.querySelector(".lead-visit-date") ? "모델하우스 방문예약" : "",
+      hero_variant: getHeroVariant(),
+    };
+  }
+
+
+  // ================= 상품권 교환권 쿠폰 =================
+  const COUPON_KEY = "elifCouponV1";
+
+  function couponCode() {
+    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    let c = "";
+    for (let i = 0; i < 5; i += 1) c += chars[Math.floor(Math.random() * chars.length)];
+    return "EL-" + c;
+  }
+
+  function maskPhone(phone) {
+    const d = String(phone).replace(/\D/g, "");
+    return d.slice(0, 3) + "-****-" + d.slice(-4);
+  }
+
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  // 모델하우스 약도 (능곡동 868-7, 모다아울렛 건너편)
+  function drawCouponMap(ctx, X, Y, W, H, font) {
+    ctx.save();
+    roundRect(ctx, X, Y, W, H, 18);
+    ctx.clip();
+    ctx.fillStyle = "#f2efe8";
+    ctx.fillRect(X, Y, W, H);
+    const px = function (v) { return X + v * W; };
+    const py = function (v) { return Y + v * H; };
+    function label(t, x, y, size, color, weight, align) {
+      ctx.fillStyle = color;
+      ctx.font = (weight || 700) + " " + size + "px " + font;
+      ctx.textAlign = align || "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(t, x, y);
+    }
+    // 공원
+    ctx.fillStyle = "#cfe5c2";
+    roundRect(ctx, px(0.03), py(0.03), W * 0.62, H * 0.27, 26);
+    ctx.fill();
+    label("숲새재공원", px(0.34), py(0.16), 30, "#3f7a3a");
+    // 하천 + 서해선
+    ctx.fillStyle = "#bfe0f2";
+    ctx.fillRect(px(0.735), Y, W * 0.022, H);
+    ctx.fillStyle = "#f5e6a8";
+    ctx.fillRect(px(0.80), Y, W * 0.09, H);
+    ctx.fillStyle = "#8a7a3a";
+    ctx.save();
+    ctx.translate(px(0.845), py(0.22));
+    ctx.rotate(Math.PI / 2);
+    label("서해선", 0, 0, 24, "#8a7a3a", 700);
+    ctx.restore();
+    // 도로
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(X, py(0.33), px(0.735) - X, H * 0.08);   // 능곡군자로
+    ctx.fillRect(X, py(0.72), px(0.735) - X, H * 0.08);   // 장현능곡로
+    ctx.fillRect(px(0.395), py(0.33), W * 0.045, H * 0.67); // 사이 도로
+    label("능곡군자로", px(0.15), py(0.37), 22, "#8f8a80", 600);
+    label("장현능곡로", px(0.15), py(0.76), 22, "#8f8a80", 600);
+    // 모델하우스
+    ctx.fillStyle = "#054438";
+    roundRect(ctx, px(0.13), py(0.44), W * 0.25, H * 0.25, 14);
+    ctx.fill();
+    label("엘리프", px(0.255), py(0.53), 28, "#e3c79f", 800);
+    label("모델하우스", px(0.255), py(0.605), 30, "#ffffff", 800);
+    // 핀
+    const pinX = px(0.255), pinY = py(0.43);
+    ctx.fillStyle = "#e5483b";
+    ctx.beginPath();
+    ctx.arc(pinX, pinY - 34, 24, Math.PI, 0);
+    ctx.lineTo(pinX, pinY);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = "#fff";
+    ctx.beginPath();
+    ctx.arc(pinX, pinY - 34, 9, 0, Math.PI * 2);
+    ctx.fill();
+    // 모다아울렛
+    ctx.fillStyle = "#ead9c0";
+    roundRect(ctx, px(0.46), py(0.44), W * 0.255, H * 0.25, 14);
+    ctx.fill();
+    label("모다아울렛", px(0.587), py(0.535), 30, "#6b4f2a", 800);
+    label("(롯데시네마)", px(0.587), py(0.61), 22, "#8a6d45", 600);
+    // 시흥능곡역 + 4번 출구 동선
+    ctx.strokeStyle = "#5fb336";
+    ctx.lineWidth = 10;
+    ctx.lineCap = "round";
+    ctx.beginPath();
+    ctx.moveTo(px(0.845), py(0.87));
+    ctx.lineTo(px(0.845), py(0.70));
+    ctx.lineTo(px(0.70), py(0.70));
+    ctx.stroke();
+    ctx.fillStyle = "#5fb336";
+    roundRect(ctx, px(0.775), py(0.84), W * 0.205, H * 0.13, 12);
+    ctx.fill();
+    label("시흥능곡역", px(0.877), py(0.885), 24, "#ffffff", 800);
+    label("서해선", px(0.877), py(0.935), 19, "#eaffdf", 600);
+    ctx.fillStyle = "#f4c430";
+    ctx.beginPath();
+    ctx.arc(px(0.70), py(0.70), 19, 0, Math.PI * 2);
+    ctx.fill();
+    label("4", px(0.70), py(0.702), 22, "#3a2f00", 800);
+    label("4번 출구", px(0.70), py(0.795), 20, "#3a6b22", 700);
+    // 북쪽 표시
+    label("N ↑", px(0.95), py(0.07), 22, "#8f8a80", 800);
+    ctx.restore();
+  }
+
+  function renderCoupon(data) {
+    const W = 1080, H = 1720;
+    const cv = document.createElement("canvas");
+    cv.width = W;
+    cv.height = H;
+    const ctx = cv.getContext("2d");
+    const font = getComputedStyle(document.body).fontFamily || "'Apple SD Gothic Neo','Malgun Gothic',sans-serif";
+    function text(t, x, y, size, color, weight, align) {
+      ctx.fillStyle = color;
+      ctx.font = (weight || 700) + " " + size + "px " + font;
+      ctx.textAlign = align || "left";
+      ctx.textBaseline = "alphabetic";
+      ctx.fillText(t, x, y);
+    }
+    ctx.fillStyle = "#f4f0ea";
+    ctx.fillRect(0, 0, W, H);
+    // 상단 티켓
+    ctx.fillStyle = "#054438";
+    roundRect(ctx, 50, 50, W - 100, 560, 30);
+    ctx.fill();
+    text("ELIF  시흥 더프라임", 110, 140, 34, "#e3c79f", 800);
+    text("모델하우스 방문 고객 사은 이벤트", 110, 196, 30, "#c9d9d2", 600);
+    text("백화점 상품권", 110, 300, 64, "#ffffff", 800);
+    text("교환권", 110, 388, 76, "#f3d39b", 800);
+    ctx.setLineDash([14, 12]);
+    ctx.strokeStyle = "rgba(255,255,255,.35)";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(110, 440);
+    ctx.lineTo(W - 110, 440);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    text("성함", 110, 500, 28, "#9fbcb2", 600);
+    text(data.name, 250, 500, 32, "#ffffff", 800);
+    text("연락처", 110, 556, 28, "#9fbcb2", 600);
+    text(maskPhone(data.phone), 250, 556, 32, "#ffffff", 800);
+    text("쿠폰번호", 600, 500, 28, "#9fbcb2", 600);
+    text(data.code, 600, 556, 40, "#f3d39b", 800);
+    // 사용 안내
+    ctx.fillStyle = "#ffffff";
+    roundRect(ctx, 50, 640, W - 100, 250, 26);
+    ctx.fill();
+    text("인포에서 담당 최민 팀장을 찾아주세요", W / 2, 720, 40, "#054438", 800, "center");
+    text("유효기간 ~ 2026년 12월 6일 · 선착순 50명", W / 2, 780, 28, "#6b6b6b", 600, "center");
+    text("모델하우스 방문 상담 완료 시 교환 · 1인(1세대) 1회", W / 2, 830, 26, "#8a8a8a", 500, "center");
+    // 약도
+    text("오시는 길", 70, 950, 34, "#054438", 800);
+    drawCouponMap(ctx, 50, 980, W - 100, 560, font);
+    text("경기 시흥시 능곡동 868-7", 70, 1610, 36, "#222222", 800);
+    text("모다아울렛(롯데시네마) 건너편 · 서해선 시흥능곡역 4번 출구 방면", 70, 1660, 26, "#6b6b6b", 600);
+    return cv.toDataURL("image/png");
+  }
+
+  function initCoupon() {
+    const band = document.getElementById("coupon");
+    const modal = document.getElementById("couponModal");
+    const form = document.getElementById("couponForm");
+    const result = document.getElementById("couponSuccess");
+    const img = document.getElementById("couponImg");
+    const save = document.getElementById("couponSave");
+    if (!band || !modal || !form) return;
+
+    const until = Date.parse(band.dataset.couponUntil || "");
+    if (until && Date.now() > until) {
+      band.hidden = true;
+      return;
+    }
+
+    // 이벤트 광고(링크에 offer=gift)로 들어온 방문자에게만 노출
+    // 같은 세션 안에서 새로고침해도 유지, 이미 발급받은 사람은 계속 볼 수 있음
+    let eligible = false;
+    try {
+      if (new URLSearchParams(window.location.search).get("offer") === "gift") {
+        sessionStorage.setItem("elifOfferGift", "1");
+      }
+      eligible = sessionStorage.getItem("elifOfferGift") === "1" || !!localStorage.getItem(COUPON_KEY);
+    } catch (e) {
+      eligible = new URLSearchParams(window.location.search).get("offer") === "gift";
+    }
+    if (!eligible) {
+      band.hidden = true;
+      return;
+    }
+    band.hidden = false;
+
+    let pending = null;
+
+    function show(data) {
+      const url = renderCoupon(data);
+      img.src = url;
+      save.href = url;
+      form.hidden = true;
+      result.hidden = false;
+    }
+
+    function open() {
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      let saved = null;
+      try { saved = JSON.parse(localStorage.getItem(COUPON_KEY) || "null"); } catch (e) { saved = null; }
+      if (saved && saved.code) show(saved);
+    }
+
+    function close() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll("[data-coupon-open]").forEach(function (b) { b.addEventListener("click", open); });
+    modal.querySelectorAll("[data-coupon-close]").forEach(function (b) { b.addEventListener("click", close); });
+    modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && modal.classList.contains("is-open")) close(); });
+
+    // 제출 직전에 쿠폰번호를 만들어 시트 "접수 위치" 칸에 같이 기록
+    document.addEventListener("submit", function (e) {
+      if (e.target !== form) return;
+      const code = couponCode();
+      pending = {
+        name: form.querySelector(".lead-name").value.trim(),
+        phone: form.querySelector(".lead-phone").value.trim(),
+        code: code,
+      };
+      form.dataset.position = "쿠폰발급·" + code;
+    }, true);
+
+    form.addEventListener("lead:success", function () {
+      if (!pending) return;
+      try { localStorage.setItem(COUPON_KEY, JSON.stringify(pending)); } catch (e) { /* 저장 불가 환경 무시 */ }
+      trackLotte("coupon_issued", { coupon_code: pending.code });
+      show(pending);
     });
   }
 
@@ -560,9 +845,7 @@
       if (formStarted) return;
 
       formStarted = true;
-      trackLotte("lead_form_start", {
-        form_position: form.dataset.position || "관심고객등록",
-      });
+      trackLotte("lead_form_start", leadEventParams(form));
     });
 
     phoneInput.addEventListener("input", function () {
@@ -571,6 +854,7 @@
 
 
     function showSuccess() {
+      form.dispatchEvent(new CustomEvent("lead:success"));
       form.reset();
       form.hidden = true;
 
@@ -631,7 +915,7 @@
       isSubmitting = true;
       submitButton.disabled = true;
       submitButton.textContent = "전송 중...";
-      trackLotte("lead_form_submit", {});
+      trackLotte("lead_form_submit", leadEventParams(form));
 
       const query = new URLSearchParams(window.location.search);
       const payload = {
@@ -658,11 +942,15 @@
         if (finished) return;
         finished = true;
 
-        trackLotte("lead_form_request_sent", {
+        const successParams = Object.assign(leadEventParams(form), {
           utm_source: payload.utmSource,
           utm_medium: payload.utmMedium,
           utm_campaign: payload.utmCampaign,
+          utm_content: payload.utmContent,
         });
+        trackLotte("lead_form_request_sent", successParams);
+        // GA4 추천 이벤트 - 주요 이벤트(전환)로 지정해서 사용
+        trackLotte("generate_lead", successParams);
 
         // Meta Pixel - 잠재 고객(Lead) 전환
         if (typeof window.fbq === "function") {
@@ -941,9 +1229,12 @@ function initMapModal() {
     initConversionTracking();
     initPrivacyModal();
     initHeroVariant();
+    initCoupon();
+    initScrollDepth();
     initInquiryPicker();
     initLeadForm(document.getElementById("lotteLeadForm"), document.getElementById("lotteLeadSuccess"));
     initLeadForm(document.getElementById("quickLeadForm"), document.getElementById("quickLeadSuccess"));
+    initLeadForm(document.getElementById("couponForm"), document.getElementById("couponSuccess"));
     initPcCallModal();
     initMapModal();
     initUpcomingSection();

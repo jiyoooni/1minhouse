@@ -300,3 +300,40 @@ body.map-modal-open .conversion-bottom-bar { visibility: hidden !important; }
   .value-card-body .pc-dot { display:none; }
   .value-card-body strong { font-size:14px; line-height:1.35; }
 }
+
+/* ===== 상품권 교환권 쿠폰 (2026-11-17) ===== */
+.coupon-band { padding:28px 0 0; background:#f4f0ea; }
+.coupon-band[hidden] { display:none; }
+.coupon-ticket { position:relative; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:26px 32px; background:#054438; color:#fff; border-radius:14px; overflow:hidden; }
+.coupon-ticket::before, .coupon-ticket::after { content:""; position:absolute; top:50%; width:26px; height:26px; margin-top:-13px; border-radius:50%; background:#f4f0ea; }
+.coupon-ticket::before { left:-13px; } .coupon-ticket::after { right:-13px; }
+.coupon-ticket-main { padding-left:6px; }
+.coupon-eyebrow { font-size:13px; font-weight:700; letter-spacing:.04em; color:#e3c79f; }
+.coupon-title { display:block; margin-top:4px; font-size:26px; font-weight:800; letter-spacing:-.02em; }
+.coupon-title em { font-style:normal; color:#f3d39b; }
+.coupon-desc { margin-top:4px; font-size:14px; color:#c9d9d2; }
+.coupon-desc span { color:#fff; font-weight:700; margin-left:4px; }
+.coupon-open { flex:none; display:inline-flex; align-items:center; gap:8px; padding:15px 26px; border:0; border-radius:999px; background:#e3c79f; color:#054438; font-size:16px; font-weight:800; cursor:pointer; font-family:inherit; border-left:2px dashed rgba(255,255,255,.0); }
+.coupon-modal { position:fixed; inset:0; z-index:99990; display:none; align-items:center; justify-content:center; padding:16px; background:rgba(0,0,0,.6); }
+.coupon-modal.is-open { display:flex; }
+.coupon-dialog { position:relative; width:100%; max-width:440px; max-height:calc(100vh - 32px); overflow-y:auto; background:#fff; border-radius:14px; padding:30px 24px 24px; }
+.coupon-close { position:absolute; right:10px; top:6px; border:0; background:none; font-size:30px; line-height:1; color:#888; cursor:pointer; }
+.coupon-form-eyebrow { font-size:13px; font-weight:700; color:#a07a45; }
+.coupon-form h3 { margin-top:4px; font-size:23px; font-weight:800; color:#054438; }
+.coupon-form-sub { margin:4px 0 18px; font-size:14px; color:var(--muted); }
+.coupon-form .form-group { margin-bottom:10px; }
+.coupon-form-note { margin-top:10px; font-size:11.5px; color:var(--muted); line-height:1.5; }
+.coupon-result { text-align:center; }
+.coupon-result-title { font-size:19px; font-weight:800; color:#054438; margin-bottom:12px; }
+.coupon-img { display:block; width:100%; border-radius:10px; border:1px solid var(--line); }
+.coupon-save { display:block; margin-top:12px; padding:14px; border-radius:10px; background:#054438; color:#fff; font-weight:800; text-decoration:none; }
+.coupon-ios { margin-top:8px; font-size:12.5px; color:var(--muted); }
+@media (max-width: 768px) {
+  .coupon-band { padding:18px 0 0; }
+  .coupon-ticket { flex-direction:column; align-items:stretch; text-align:center; gap:14px; padding:20px 18px; }
+  .coupon-ticket-main { padding-left:0; }
+  .coupon-title { font-size:21px; }
+  .coupon-desc { font-size:13px; }
+  .coupon-desc span { display:block; margin:2px 0 0; }
+  .coupon-open { justify-content:center; padding:14px; }
+}
