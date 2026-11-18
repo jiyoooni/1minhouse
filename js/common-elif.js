@@ -428,11 +428,6 @@
     return "EL-" + c;
   }
 
-  function maskPhone(phone) {
-    const d = String(phone).replace(/\D/g, "");
-    return d.slice(0, 3) + "-****-" + d.slice(-4);
-  }
-
   function roundRect(ctx, x, y, w, h, r) {
     ctx.beginPath();
     ctx.moveTo(x + r, y);
@@ -531,8 +526,13 @@
     ctx.restore();
   }
 
+  function couponExpiry(issuedAt) {
+    const d = new Date((issuedAt || Date.now()) + 14 * 24 * 60 * 60 * 1000);
+    return d.getFullYear() + "년 " + (d.getMonth() + 1) + "월 " + d.getDate() + "일";
+  }
+
   function renderCoupon(data) {
-    const W = 1080, H = 1720;
+    const W = 1080, H = 1400;
     const cv = document.createElement("canvas");
     cv.width = W;
     cv.height = H;
@@ -544,43 +544,30 @@
       ctx.textAlign = align || "left";
       ctx.textBaseline = "alphabetic";
       ctx.fillText(t, x, y);
+      return ctx.measureText(t).width;
     }
     ctx.fillStyle = "#f4f0ea";
     ctx.fillRect(0, 0, W, H);
     // 상단 티켓
     ctx.fillStyle = "#054438";
-    roundRect(ctx, 50, 50, W - 100, 560, 30);
+    roundRect(ctx, 50, 50, W - 100, 280, 30);
     ctx.fill();
-    text("ELIF  시흥 더프라임", 110, 140, 34, "#e3c79f", 800);
-    text("모델하우스 방문 고객 사은 이벤트", 110, 196, 30, "#c9d9d2", 600);
-    text("백화점 상품권", 110, 300, 64, "#ffffff", 800);
-    text("교환권", 110, 388, 76, "#f3d39b", 800);
-    ctx.setLineDash([14, 12]);
-    ctx.strokeStyle = "rgba(255,255,255,.35)";
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.moveTo(110, 440);
-    ctx.lineTo(W - 110, 440);
-    ctx.stroke();
-    ctx.setLineDash([]);
-    text("성함", 110, 500, 28, "#9fbcb2", 600);
-    text(data.name, 250, 500, 32, "#ffffff", 800);
-    text("연락처", 110, 556, 28, "#9fbcb2", 600);
-    text(maskPhone(data.phone), 250, 556, 32, "#ffffff", 800);
-    text("쿠폰번호", 600, 500, 28, "#9fbcb2", 600);
-    text(data.code, 600, 556, 40, "#f3d39b", 800);
+    text("ELIF  시흥 더프라임", 110, 122, 24, "#e3c79f", 800);
+    text("모델하우스 방문 고객 사은 이벤트", 110, 172, 28, "#c9d9d2", 600);
+    const w1 = text("백화점 상품권 ", 110, 270, 66, "#ffffff", 800);
+    text("교환권", 110 + w1, 270, 66, "#f3d39b", 800);
     // 사용 안내
     ctx.fillStyle = "#ffffff";
-    roundRect(ctx, 50, 640, W - 100, 250, 26);
+    roundRect(ctx, 50, 360, W - 100, 230, 26);
     ctx.fill();
-    text("인포에서 담당 최민 팀장을 찾아주세요", W / 2, 720, 40, "#054438", 800, "center");
-    text("유효기간 ~ 2026년 12월 6일 · 선착순 50명", W / 2, 780, 28, "#6b6b6b", 600, "center");
-    text("모델하우스 방문 상담 완료 시 교환 · 1인(1세대) 1회", W / 2, 830, 26, "#8a8a8a", 500, "center");
+    text("인포에서 담당자 '최민' 팀장을 찾아주세요", W / 2, 448, 46, "#054438", 800, "center");
+    text("유효기간 ~ " + couponExpiry(data.issuedAt) + " (발행일로부터 14일)", W / 2, 512, 28, "#6b6b6b", 600, "center");
+    text("모델하우스 방문 상담 완료 시 교환 · 1인(1세대) 1회 · 선착순 50명", W / 2, 560, 24, "#8a8a8a", 500, "center");
     // 약도
-    text("오시는 길", 70, 950, 34, "#054438", 800);
-    drawCouponMap(ctx, 50, 980, W - 100, 560, font);
-    text("경기 시흥시 능곡동 868-7", 70, 1610, 36, "#222222", 800);
-    text("모다아울렛(롯데시네마) 건너편 · 서해선 시흥능곡역 4번 출구 방면", 70, 1660, 26, "#6b6b6b", 600);
+    text("오시는 길", 70, 660, 34, "#054438", 800);
+    drawCouponMap(ctx, 50, 690, W - 100, 560, font);
+    text("주소 : 경기 시흥시 능곡동 868-7", 70, 1318, 36, "#222222", 800);
+    text("모다아울렛(롯데시네마) 건너편 · 서해선 시흥능곡역 4번 출구 방면", 70, 1366, 26, "#6b6b6b", 600);
     return cv.toDataURL("image/png");
   }
 
@@ -654,6 +641,7 @@
         name: form.querySelector(".lead-name").value.trim(),
         phone: form.querySelector(".lead-phone").value.trim(),
         code: code,
+        issuedAt: Date.now(),
       };
       form.dataset.position = "쿠폰발급·" + code;
     }, true);
