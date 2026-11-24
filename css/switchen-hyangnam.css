@@ -66,7 +66,7 @@ main { background: #fff; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(20, 23, 38, .82) 0%, rgba(20, 23, 38, .55) 55%, rgba(20, 23, 38, .1) 100%);
+  background: linear-gradient(180deg, rgba(20, 23, 38, .72) 0%, rgba(20, 23, 38, .45) 55%, rgba(20, 23, 38, 0) 100%);
 }
 .jb-hero-in { position: absolute; inset: 0; z-index: 1; padding: 52px 24px 0; }
 .jb-hero-top { font-size: 16px; font-weight: 600; opacity: .92; }
@@ -462,3 +462,6 @@ main, .jb-footer { overflow-x: clip; }
 .sw-siteplan--light { background: #fff; border-color: var(--jb-line); margin-top: 0; }
 .sw-siteplan--light .sw-siteplan-cap { color: var(--jb-navy); font-size: 15px; }
 .sw-siteplan--light .sw-siteplan-cap small { color: var(--jb-muted); opacity: 1; }
+
+/* 첫 화면 계약금 기준 표기 */
+.sw-pill-note { display: block; margin-top: 2px; font-size: 12px; font-weight: 500; color: var(--jb-muted); }
