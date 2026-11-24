@@ -434,3 +434,8 @@ main { background: #fff; }
 
 /* 첫 화면: 아파트가 '상담 진행중' 줄 뒤로 오도록 사진을 위로 90px 올림 (높이는 600 유지) */
 .jb-hero-bg { height: 690px; margin-top: -90px; object-position: center 50%; }
+
+/* 모바일 가로 넘침 방지: 아이폰 사파리는 keep-all 에서 띄어쓰기 없는 긴 단어를 줄바꿈하지 않아 카드가 화면 밖으로 밀림 */
+.jb-loc article > div, .jb-big3-txt, .jb-overview dd { min-width: 0; }
+.jb-loc p, .jb-big3 p, .jb-overview dd, .jb-city h3, .footer-disclaimer { overflow-wrap: anywhere; }
+main, .jb-footer { overflow-x: clip; }
