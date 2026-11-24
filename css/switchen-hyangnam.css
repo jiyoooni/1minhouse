@@ -14,7 +14,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 64px; }
 body.jb {
-  font-family: Pretendard, "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
   color: var(--jb-ink);
   background: #e3e5ec;
   line-height: 1.5;
