@@ -439,3 +439,26 @@ main { background: #fff; }
 .jb-loc article > div, .jb-big3-txt, .jb-overview dd { min-width: 0; }
 .jb-loc p, .jb-big3 p, .jb-overview dd, .jb-city h3, .footer-disclaimer { overflow-wrap: anywhere; }
 main, .jb-footer { overflow-x: clip; }
+
+/* 폼 보조 문구 */
+.sw-form-sub { margin: -8px 0 14px; text-align: center; font-size: 14px; color: var(--jb-muted); }
+.jb-form-box h2 { margin-bottom: 12px; }
+
+/* 섹션 보조 문구 */
+.sw-sec-lead { display: flex; justify-content: space-between; align-items: baseline; margin: -10px 0 14px; font-size: 15px; color: var(--jb-muted); }
+.sw-sec-lead small { font-size: 12px; }
+.sw-sec-lead--center { justify-content: center; }
+.sw-sec-lead--dark { color: rgba(255, 255, 255, .75); }
+
+/* 중간 CTA */
+.sw-cta { background: var(--jb-navy); color: #fff; text-align: center; }
+.sw-cta-img { width: 100%; aspect-ratio: 15 / 7; object-fit: cover; object-position: center 45%; }
+.sw-cta-in { padding: 26px 16px 32px; }
+.sw-cta h2 { font-size: 23px; font-weight: 700; line-height: 1.4; letter-spacing: -.02em; }
+.sw-cta p { margin-top: 10px; font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, .78); }
+.sw-cta-btn { display: block; margin-top: 18px; padding: 16px 10px; border-radius: 10px; background: var(--jb-accent); color: var(--jb-navy); font-size: 17px; font-weight: 700; }
+
+/* 단지 배치도 (밝은 배경용) */
+.sw-siteplan--light { background: #fff; border-color: var(--jb-line); margin-top: 0; }
+.sw-siteplan--light .sw-siteplan-cap { color: var(--jb-navy); font-size: 15px; }
+.sw-siteplan--light .sw-siteplan-cap small { color: var(--jb-muted); opacity: 1; }
