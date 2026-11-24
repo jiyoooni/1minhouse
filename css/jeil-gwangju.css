@@ -321,3 +321,19 @@ main { background: #fff; }
 .jb-big3-free { position: static; display: inline-block; padding: 2px 8px; font-size: 10px; }
 .jb-big3 h3 { margin-top: 4px; font-size: 18px; }
 .jb-big3 p { margin-top: 3px; font-size: 13px; line-height: 1.45; }
+
+/* 스크롤하면 나타나기 (common-jeil.js 가 화면에 들어온 .reveal 에 .is-visible 추가) */
+.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s cubic-bezier(.2, .7, .3, 1); will-change: opacity, transform; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+.js .jb-loc article.reveal:nth-child(2) { transition-delay: .08s; }
+.js .jb-loc article.reveal:nth-child(3) { transition-delay: .16s; }
+.js .jb-loc article.reveal:nth-child(4) { transition-delay: .24s; }
+/* BIG 3 카드는 목록이 보일 때 한 장씩 차례로 */
+.js .jb-big3.reveal { opacity: 1; transform: none; }
+.js .jb-big3.reveal li { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s cubic-bezier(.2, .7, .3, 1); }
+.js .jb-big3.reveal.is-visible li { opacity: 1; transform: none; }
+.js .jb-big3.reveal.is-visible li:nth-child(2) { transition-delay: .12s; }
+.js .jb-big3.reveal.is-visible li:nth-child(3) { transition-delay: .24s; }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal, .js .jb-big3.reveal li { opacity: 1; transform: none; transition: none; }
+}
