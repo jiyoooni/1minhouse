@@ -281,6 +281,10 @@
       // 전화 버튼은 위치와 상관없이 phone_click 하나로도 집계
       if (href.indexOf("tel:") === 0) {
         trackLotte("phone_click", { cta_name: eventName, hero_variant: getHeroVariant() });
+        // Meta Pixel - 전화 문의(Contact). 클릭 1회당 1번만 발생
+        if (typeof window.fbq === "function") {
+          window.fbq("track", "Contact", { content_name: eventName });
+        }
       }
     });
   }
@@ -1210,8 +1214,31 @@ function initMapModal() {
 }
 
 
+  // 유니트 사진 가로 슬라이드: 화살표로 한 장씩 이동
+  function initUnitSlider() {
+    const track = document.getElementById("unitTrack");
+    if (!track) return;
+    const prev = document.querySelector(".unit-prev");
+    const next = document.querySelector(".unit-next");
+    function step() {
+      const slide = track.querySelector(".unit-slide");
+      return slide ? slide.getBoundingClientRect().width + 14 : track.clientWidth * 0.8;
+    }
+    function update() {
+      const max = track.scrollWidth - track.clientWidth - 4;
+      if (prev) prev.disabled = track.scrollLeft <= 4;
+      if (next) next.disabled = track.scrollLeft >= max;
+    }
+    if (prev) prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });
+    if (next) next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: "smooth" }); });
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+
   ready(function () {
     initHeaderAndNavigation();
+    initUnitSlider();
     initReveal();
     initConversionBottomBar();
     initConversionTracking();
